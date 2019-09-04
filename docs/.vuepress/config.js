@@ -25,6 +25,13 @@ module.exports = {
           collapsable: false,
           children: ["", "freshmen_fall", "freshmen_spring"]
         }
+      ],
+      "/be/": [
+        {
+          title: "后端",
+          collapsable: false,
+          children: ["", "freshmen_fall", "freshmen_spring"]
+        }
       ]
     }
   }
