@@ -47,6 +47,8 @@
 + [LadderLay](https://github.com/LadderLay)
 + [ildnyy](https://github.com/ildnyy)
 + [jonusis](https://github.com/jonusis)
++ [Amybiubiu](https://github.com/Amybiubiu)
+
 
 #### 2017 级
 
@@ -65,6 +67,11 @@
 
 + [Amanda111](https://github.com/Amanda111)
 + [Elegenthus](https://github.com/Elegenthus)
+
+
+#### 2014 级
+
++ [stephenLYZ](https://github.com/stephenLYZ)
 
 #### 2013 级
 
