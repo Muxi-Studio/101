@@ -31,32 +31,32 @@
 
 #### 2018 级
 
-zmc
-jzc
-yhq
-hjm
++ [Shadowmaple](https://github.com/Shadowmaple)
++ [Bowser](https://github.com/Bowser1704)
++ [hjm](https://github.com/hjm1027)
++ [jiangzc](https://github.com/jiangzc)
 
 #### 2017 级
 
-sry
-tam
-cgh
++ [ShiinaOrez](https://github.com/ShiinaOrez)
++ [Darren](https://github.com/Darren2017)
++ [CGH](https://github.com/CGH233)
 
 #### 2016 级
 
-zk
-lly
-pqc
++ [Humbertzhang](https://github.com/Humbertzhang)
++ [yuyilei](https://github.com/yuyilei)
++ [Andrewpqc](https://github.com/Andrewpqc)
++ [AnyaLeung](https://github.com/AnyaLeung)
 
 #### 2015 级
 
-https://github.com/kasheemlew
-anyaliang
-roseou
++ [kasheemlew](https://github.com/kasheemlew)
++ [RoseOu](https://github.com/RoseOu)
 
 #### 2014 级
 
-https://github.com/misakar
++ [Misakar](https://github.com/misakar)
 
 
 

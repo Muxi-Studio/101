@@ -3,12 +3,12 @@ home: true
 heroImage: /hero.png
 actionText: 马上查看
 actionLink: /fe/
-# features:
-#   - title: 简洁至上
-#     details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-#   - title: Vue驱动
-#     details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-#   - title: 高性能
-#     details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
+features:
+  - title: 注重基础
+    details: 专门设立公共的计算机基础线，独立于专业方向的学习。
+  - title: 与时俱进
+    details: 选用最新的教学材料，每年修订教程，不教过时的内容。
+  - title: 项目驱动
+    details: 边学边做，通过小项目锻炼能力，增强理解。
 footer: Hello from CCNU | Copyright © 2014-present Muxistudio
 ---
