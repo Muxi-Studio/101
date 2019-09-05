@@ -48,6 +48,7 @@
 + [ildnyy](https://github.com/ildnyy)
 + [jonusis](https://github.com/jonusis)
 + [Amybiubiu](https://github.com/Amybiubiu)
++ [Moomyd](https://github.com/Moomyd)
 
 
 #### 2017 级
