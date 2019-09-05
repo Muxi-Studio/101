@@ -1,7 +1,7 @@
 module.exports = {
   base: "/101/",
   title: "木犀 101",
-  description: "木犀沉淀的互联网技术入门指南",
+  description: "木犀沉淀的互联网学习入门指南",
   themeConfig: {
     nav: [
       { text: "前端", link: "/fe/" },
