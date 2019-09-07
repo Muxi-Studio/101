@@ -9,6 +9,8 @@ module.exports = {
       { text: "后端", link: "/be/" },
       { text: "产品", link: "/product/" },
       { text: "计算机基础", link: "/cs/" },
+      { text: "软技能", link: "/soft/" },
+      { text: "求职", link: "/job/" },
       // { text: "设计", link: "/design/" },
     ],
     // displayAllHeaders: true, // 默认值：false
@@ -31,7 +33,7 @@ module.exports = {
         {
           title: "后端",
           collapsable: false,
-          children: ["", "freshmen_fall", "freshmen_spring"]
+          children: ["", "freshmen_fall", "freshmen_spring", "sophomore_fall"]
         }
       ],
       "/android/": [
