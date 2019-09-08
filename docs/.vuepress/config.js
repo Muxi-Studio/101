@@ -19,7 +19,7 @@ module.exports = {
         {
           title: "前端",
           collapsable: false,
-          children: ["", "freshmen_fall"]
+          children: ["", "freshmen_fall", "freshmen_spring", "sophomore_fall"]
         }
       ],
       "/cs/": [
