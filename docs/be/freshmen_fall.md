@@ -7,9 +7,14 @@
 
 相比较其它语言来说，go是一门十分年轻的语言，虽然年轻，但它十分强大，丰富的标准库，原生支持高并发等等。而且因为go继承了C的很多基因，十分容易上手，经过C语言的学习，要上手go并不难。
 
-目标：学习 golang 的基本语法，阅读《go in action》
+目标：
 
->    每周会进行一次测试，测试的表现将会计入考核
++   学习 golang 的基本语法，阅读《Go in action》（中文译名《Go语言实战》）第四、五章
++   完成3道练习
+
+重点：go的基本程序结构，整型，字符串，数组，切片，映射，函数，自定义类型（结构体）
+
+其它资源：《[The way to go](https://www.kancloud.cn/kancloud/the-way-to-go/72432)》，《[宋老板的Go教程](https://github.com/ShiinaOrez/Tutor-Go)》，
 
 ### task 1
 
@@ -42,7 +47,7 @@
 罗马数字包含一下几个字符：`I, V, X, L, C, D, M`。与阿拉伯数字的对应关系如下：
 
 | 字符 | 数值 |
-| ---- | ---- |
+| :---: | :---: |
 | I    | 1    |
 | V    | 5    |
 | X    | 10   |
@@ -90,11 +95,65 @@
 
 ## Week 3
 
-并发是 go 的一项十分重要的特性
+并发是 go语言 的一项十分重要的特性，go原生支持并发，实现go并发是每一个go语言学习者都必须要掌握的技能。
 
-目标：go并发，锁，通信安全
+目标：
 
-### task 1
++   阅读《Go inaction》第六章，学习并发，锁和通道
+
++   完成练习
+
+### task
+
+#### 并发实现
+
+对以下`GetUserList()`的代码进行更改，实现并发，注意在写入操作时要避免竟态
+
+```go
+type UserInfo struct {
+	Id	 	 int64
+	Name 	 string
+	CourseId int64
+}
+
+// 根据用户id获取用户信息，以映射的形式返回
+func GetUserList(userId []int64) (map[int64]*UserInfo, error) {
+	userList := make(map[int64]*UserInfo, 0)
+
+	for _, id := range userId {
+        // 获取姓名
+		name, err := GetName(id)
+		if err != nil {
+			return nil, err
+		}
+
+        // 获取课堂号
+		courseId, err := GetCourseId(id)
+		if err != nil {
+			return nil, err
+		}
+
+		// 添加用户
+		userList[id] = &UserInfo{
+			Id:		  id,
+			Name: 	  name,
+			CourseId: courseId,
+		}
+	}
+
+	return userList, nil
+}
+
+// 获取姓名
+func GetName(id int64) (string, error) {
+	// ...
+}
+
+// 获取课堂号
+func GetCourseId(id int64) (int64, error){
+	// ...
+}
+```
 
 
 
