@@ -2,7 +2,7 @@
 
 > 这是一个让你实现梦想的地方。
 
-![An image](hero.png)
+![An image](./hero.png)
 
 
 
