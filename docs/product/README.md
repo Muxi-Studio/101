@@ -2,7 +2,7 @@
 
 > 这是一个让你实现梦想的地方。
 
-![An image](C:/Users/Summer/Desktop/ACTIVITIES/101/docs/product/hero.png)
+![An image](hero.png)
 
 
 
@@ -23,4 +23,6 @@
   - Summer
 - 2016级
   - Zing
+
+
 
