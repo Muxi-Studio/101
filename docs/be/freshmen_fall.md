@@ -14,7 +14,7 @@
 
 重点：go的基本程序结构，整型，字符串，数组，切片，映射，函数，自定义类型（结构体）
 
-其它资源：《[The way to go](https://www.kancloud.cn/kancloud/the-way-to-go/72432)》，《[宋老板的Go教程](https://github.com/ShiinaOrez/Tutor-Go)》，
+其它资源：《[The way to go](https://www.kancloud.cn/kancloud/the-way-to-go/72432)》，《[宋老板的Go教程](https://github.com/ShiinaOrez/Tutor-Go)》
 
 ### task 1
 
@@ -159,7 +159,11 @@ func GetCourseId(id int64) (int64, error){
 
 ## Week 4
 
-目标：学习用 go 写简单的爬虫，模拟登陆。
+目标：学习用 Golang 写简单的爬虫，学会模拟登陆。
+
+>   [爬虫简明教程](https://github.com/Shadowmaple/notes/blob/master/crawler/go_crawler.md)
+>
+>   [模拟登陆简明教程](https://github.com/Shadowmaple/notes/blob/master/crawler/simulate_login.md)
 
 ### task 1
 
@@ -167,17 +171,17 @@ func GetCourseId(id int64) (int64, error){
 
 ### task 2
 
-模拟登陆学校信息系统
+模拟登陆豆瓣网
 
 ## Week 5
 
 数据库在后端中是一个十分重要的概念，它是后端开发与运维中必不可少的一项工具。
 
-gorm 是go语言中一个实现数据库访问的 ORM（对象关系映射）库。使用这个库，我们方便地对数据库中的数据进行 CRUD（增删改查）。
+ [gorm](https://gorm.io/) 是go语言中一个实现数据库访问的 ORM（对象关系映射）库。使用这个库，我们方便地对数据库中的数据进行 CRUD（增删改查）。
 
 目标：
 
-+   学习和使用 [gorm ]( https://github.com/jinzhu/gorm)
++   学习和使用 gorm
 +   了解数据库的基本概念，以及各种数据库之间的区别，如关系型与非关系型。
 
 ## week 6 - 8
