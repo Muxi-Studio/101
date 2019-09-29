@@ -47,7 +47,7 @@ module.exports = {
         {
           title: "产品",
           collapsable: false,
-          children: ["", "freshmen_fall", "freshmen_spring"]
+          children: ["", "freshmen_fall"]
         }
       ]
     }
