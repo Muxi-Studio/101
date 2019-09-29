@@ -26,7 +26,7 @@ module.exports = {
         {
           title: "计算机基础",
           collapsable: false,
-          children: ["", "prepare", "freshmen_fall", "freshmen_spring"]
+          children: ["", "prepare", "culture", "freshmen_fall", "freshmen_spring"]
         }
       ],
       "/be/": [
