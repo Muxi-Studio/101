@@ -52,7 +52,13 @@ Markdown以其易写、易读、纯键盘操作解放鼠标及学习简单15分�
 * 为自己的博客选择合适的主题和样式(你可以尽可能的让它美观一些，别忘了一定要选择有语法高亮的主题)
 * 更新你的第一篇博文吧，在上面总结一下你搭博客时遇到的问题及解决方式，并总结使用博客常用的命令行。
 ---
-### 翻墙
+### 科学上网
+少数国家实行了高强度的网络审查，同时大多数国家都有一定的网络规范与监视系统存在。以中国大陆为例，中国通过其在网络建设的“防火长城”限制或阻止境内居民访问其境外的色情、当局无法管控的的新闻网站（例如BBC中文网）和社交网站（例如Facebook、Twitter）等。若中国大陆居民需要访问这些被屏蔽的网站，则需要翻墙。
+
+突破网络审查或突破网络封锁，俗称翻墙、科学上网、魔法上网等。由于“翻墙”在中国大陆境内成为敏感词汇，现在更多的使用科学上网来代替“翻墙”，通常特指在中国大陆绕过互联网审查封锁技术（IP封锁、端口封锁、关键词过滤、域名劫持等），突破防火长城，实现对网络内容的访问。
+
+突破网络审查的软件通常被称作翻墙软件，俗称梯子。翻墙软件并不只是VPN、代理软件。它们着眼于获得被屏蔽的网站内容，并在访问受限网站时向ISP隐藏自己的真实地址信息。
+
 [ShadowSocks](https://github.com/shadowsocks/shadowsocks)是一个开源的翻墙软件, 木犀在美国的另外一台服务器上配置了ShadowSocks。ShadowSocks的优点在于可以扫描长城防火墙的端口，访问国外网站时走美国，访问国内网站时走国内，体验很好。
 
 **ShadowSocks配置:**
@@ -62,7 +68,13 @@ Markdown以其易写、易读、纯键盘操作解放鼠标及学习简单15分�
  + [Windows客户端](https://tower.im/projects/a1482d8ab658462eb68a7557cb1ba897/uploads/7dd679982fb349fba71e916c1c41f7dc?version=1)
  + [ios客户端](https://github.com/shadowsocks/shadowsocks-iOS)
  + [安卓客户端](https://github.com/shadowsocks/shadowsocks-android)
+ + [Linux客户端 SSR](https://github.com/qingshuisiyuan/electron-ssr-backup)
 
+ShadowSocksR 则是原版ShadowSocks（SS）的一个衍生版本，相比原版而言，主要增加了混淆参数功能。
+
++ Shadowsocks原版(另一人接手)：[shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows/releases)
++ Shadowsocks原版 安卓版：[shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android/releases)
++ ShadowsocksR跨平台客户端：[electron-ssr](https://github.com/qingshuisiyuan/electron-ssr-backup)
 
 **其他:**
 还可以使用其他的vpn运营商提供的服务
