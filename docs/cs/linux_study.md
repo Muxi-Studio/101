@@ -3,17 +3,24 @@
 有关Linux安装、使用、配置、学习等
 
 ## 安装
+与Ubuntu兼容性较好的电脑  
+[Ubuntu硬件认证](https://certification.ubuntu.com/desktop)
+
+Ubuntu系统ISO文件下载  
+[清华大学开源软件镜像站](https://mirror.tuna.tsinghua.edu.cn/ubuntu-releases/)
 
 戴尔笔记本电脑安装Linux问题  
 [记录一次远程安装系统的经历](linux/记录一次远程安装系统的经历.html)
 
+[Linux UEFI与备份还原(引导修复)](https://www.jianshu.com/p/7821027cc455)
 ## 配置
 
-[Ubuntu装机指南](linux/Ubuntu装机指南.html)
+[Ubuntu配置指南1](linux/Ubuntu装机指南.html)
 
-[Ubuntu装机指南2](linux/Ubuntu装机指南2.html)
+[Ubuntu配置指南2](linux/Ubuntu装机指南2.html)
 
 ## 使用
+[鸟哥的 Linux 私房菜 第三版 -- 基础学习篇目录](http://cn.linux.vbird.org/linux_basic/linux_basic.php)
 
 [Linux常用命令大全1](linux/Linux常用命令大全1.html)
 

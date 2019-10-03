@@ -15,6 +15,7 @@
 - 安装 Ubuntu 系统[安装教程](https://ywnz.com/linuxaz/2588.html)。安装如果有问题，请查阅 [Linux 专题中的常见安装问题文档](/cs/linux_study.html)。（无法解决的问题请团队内咨询）
 - 安装完成后尝试去配置它，让你的系统更加美观
 - 安装配置[ Zsh 终端](https://ohmyz.sh/)
+- 学习Linux基础知识 
 - 掌握常用的命令行操作，可以参考 [Linux 专题中的常用命令大全](/cs/linux_study.html)
 - 如果你有余力的话推荐你去看[《Unix & Linux 大学教程》](https://book.douban.com/subject/4253716/)，系统学习 Unix & Linux 操作系统。（PDF 在团队内索取）
 
@@ -62,15 +63,13 @@ Markdown以其易写、易读、纯键盘操作解放鼠标及学习简单15分�
 
 突破网络审查的软件通常被称作翻墙软件，俗称梯子。翻墙软件并不只是 VPN、代理软件。它们着眼于获得被屏蔽的网站内容，并在访问受限网站时向 ISP 隐藏自己的真实地址信息。
 
-[ShadowSocks](https://github.com/shadowsocks/shadowsocks) 是目前最流行的翻墙软件。
+[ShadowSocks](https://github.com/shadowsocks/shadowsocks) 是目前最流行的翻墙软件。ShadowSocksR 是原版 ShadowSocks（SS）的一个衍生版本，相比原版而言，主要增加了混淆参数功能。
 
 ShadowSocks 原理示意图
 
 ![](./whats-shadowsocks-04.png)
 
 **ShadowSocks 配置:**
-
-ShadowSocksR 是原版 ShadowSocks（SS）的一个衍生版本，相比原版而言，主要增加了混淆参数功能。目前用 SSR 比较多。首先我们要安装一个 SSR 客户端：
 
 - [Linux 命令行客户端](https://blog.mrwang.pw/2018/12/13/Linux%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8ssr/)
 - Windows 客户端[shadowsocksr-csharp](https://github.com/shadowsocksrr/shadowsocksr-csharp/releases)
