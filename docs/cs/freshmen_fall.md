@@ -60,74 +60,87 @@
 - 《鸟哥的 Linux 私房菜》（PDF 在团队内获取）
 - 网络课程（本系列的主要课程参考）：  
   [斯坦福：Practical Unix](https://practicalunix.org)  
-  [讲解视频（需翻墙）](https://practicalunix.org/video-schedule)（可联系团队内获取百度网盘）
+  [讲解视频（需翻墙）](https://practicalunix.org/video-schedule)
 
 ### Week 1
 
 #### 了解 Unix & Linux 系统，历史，及简单使用
 
-- 操作系统的发展历史，Unix & Linux 介绍及其历史，可以看《Unix & Linux 大学教程》的前五章
-- 学习使用 Vim/Emacs 文本编辑器，学会基本操作
-- 在终端使用 GCC 编译，GDB 调试 C 语言程序（更深入一点可以尝试学一下 make 工具，会写 makefile）
+**学习目标**
+
+- 学习操作系统的发展历史，初步了解 Unix & Linux 是什么，以及其历史
+- 学习使用 Vim/Emacs 文本编辑器，学会基本操作（主要是 Vim）
+- 在终端使用 GCC 编译，GDB 调试 C 语言程序（进阶：更深入一点可以尝试学一下 Make 工具，会写 Makefile）
 
 ##### 任务：
 
-1. 阅读《Unix & Linux 大学教程》的前五章
-2. 用 Vim 在终端写 C 程序，并使用 GCC 编译，GDB 调试
+1. 阅读《Unix & Linux 大学教程》的前三章
+2. 用 Vim 在终端写 C 程序，并使用 GCC 编译，GDB 调试。看 [文本编辑器视频](https://www.youtube.com/watch?v=-6VEIBtrzgE&index=24&list=PLAn5BRyzQEf9VoK8gRKp8Z0LGME6fISaE) 和 [GDB 视频](https://www.youtube.com/watch?v=sCtY--xRUyI&t=296s)
 
 ### Week 2
 
 #### Shell 及 Linux 基本常用命令学习，Linux 文件系统概念以及基本操作学习
 
-- 了解什么是 Shell，了解 bash 等等经典的 Shell。安装使用更方便的 Zsh（oh-my-zsh），阅读《Unix & Linux 大学教程》11~14 章
-- 学习 Linux 中常用的简单命令  
-  [Unix/Linux Command Reference](http://www.cs.cmu.edu/~213/recitations/fwunixref.pdf)
-- 了解 Linux 的文件系统概念，学习在终端中对文件系统进行基本操作（ls,cd,mkdir,touch,mv,cp）等等操作
+**学习目标**
+
+- 了解什么是 Shell，了解 bash 等等经典的 Shell。安装使用更方便的 Zsh（oh-my-zsh）
+- 学习 Linux 中常用的命令 [Unix/Linux Command Reference](http://www.cs.cmu.edu/~213/recitations/fwunixref.pdf)
+- 了解 Linux 的文件系统
 
 #### 任务
 
-1. 阅读《Unix & Linux 大学教程》11~14 章
-2. 看 Practical Unix 的[video](https://practicalunix.org/video-schedule) 中的 Week 2: Intro and shell
-3. 完成[Week2 lab](https://practicalunix.org/content/week-2-intro)
-4. 阅读 《Unix & Linux 大学教程》23 章 总结 Linux 文件系统结构，了解根目录下各个目录的作用
+1. 阅读《Unix & Linux 大学教程》11 章。进阶：有兴趣的可以阅读 12-14 章。
+2. 看视频的[Practical Unix: Intro 2 - Shell](https://www.youtube.com/watch?v=aGEUON7k2m4&index=23&list=PLAn5BRyzQEf9VoK8gRKp8Z0LGME6fISaE)
+3. 阅读 《Unix & Linux 大学教程》23 章，了解 Linux 文件系统，了解根目录下各个目录的作用。在终端中对文件系统进行基本操作（ls,cd,mkdir,touch,mv,cp）等等操作。学习 Linux 常用命令之后尝试在终端中玩一下[这些命令](http://www.cs.cmu.edu/~213/recitations/fwunixref.pdf)。
 
 ### Week 3
 
 #### I/O 重定向，过滤器，正则表达式学习
 
-I/O 重定向和管道是 Unix 命令行工具箱之后隐藏的设计准则的体现，这些都是帮你升级为 Unix/Linux 进阶用户的有力工具
+> I/O 重定向和管道是 Unix 命令行工具箱之后隐藏的设计准则的体现，这些都是帮你升级为 Unix/Linux 进阶用户的有力工具
 
-- 看《Unix & Linux 大学教程》的 15 ～ 20 章
-- 学习正则表达式
+**学习目标**
+
+- 掌握 I/O 重定向和管道的基本用法，理解管道背后的 Unix 设计哲学
+- 学习正则表达式基础
 
 #### 任务
 
-1. 阅读《Unix & Linux 大学教程》的 15 ～ 20 章，看[视频](https://practicalunix.org/video-schedule)中的 Week 3: Input / output redirection
-2. 完成 [Week3](https://practicalunix.org/content/week-3-pipelines)，[Week4](https://practicalunix.org/content/week-4-grep) 的 Lab
+1. 阅读《Unix & Linux 大学教程》的 15 章，看[课程视频](https://practicalunix.org/video-schedule)中的 Week 3: Input / output redirection 小节的几个视频，并自己跟着视频在终端中进行对应的练习
+2. 阅读 《Unix & Linux 大学教程》的 20 章，看[课程视频](https://practicalunix.org/video-schedule)中的 Week 4: Search and grep 小节的几个视频，并自己跟着视频在终端中进行对应的练习（主要是 grep 的用法）
+3. 进阶：完成 [Week3](https://practicalunix.org/content/week-3-pipelines)，[Week4](https://practicalunix.org/content/week-4-grep) 的 Lab
 
 ### Week 4
 
-简单 Shell 脚本的编写， Linux 网络工具的使用  
-有兴趣的还可以继续学一下 Shell 编程，写写 Shell 脚本
+#### Linux 网络工具的使用
+
+> 有兴趣的还可以继续学一下 [Shell 编程](http://product.dangdang.com/24013685.html)，写写 Shell 脚本。对后端同学来说是一个必备技能
 
 #### 任务
 
-1. 学习[视频](https://practicalunix.org/video-schedule) 中 Week 7: Network
-2. 完成 Shell 脚本编写 [Week5 Lab](https://practicalunix.org/content/week-5-scripting)
-3. 网络编程，[Week 6](https://practicalunix.org/content/week-8) 和 [Week 7](https://practicalunix.org/content/week-7-web) lab
+1. 网络编程，学习[视频](https://practicalunix.org/video-schedule)中 Week 7: Network 这个小节的内容。主要是 cURL，scp，wget 等等工具的使用。
+2. 完成 [Week 6](https://practicalunix.org/content/week-8) 和 [Week 7](https://practicalunix.org/content/week-7-web) Lab
 
 ### Week 5
+
+> 这个是进阶任务，有多余时间的同学可以考虑。之后的大一下学习安排中也会涉及，所以不是必选
 
 #### 简单的 Linux 系统编程（需 C 语言基础）
 
 - 参考书[《Linux 系统编程》](http://product.dangdang.com/23460699.html)
 
-这时你对 Linux 系统已经有了初步了解，且掌握 C 语言，所以可以更进一步，去接触一下 Linux 系统编程，调用系统接口，做一些有意思的事情。通过直接和 Linux 系统对话，来更深入的认识 Linux 系统
+**学习目标**
+
+这时你对 Linux 系统已经有了初步了解，且掌握 C 语言，所以可以更进一步，去接触一下 Linux 系统编程，调用系统接口，做一些有意思的事情。通过直接和 Linux 系统对话，来更深入的认识 Linux 系统，系统编程主要包括以下几个方面：
 
 - 文件系统操作
 - 进程，线程管理
 - 内存管理
 - 网络编程
+
+#### 任务
+
+1. 自行寻找资料学习并练习。
 
 ## 博客搭建
 
