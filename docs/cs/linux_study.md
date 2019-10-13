@@ -15,9 +15,11 @@ Ubuntu系统ISO文件下载
 [Linux UEFI与备份还原(引导修复)](https://www.jianshu.com/p/7821027cc455)
 ## 配置
 
-[Ubuntu配置指南1](linux/Ubuntu装机指南.html)
+[Ubuntu配置指南1](linux/Ubuntu装机指南.html)   添加源 sudo免密码 grub设置 编辑器的首选项 安装输入法  Git
 
-[Ubuntu配置指南2](linux/Ubuntu装机指南2.html)
+[Ubuntu配置指南2](linux/Ubuntu装机指南2.html) 界面美化等
+
+[Deepin配置指南](linux/deepin美化.html) 界面美化等
 
 ## 使用
 [鸟哥的 Linux 私房菜 第三版 -- 基础学习篇目录](http://cn.linux.vbird.org/linux_basic/linux_basic.php)
