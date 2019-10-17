@@ -40,7 +40,7 @@ module.exports = {
         {
           title: "安卓",
           collapsable: false,
-          children: ["", "freshmen_fall"]
+          children: ["", "freshmen_fall", "appendix_java_quiz", "appendix_reference", "appendix_tech_direction"]
         }
       ],
       "/product/": [
