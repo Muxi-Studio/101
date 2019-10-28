@@ -188,13 +188,15 @@ _第二章_
 
 *高阶函数*
 
-+ 高阶函数：接受一个函数作为参数，或者返回一个函数的函数。
-+ 函数是一种抽象，高阶函数的存在让我们可以任意组合这些抽象。我们编写一个一个小的逻辑单元，每个单元只负责一个小的环节（单一职责），通过**组合**这些函数，我们就可以表达复杂的逻辑，并且保证了代码的可维护性
++ 高阶函数（Higher order function）：接受一个函数作为参数，或者返回一个函数的函数。
++ 函数是一种抽象（Abstraction），高阶函数的存在让我们可以任意组合这些抽象。我们编写一个一个小的逻辑单元，每个单元只负责一个小的环节（单一职责），通过**组合**这些函数，我们就可以表达复杂的逻辑，并且保证了代码的可维护性
 + 高阶函数如果接受一个函数作为参数，一般会在内部调用这个函数，这样从外界来看，调用这个高阶函数就组合了高阶函数自身和传入函数两者的功能，通过多层高阶函数调用，可以进行复杂的组合。
 + 高阶函数如果接受一个函数作为参数，也可能不在内部调用这个函数，而是返回一个新的函数，这个新的函数包装了传入的函数，并添加了附加的逻辑。这也是一种对抽象的组合。
 + 高阶函数如果不接受一个函数作为参数，就一定会返回一个新函数，这个新函数绑定了传入的参数。通过调用这个高阶函数，可以生成新的函数，类似一个函数工厂
 + 数组的高阶函数系列方法：map，reduce，filter
-+ UTF8 和 UTF 16 字符编码
++ 字符编码概念：unicode，code unit，code point，UTF16 这些概念。推荐阅读[What every JavaScript developer should know about Unicode](https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-unicode/)或者[Unicode与JavaScript详解](http://www.ruanyifeng.com/blog/2014/12/unicode.html)
++ JS 与 unicode：遍历字符串获得单个 unicode 字符的方法，获取单个 unicode 字符 code point 的方法 codePointAt()
+
 
 *面向对象*
 

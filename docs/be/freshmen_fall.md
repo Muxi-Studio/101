@@ -1,22 +1,56 @@
 # 大一上学期
 
+> 本学期主要内容是：学习 Go 语言基础。了解数据库基础和SQL 语言。学习使用 Gin 和 gorm 开发 Web 应用。
 
-> 编写中。这个文档之前 Tower 中的是按 Py 来写的，今年转到 Go 之后要重新写过了。要确定一本教材，然后按上面的学。写例子和作业。后面开始学Web开发相关的，这部分的可以参考之前的。这里先 Copy 了之前的内容占位。
+## Week 1 - 2 Go 语言入门
 
-## Week 1 - 2
+相比较其它语言来说，Go 是一门十分年轻的语言。虽然年轻，但它高效而简洁，并且原生支持了并发编程，是云计算时代的首选语言。而且因为 Go 继承了 C 的很多语法特点，经过 C 语言的学习，要上手 Go 并不难。
 
-相比较其它语言来说，go是一门十分年轻的语言，虽然年轻，但它十分强大，丰富的标准库，原生支持高并发等等。而且因为go继承了C的很多基因，十分容易上手，经过C语言的学习，要上手go并不难。
+教材：[《Go in Action》](http://product.dangdang.com/26914357.html)（主要） + [《The Go Programming Language》](http://product.dangdang.com/25072202.html)（参考） （两书PDF 版可在团队内获取）
 
-目标：
+其他参考资料：
 
-+   学习 golang 的基本语法，阅读《Go in action》（中文译名《Go语言实战》）第四、五章
-+   完成3道练习
++ [The way to go](https://www.kancloud.cn/kancloud/the-way-to-go/72432)
++ [宋老板的Go教程](https://github.com/ShiinaOrez/Tutor-Go)
 
-重点：go的基本程序结构，整型，字符串，数组，切片，映射，函数，自定义类型（结构体）
+**目标**：
 
-其它资源：《[The way to go](https://www.kancloud.cn/kancloud/the-way-to-go/72432)》，《[宋老板的Go教程](https://github.com/ShiinaOrez/Tutor-Go)》
++ 了解 Go 语言的历史，阅读《The Go Programming Language》**Preface（序言）**。以及《Go in action》第一章。谷歌搜索了解一下 Go 语言的**主要作者**。在本地运行一个 Go 的 **Hello World**。
++ 学习 Go 的基本语法，阅读 《The Go Programming Language》 **第二，三章**。
++ 学习 Go 的数据结构和类型系统，阅读 《Go in action》**第 四、五 章**。（《The Go Programming Language》的 **4-7 章可以作为参考**）
++ 完成下面的 **3 道练习**
 
-### task 1
+
+主要知识点（看完书可以按这个查漏补缺）：
+
+*基础语法*
+
++ 基本数据类型
++ 变量声明（特别注意 Short Variable Declarations）
++ 指针类型（《The Go Programming Language》2.3.2）
++ 函数声明和调用（详细的在《The Go Programming Language》第五章
++ 包（Package）
+
+*数据结构*
+
++ 数组与切片
++ 字符串
++ Map
++ 切片，数组，字符串的内部实现和联系
+
+*类型系统*
+
++ 结构体
++ 结构体方法（Value receiver VS Pointer receiver）
++ 接口（interface）与实现
++ 类型组合
+
+
+附：如果不了解 [值传递 VS 引用传递](https://goinbigdata.com/golang-pass-by-pointer-vs-pass-by-value/)。可以看一下。
+
+***
+
+### Task 1
 
 #### 寻找子串
 
