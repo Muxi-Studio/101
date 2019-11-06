@@ -8,10 +8,10 @@ module.exports = {
       { text: "安卓", link: "/android/" },
       { text: "后端", link: "/be/" },
       { text: "产品", link: "/product/" },
+      { text: "设计", link: "/design/" },
       { text: "计算机基础", link: "/cs/" },
       { text: "软技能", link: "/soft/" },
       { text: "求职", link: "/job/" },
-      // { text: "设计", link: "/design/" },
     ],
     // displayAllHeaders: true, // 默认值：false
     sidebar: {
