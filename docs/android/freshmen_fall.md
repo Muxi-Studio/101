@@ -55,8 +55,7 @@ Android 是移动开发的一大巨头，从 Android 1.0 到现在的10.0，功�
 - 开始学习Android ***（注意前期准备）***
 	- 《权威指南》第一章 1.1~1.4，跟随案例写 GeoQuiz
 		- 重点：**简单布局和基本属性**、**Androidstudio的使用**
-	- 学习使用 LinearLayout 和 RelativeLayout，并合理使用两种布局完成下面两个界面
-		- ***！！！！***
+	- 学习使用 LinearLayout 和 RelativeLayout，并合理使用两种布局完成一个简单的计算器界面
 
 ### week 4
 
@@ -67,7 +66,7 @@ Android 是移动开发的一大巨头，从 Android 1.0 到现在的10.0，功�
  	- 《权威指南》第1章的后半部分和第2章的内容，跟随案例写GeoQuiz。
  		- 重点：**监听器**、**Activity**、**MVC设计模式**、**在模拟器和物理设备上运行代码**、**Button的基本属性和使用方法**、**Toast的使用**等
  	- 完成挑战练习 1.11、2.7、2.8
- 	
+	 	
 	
 ### week 5
 
@@ -82,19 +81,49 @@ Android 是移动开发的一大巨头，从 Android 1.0 到现在的10.0，功�
 - Android 学习
 	- 《权威指南》第5章、第6章，跟随案例写 GeoQuiz。
 		- 重点：**显式Intent的基本使用和传递数据的方法**、**在manifest.xml中声明**、**Android SDK**、**compileSdkVersion、minSdkVersion、targetSdkVersion的定义与区别**
-	- 完成挑战练习：
+	- 完成挑战练习：5.5的前两个漏洞，6.5
 
 ### week 7
 
++ Android学习
+  + 《权威指南》第7-9章，跟随案例写CriminalIntent
+    + 重点：**fragment的基本使用和相关知识**、**RecyclerView的使用方法**、**使用图形布局工具编辑布局**、**ConstraintLayout的基本使用**、**基本的布局属性**、
+  + 完成挑战练习：8.8、9.5
+
 ### week 8
+
++ Android学习
+  + 《权威指南》第10-13章，跟随案例写CriminalIntent
+    + 重点：**使用argument传递数据**、**ViewPager的使用方法**、**fragment间的数据传递**、**在顶部栏添加menu**
+  + 完成挑战练习：11.5、11.6、13.7
 
 ### week 9
 
++ Android学习
+
++ 《权威指南》第14-16章，跟随案例写CriminalIntent
+  + 重点：**数据库的相关知识和SQLite的使用**、**隐式intent的组成和基本使用**、**使用隐式intent拍照**、**保存照片和加载本地照片**
++ 完成挑战练习：10.6、14.8、15.6、16.6
+
 ### week 10
 
-### week 11
++ Android学习
++ 《权威指南》第17-19章，跟随案例写CriminalIntent
+  + 重点：
++ 完成挑战练习：
 
 ### week 12
 
++ Android学习
+
++ 《权威指南》第21-23章，跟随案例写BeatBox
+
 ### 冬令营
+
++ 《权威指南》看完，跟随案例写项目
+  + NerdLauncher 
+  + PhotoGallery
+  + BoxDrawingView
+  + Sunset
+  + Locatr
 
