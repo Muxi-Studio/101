@@ -195,9 +195,9 @@ func GetCourseId(id int64) (int64, error){
 
 目标：学习用 Golang 写简单的爬虫，学会模拟登陆。
 
->   [爬虫简明教程](https://github.com/Shadowmaple/notes/blob/master/crawler/go_crawler.md)
+>   [爬虫简明教程](./crawler/go_crawler.md)
 >
->   [模拟登陆简明教程](https://github.com/Shadowmaple/notes/blob/master/crawler/simulate_login.md)
+>   [模拟登陆简明教程](./crawler/simulate_login.md)
 
 ### task 1
 
