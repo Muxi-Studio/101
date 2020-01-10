@@ -210,221 +210,174 @@ _第二章_
 + 原型的概念
 + JS 中 Class 的使用 
 
-<!-- 自测练习：回答问题并说明原因
 
-1.
+### Task 4：A Robot 项目
 
-```
-var a = function(){}
-a.b = 1
-a.prototype.b = 2
-a.prototype.c = 3
-a.prototype.d = 4
-console.log(a.b)
-console.log(new a().b)
+// TODO
 
-var foo = new a()
-foo.c = 5
-console.log(foo.c)
-console.log(foo.d)
-```
+## 模块四：Web 开发基础
 
-请问`console.log`的输出？
+### Task 1：JavaScript 与浏览器
 
----
+JavaScript 当年是作为 NetScape 浏览器的一个特性出现的。后面 JavaScript 成为了在浏览器中编程的唯一标准。随着互联网的发展，JS 也从浏览器里的一个小特性变为了一门使用非常广泛的主流语言。
 
-2.
+我们如何在浏览器中使用 JS？JS/HTML/CSS 三者是如何构成一个页面的？这就是本节要讨论的话题。
 
-```
-var Foo = function(){
-  this.a = 1
-  return {
-    a:2
-  }
-}
+阅读教材第 **13** 章，以及下面的拓展阅读材料。
 
-var bar = new Foo()
-console.log(bar.a)
-```
+知识要点：
 
-请问`console.log`的输出？
++ 互联网（Internet）的基础概念：IP 地址，HTTP 协议，URL。
++ HTML 基础概念：标签语法，doctype，特殊字符转义，兼容语法错误（error-tolerant）。
++ 如何在 HTML 中引入 JS：`<script />` 标签。
++ 兼容性与[浏览器战争](https://zh.wikipedia.org/zh-hk/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%A7%E6%88%98)（这个链接需要翻墙）。
 
----
 
-3.
+拓展阅读：
 
-```
-var map = Object.create(null);
-console.log("toString" in map);
++ [Javascript 诞生记](http://www.ruanyifeng.com/blog/2011/06/birth_of_javascript.html)
++ 浏览器厂商对 HTML/CSS/JS 等技术的实现如果不统一，会对开发者造成很大的困扰。因此需要一个中立的组织来制定 [Web 标准](https://juejin.im/post/5c700b1de51d457fd033f496)
++ 浏览器兼容性：IE 对 Web 标准的实现存在很多问题，因此在开发兼容 IE 的网页时，经常需要查阅相关的资料并做特定的处理。后来 HTML5 和 CSS3 普及之后，微软推出了符合 Web 标准的 Edge 浏览器，目前我们一般不需要兼容 IE 了（除了针对银行或者政府的业务）。目前主流的四大浏览器：Chrome，Safari，Firefox，Edge 被称为是常青浏览器（Evergreen Browser），这些浏览器遵守 Web 标准，并且会自动更新，兼容性的问题比较少。
 
-var map = Object.create({a:1});
-console.log("toString" in map);
-console.log("a" in map);
-```
 
-请问`console.log`的输出？
+### Task 2：模块
 
----
 
-4.
+理想的程序应该是由多个自治的部分组成的。每个部分各司其职。本节引入了模块的概念。模块是每个主流编程语言（C++/Java/C#等等）都有的一个特性，它让你可以将代码写到一个模块中，控制代码对外暴露（可以从另一个模块访问）的函数和属性。我们通过将代码写成一个一个模块，就可以组成一个结构清晰，易于维护的大型前端应用。
 
-```
-function foo(obj){
-  return Object.prototype.toString.call(obj).slice(8,-1)
-}
+阅读教材第 **10** 章并完成书上习题，上传到 Github
 
-```
+知识要点：
 
-请说明函数`foo`的作用
++ **模块**（Modules）的概念。模块就是一段代码，它声明了外部的依赖（dependencies），同时也声明了对外暴露的接口（Interface）。
++ **包**（Package）的概念。Package 就是可以被分发的模块，它有一个描述自身依赖的文件。为了让开发者可以共享代码，JS 有一个统一的包格式和包管理工具：[NPM](http://npmjs.org/)。
++ JS 一开始没有模块特性，我们有很多方法在 JS 中实现模块的效果：**立即执行函数表达式（IIFE)，eval 方式，CommonJS**。这些方式有各自的问题。CommonJS 和 NPM 一起出现，是比较常用的模块实现。
++ ECMAScript modules 是 JS 标准化的模块实现（语言内置）。**了解 ES 模块的基本语法以及静态特性**。
++ 浏览器对新的 JS 特性的支持是一个缓慢的过程。同时我们也会使用 [TypeScript](http://www.typescriptlang.org/) （编译到 JS 的静态类型语言）来为构建大型前端应用提供支持。为了提早使用这些特性，在编写完代码后，我们会对源代码进行**编译（compile）**，产生浏览器可以运行的 JS 代码。
++ 一个项目的模块的数量往往很大，但浏览器下载 JS 文件受到网络请求并发数的限制。因此我们在部署 JS 代码时，往往会进行**打包（bundling）**，将多个 JS 模块合并为一个文件。
++ **Building and bundling** 指的就是上述两个步骤，我们经常使用的工具是 [Webpack]() 和 [Babel]() 等等。
++ 目前我们使用 ES Module 编写的代码往往会被转化为 CommonJS，然后在浏览器运行。虽然主流浏览器对 ES Module 都有了支持，但为了兼容性考虑，在未来一段时间内，我们还是需要进行转译。
++ 模块设计是主观的，往往涉及很多利弊权衡（trade-offs），需要开发者进行深入的思考。
++ 模块设计一个重要方面就是要**容易使用（ease of use）**，因为不管是自己用还是给其他人用，如果过一段时间之后去看代码，都需要能尽快的想起模块的用法。模块对外暴露的 API 很重要。**好的 API 往往是模仿了现存的惯例**。如果你想不到好的 API 设计或者数据结构，最好的办法就是看看已有的开源模块是怎么设计的，并且仿造这个惯例。
 
----
 
-5.
+拓展阅读：
 
-```
-var a = {}
-a.bar = 2
+1. [ES6 标准入门 - Module 的语法](https://es6.ruanyifeng.com/#docs/module) 入门教程
+1. [ES6 标准入门 - Module 的加载实现](https://es6.ruanyifeng.com/#docs/module-loader) 入门教程
+1. [JS 模块化七日谈](https://github.com/Huxpro/js-module-7day) 考古向
+2. [Understanding ECMAScript 6 - Modules](https://leanpub.com/understandinges6/read/#leanpub-auto-encapsulating-code-with-modules) 深度的参考手册
 
-Object.defineProperty(a, "foo",
-                      { value: "hi"});
 
-console.log(delete a.foo)
-console.log(delete a.bar)
+小练习：
 
-a.foo = "world"
-console.log(a.foo)
+使用 Webpack 打包 Chapter 7 的 Robot 项目，并用 Babel 把代码转译为 ES5。最后可以在本地用 HTML 看到项目。
 
+> TODO: 项目文档，项目代码准备。
 
-for (var key in a){
-  console.log(key);
-}
 
-console.log("foo" in a);
-console.log("bar" in a);
-```
+### Task 3：DOM API 与事件处理
 
-请问`console.log`的输出？
+HTML 和 CSS 控制页面的结构和样式。在富交互的前端应用开发中，我们需要使用 JS 响应用户的点击事件，并对页面的结构进行动态的修改。
 
----
+浏览器给 JS 提供了 DOM API，用于动态控制页面的结构和样式，以及用户交互事件的监听。对于现代前端应用（比如购物网站，社交网站，电子邮箱，在线文档）等等来说，这些 API 是必须掌握的。
 
-6.
+阅读教材第 **14** 章和 **15** 章并完成书上习题，上传到 Github
 
-```
-var a = 1;
+知识要点：
 
-function test() {
+**DOM**
 
-	a = 0;
++ 浏览器内部存储 HTML 文档的数据结构叫 **Document Object Model**，简称是 DOM。
++ DOM 是一个树结构。可以看这里了解一下[树（Tree）](https://www.cnblogs.com/jaxu/p/11309385.html)这种数据结构。
++ DOM 其实是一种标准，是一种**抽象的数据结构**。DOM 也可以用来解析 XML。这也是 DOM 中存在 NodeType 或者 Array like Object 的原因。
++ 遍历节点的方式：了解 childNodes，firstChild，lastChild，previousSibling，nextSibling，children 等属性。
++ 查找节点：了解 getElementsByTagName，getElementById，getElementsByClassName 等 API。
++ 插入/删除/替换节点：了解 remove，appendChild，insertBefore，replaceChild 等 API。注意 insertBefore 的参数。 
++ 创建节点：了解 createTextNode，createElement 等 API。
++ 属性（Attributes）：DOM 节点有属性，比如 a 标签的 href 等等。我们也可以在节点上加自定义的属性。这些自定义属性要用 getAttribute 和 setAttribute 两个方法去访问。class 这个属性是 JS 里的关键字，所以比较特殊，要用 node.className 访问，或者用 getAttribute['class'] 访问。
++ 布局（Layout）：块级元素（Block Elements） vs 行内元素（Inline Elements）的概念和主要区别。获取元素的宽高可以用 offsetHeght/offsetWidth 或者 clientHeight/clientWidth。两者的区别是前者包括边框，后者不包括。要获取元素的坐标，可以用 getBoundingClientRect 方法，返回的坐标是相对于屏幕左上角的。如果要获取相对整个文档的坐标，就要加上滚动条的位置：pageXOffset 或者 pageYOffset。当我们调用以上属性或者方法去获取元素的布局信息时，会触发浏览器的布局流程，涉及一些计算。因此我们要尽量少的去调用以上的 API。
++ 通过 style 属性我们可以动态的设置元素的样式。带中划线的属性，在 JS 中要使用驼峰命名来获取，比如：font-family -> fontFamily。
++ 查找元素时，我们通常用 **querySelector 和 querySelectorAll** 两个 API。这两个 API 让我们可以用 CSS 选择器去查找元素，非常方便，因此是最常用的。
 
-	console.log(a);
+**CSS**
 
-	console.log(this.a);
++ CSS（Cascading Style Sheets）中的 **Cascade 代表层叠**。多个 CSS 选择器可以作用于同一个元素。最终元素的样式是多个样式表叠加的结果。因此 CSS 里有一个重要概念：选择器**优先级（specificity）**，也叫选择器权重。CSS 选择器优先级有一套专门的[计算规则](https://juejin.im/post/5be3d07be51d457d4932b043)。
++ 了解 CSS 的 position 属性，**相对定位和绝对定位**的概念和区别。
++ 了解 **requestAnimationFrame** API 的用法和使用场景。
 
-	var a;
+**Event**
 
-	console.log(a);
++ 在使用页面的时候，我们需要响应用户的输入，比如鼠标点击，或者键盘输入。每一次输入我们可以定义为一次事件。事件可以被放到一个队列里，我们可以定时去查询是否有事件发生。
++ 比定时查询（polling）更好的办法是：操作系统会处理用户的输入，然后通过一种方式通知我们事件发生。
++ 浏览器允许我们注册**事件处理函数（handlers）**。API 是 **window.addEventListener**。这个 API 接受事件名和一个回调函数（Callback），当指定的事件发生时，这个回调函数就会运行。
++ 我们也可以直接在 HTML 中用 onclick 这样的 on + 事件名 组成的属性来注册事件处理函数。但这样的坏处是只能注册一个函数，并且将逻辑和 HTML 结构耦合，因此我们一般还是用 addEventListener。
++ **removeEventListener** 用于移除事件注册函数。需要注意的是传入的函数必须和注册时的函数是同一个（同一个引用）。
++ 事件对象是事件处理函数被调用时传入的参数。可以从事件对象的属性中获得事件的相关信息，比如键盘按下了哪一个键等等。
++ **事件冒泡（propagation）**，DOM 树结构中，子节点上触发的事件，也会在所有的父节点上触发（**自底向上**，父，祖父，**依次触发**）。所有我们把这个过程叫做冒泡。事件对象中的 **target** 属性指向真正触发事件的节点。利用时间冒泡这个特性，在需要批量监听事件时，我们可以把事件注册在父节点上，这样就可以一次监听所有子节点的事件。这种做法被叫做**事件代理**。
++ 事件有默认行为，比如 a 标签在被点击时会跳转到对应的链接，滚动事件会使页面发生滚动。我们可以调用事件对象的 **preventDefault** 方法来阻止默认行为。
++ 了解主要事件：**键盘（Key），点击（Pointer），滚动（Scroll），聚焦（Focus），加载（Load）** 的事件对象的 API。
++ JS 是单线程执行的（某一时刻只能执行某一段代码）。因此如果我们执行了大量的计算，就会影响事件的及时响应，事件回调只有在没有 JS 代码运行的时刻才会被调用。对于长时间运行的计算，我们可以用 **webworker** 来解决。webworker 和主线程之间的内存空间的隔离的，因此传参需要进行 JSON 序列化，传给 worker 的是数据的 Copy。
++ **clearTimeout** 可以用于清除定时器（传入 setTimeout 的返回值）。**clearAnimationFrame** 用于清除 requestAnimationFrame。**setInterval** 用于每隔 X 毫秒执行一个函数。对应的清除函数是 **clearInterval**。
++ **节流（debouncing）** 是一种用来控制事件触发频率的技术。比如 scroll 或者 input 事件，如果频繁触发，并且在事件回调中做了影响性能的操作，就会造成卡顿。此时我们可以用节流和限制事件触发的频率。了解如何使用 setTimeout 实现节流。
 
-}
-test();
-new test();
-```
 
-请问`test()`和`new test()`的输出分别是什么
+### Task 4：异步编程
 
----
+阅读教材第 **11** 章并完成书上习题，上传到 Github
 
-7.
 
-```
-function foo(){
-    f = function(){
-        console.log('1');
-    }
-    return this;
-}
-foo.f = function(){
-    console.log('2');
-}
-foo.prototype.f = function(){
-    console.log('3');
-}
-var f = function(){
-    console.log('4');
-}
-function f(){
-    console.log('5');
-}
-//写出下面的结果
-foo.f();
-f();
-foo().f();
-new foo.f();
-new foo().f();
-new new foo().f();
-```
 
-写出结果说明原因
+知识要点：
 
----
++ Promise
++ async await
 
-### Task3：
 
-完成[JS 练习](https://hk.tower.im/projects/8b4990dc9e324866a0357c7a0dda0d5d/docs/f53eb2b6e8e645ed9d3b05f16f3ddd4a/) 上传 github -->
+### Task 5：HTTP 基础，JS 网络请求与表单元素
 
-## 模块四：前端工程化基础与 JavaScript 进阶
+前端开发主要实现基于 浏览器/服务器（B/S） 架构的 Web 应用。前端主要实现浏览器端的界面和逻辑。数据从服务端中获取。浏览器和服务端的通信主要通过 HTTP 协议。本节我们主要了解 HTTP 协议，在 JS 中如何发 HTTP 请求，以及常用的表单元素（用于搜集用户输入的信息）。
 
-前端开发中，起初只要在 `<script/>` 标签中嵌入几十上百行代码就能实现一些基本的交互效果，后来随着个人电脑性能提升和智能手机的普及以及编译器技术的发展，JavaScript 的性能得到了很大的提升。基于 Web 技术的复杂应用不断出现，JavaScript 面临着构建大型软件的挑战。Java/C++/C# 等等语言都有着面向对象特性，模块系统，静态类型检查等等特性，JavaScript 在一开始的设计中，没有考虑到这些，在基于 Web 技术构建大型软件越来越普遍的今天，这些特性都会慢慢补上。
+阅读教材第 **18** 章并完成书上习题，上传到 Github
 
-一个模块是以一个 JS 文件为单位的，模块和模块之间有变量的隔离，因此 JS 的全局变量污染这样的问题在模块化的 JS 中将不再是问题。模块还方便了代码复用和依赖分析等等。我们接下来就来了解一下 JS 模块化的来龙去脉：
+知识要点：
 
-浏览一遍这些材料，了解模块化：
++ 了解 HTTP 协议的格式。
++ 了解 [fetch API](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch) 的用法。
++ 处于安全考虑，浏览器禁止跨域的请求。了解跨域的[定义](https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy)和发送跨域请求的[几种方法](https://juejin.im/post/5c23993de51d457b8c1f4ee1)，书上讲的主要是 [CORS](http://www.ruanyifeng.com/blog/2016/04/cors.html) 方法。
++ B/S 架构的 Web 应用通常使用 HTTP 协议 + JSON 格式的请求体进行数据交互。我们利用不同的 HTTP method 表示不同的语义（GET 获取/POST 创建/PUT 更新/DELETE 删除）。HTTP 的 URL 则代表了要操作的资源，比如 `/user/1` 代表 id 为 1 的用户。
++ HTTPS
++ 了解表单（form）系列元素：form，input，textarea，select。input 元素有很多的 type，可以用于不同的用途，可以重点了解。
++ form 的 action 代表 form 被提交后发送的 HTTP 请求的 URL。但在现代前端应用中，表单元素不需要被包裹在 form 元素中，我们可以通过 JS 去搜集表单数据，使用 fetch 发送 HTTP 请求。
++ 了解 localStorage API
 
-**模块化的原因和历史**
+拓展阅读：
 
-1. [网易前端架构-JS 模块化视频](http://pan.baidu.com/s/1pK6jxIr#path=%252Fjs%25E6%25A8%25A1%25E5%259D%2597%25E5%258C%2596)
-2. [JS 模块化七日谈](https://github.com/Huxpro/js-module-7day)
++ Web 应用：[B/S 架构](https://blog.csdn.net/qq_40587575/article/details/79673478)。
++ 现代 Web 应用的数据传输格式往往使用 JSON，对 JSON 不了解的话可以[回顾第四章讲到的 JSON](#task-3：对象，数组以及字符串)
++ [RESTful API 设计](https://www.ruanyifeng.com/blog/2011/09/restful.html)
 
-**模块化的综合介绍**
-
-3. [JS 教材第 10 章](http://eloquentjavascript.net/3rd_edition/10_modules.html)
-4. [Programming JavaScript Applications-Chapter 4. Modules](https://www.safaribooksonline.com/library/view/programming-javascript-applications/9781491950289/ch04.html)
-
-**ES6 模块**
-
-5. [Understanding ECMAScript 6-Modules](https://leanpub.com/understandinges6/read/#leanpub-auto-modules)
-
-然后我们用 CommonJS 规范来写 js 模块，这里还需要用到[webpack](https://webpack.js.org/guides/getting-started/)作为打包工具。
-
-**task：**
-构建一个项目，在项目中编写 3 个 js 文件，其中 module1 导出一段字符串，module2 导出一个如下所示的函数
-
-```
-function(str){
-    document.write(str.split("").join(','));
-}
-```
-
-其中实现 module3 依赖 module1 和 module2，将 module1 的字符串作为参数调用 module2 的函数
-
-最后用 webpack 打包出来 bundle.js 文件，在 html 文件中引用。将项目上传 github，记得.gitignore
-
-目录结构:
-![modularity](https://cdn.hyperdev.com/us-east-1%3A49aaef6d-d661-4525-9c20-60ba343a85a3%2Fmodule.png)
-
-### js 练习和深入学习
-
-- 继续完成[JS 练习](https://hk.tower.im/teams/85051/documents/2798/) 上传 github
-- 继续阅读[《Javascript 编程精解》(第三版)](http://eloquentjavascript.net/)
-- 了解[ECMAScript 6 入门](http://es6.ruanyifeng.com/)
+// TODO 设计一个基于 Postman 发 HTTP 请求的 Lab
 
 ## 模块五：基于 Web 技术的多端 GUI 应用开发原理
 
 ### GUI 应用简介
 
-### JavaSript 与浏览器：DOM 与 事件
+// TODO
+
+### 组件化思想
+
+// TODO
+
+### React 基础
+
+// TODO
 
 ### JavaSript 与移动端应用
 
+// TODO
+
 ### JavaSript 与小程序
 
-## 模块六：网络基础
+
+// TODO
