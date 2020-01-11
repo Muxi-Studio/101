@@ -326,12 +326,37 @@ HTML 和 CSS 控制页面的结构和样式。在富交互的前端应用开发�
 
 阅读教材第 **11** 章并完成书上习题，上传到 Github
 
+代码由处理器（Processor）执行。理想情况下，我们写的代码是按顺序执行的。一个 Web 应用经常需要通过网络获取数据，这个过程需要时间。在这段时间里，处理器不能等待，而是转手去做其他的事情。就像人不会坐等着水烧开，而是在烧水的同时做其他事情，等水开了再把水倒出来。这就是一个**事件驱动的异步编程模型**。
 
+所谓的异步，就是我们要其他人做一件事情，但不知道这个事情什么时候会做完，于是我们让对方做完之后通知我们。在对方做完之前，我们会做自己的事情。对于处理器（JS 代码）来说，它需要通过网络请求数据，等数据请求完成了，执行一个回调函数，继续请求完成之后的逻辑。在请求过程中，如果有用户事件产生，处理器就可以做出及时的响应。
+
+本章的故事背景是：传说乌鸦是智力很高的动物，它们用白蚁的巢穴作为计算节点，组成了一个网络，来帮助它们完成计算任务。这当然只是一个虚构的背景，不是事实。本章借虚构的乌鸦通信网络，从 0 开始构建了通信的机制，这其实就是现实中计算机网络的基础。JS 中的异步主要源于网络通信，因此本章用了这样的背景。
+
+学了本章之后，对计算机网络的原理会有一些基本的了解。等今后正式学习网络的时候，会有感触。
 
 知识要点：
 
-+ Promise
-+ async await
++ **深刻理解异步（asynchronous）的概念**。异步相对于同步（synchronous），同步是先等待别人做完 A 再等待别人做完 B，再做下一步。异步是先后触发 A 和 B，等两者都完成了，就做下一步操作。其中，等待 A 和 B 完成用的就是监听事件的方式，A 和 B 完成时会触发监听时给的回调函数，在 A 和 B 完成之后要做的操作就写在回调里面。
++ 关键词：**单线程，同一时刻只能做一件事。基于回调（事件驱动），就如同开水烧开之后的鸣笛声（事件触发），人听到这个事件之后，被叫回来倒水（回调）**。
++ 课本中还提到了基于 **多线程（thread）** 的模型。线程可以理解为是一个正在运行的程序，操作系统允许我们运行多个线程，来同时运行多个程序。在 Java 后端和客户端编程中，多线程是常见的。但 JS 被设计为是单线程的，这和浏览器的设计有关，浏览器使用一个主线程执行 JS 代码和浏览器的渲染逻辑。多线程有更高的理解和维护成本，JS 的单线程异步模型（基于回调）编写起来比较轻松，代码容易理解。目前单线程异步模型在传统的服务端编程领域也开始有应用。
++ **回调（Callback）** 是异步编程最基础的方式，当异步操作完成时，在触发异步操作时传入的回调函数就会被调用。回调的问题在于，如果在回调函数中需要进行的操作也是异步的，就需要传入另一个回调。多个异步操作串在一起，会造成很深的缩进层级，我们把这种情况称为：回调地狱。
++ 回调是传染性（contagious）的，处理异步操作的函数本身，也必须是异步的。不然函数返回的时候，内部的异步操作还没有完成。这让基于回调的异步编程很容易出错。
++ 基于回调的方式，函数不能像普通同步函数一样，在函数最后返回一个值。**Promise** 是**一种数据类型，代表未来的值**。相比使用回调，我们可以返回 Promise。这种方式要更容易理解。
++ 在 JS 中，Promise 是一个类。我们在使用的时候会实例化出 Promise 对象。Promise 对象其实是对一个值的封装，因为这个值可能在未来的某一个时刻被获取到，目前可能还没有获取，因此我们把这个值放在 Promise 对象里面。
++ 了解 **Promise.resolve，Promise.then，和创建 Promise 的方法**。
++ 异步编程中，特别是网络请求中，失败是经常发生的。了解使用 new Promise 时传入的 resolve 和 reject 两个参数的使用。以及使用 **catch** 方法处理错误。
++ 了解如何使用 Promise 包装基于回调的 API，并在发生错误时自动重试。
++ 了解 **Promise.all** API 的使用。
++ Network **flooding**，或者叫做 boardcasting（广播）是指在网络中，向所有的节点发送消息。这个功能是通过定义一种特殊类型的请求达到的，在收到这个类型的请求后，节点会把消息发给所有的相邻节点，一传十，十传百，消息最终到达了每一个节点。这个传播的原理和流言蜚语（Gossip）的传播是一样的。
++ 了解 **Generator** 的基本用法。
++ 了解 **async await** 的基本用法。
++ JS 是单线程运行的，同一时刻只能运行一端代码。异步的回调函数，比如 setTimeout，网络请求，用户事件，Promise.then 等等，必须等到没有其他代码在执行时，才会执行。浏览器中负责在合适的时机调度回调函数运行的循环机制叫 Event Loop。
+
+
+拓展阅读：
+
++ ES6标准入门：[Promise](https://es6.ruanyifeng.com/#docs/promise)，[async 函数](https://es6.ruanyifeng.com/#docs/async)
++ [JavaScript 运行机制详解：再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 
 
 ### Task 5：HTTP 基础，JS 网络请求与表单元素
@@ -346,10 +371,10 @@ HTML 和 CSS 控制页面的结构和样式。在富交互的前端应用开发�
 + 了解 [fetch API](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch) 的用法。
 + 处于安全考虑，浏览器禁止跨域的请求。了解跨域的[定义](https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy)和发送跨域请求的[几种方法](https://juejin.im/post/5c23993de51d457b8c1f4ee1)，书上讲的主要是 [CORS](http://www.ruanyifeng.com/blog/2016/04/cors.html) 方法。
 + B/S 架构的 Web 应用通常使用 HTTP 协议 + JSON 格式的请求体进行数据交互。我们利用不同的 HTTP method 表示不同的语义（GET 获取/POST 创建/PUT 更新/DELETE 删除）。HTTP 的 URL 则代表了要操作的资源，比如 `/user/1` 代表 id 为 1 的用户。
-+ HTTPS
++ HTTPS 的基本原理和作用。
 + 了解表单（form）系列元素：form，input，textarea，select。input 元素有很多的 type，可以用于不同的用途，可以重点了解。
 + form 的 action 代表 form 被提交后发送的 HTTP 请求的 URL。但在现代前端应用中，表单元素不需要被包裹在 form 元素中，我们可以通过 JS 去搜集表单数据，使用 fetch 发送 HTTP 请求。
-+ 了解 localStorage API
++ 了解 **localStorage/sessionStorage** 的作用和区别。了解 **Object.assign** API 的用法和使用场景。
 
 拓展阅读：
 
@@ -361,23 +386,100 @@ HTML 和 CSS 控制页面的结构和样式。在富交互的前端应用开发�
 
 ## 模块五：基于 Web 技术的多端 GUI 应用开发原理
 
+先大致写一下重点。
+
 ### GUI 应用简介
 
-// TODO
++ 什么是 GUI（图形用户界面）应用？
++ GUI 应用的特点：事件驱动，组件化
 
 ### 组件化思想
 
-// TODO
+JS 中，我们可以把代码封装为一个又一个的模块。在 GUI 应用中，我们把界面拆分为一个又一个的组件（Component）。组件是页面的组成部分。拆分组件的目的和 JS 需要模块的目的是一样的，是为了将应用拆分为很多容易维护的小的组成部分。同时也可以拆分出一些原子级的组件，比如按钮，对话框等等，在不同的页面中复用，提升开发效率。
+
+组件在 JS 中，其实就是一个函数，只不过这个函数返回的值，就是 UI 的结构。UI 的结构，在 JS 和浏览器环境下，其实就是 DOM。因此我们可以把组件理解为这样一个函数：
+
+```
+const Button = () => {
+    const btn = document.createElement("button")
+    cosnt text = document.createTextNode("CLICK ME");
+    btn.appendChild(text)
+    document.body.appendChild(btn)
+}
+Button()
+```
+
+同时我们提出数据驱动的概念，组件 UI 中展示的数据，就是组件这个函数的参数：
+
+```
+const Button = (props) => {
+    const btn = document.createElement("button")
+    btn.id = "foo"
+    cosnt text = document.createTextNode(props.text);
+    btn.appendChild(text)
+    document.body.appendChild(btn)
+}
+Button({ text: "Click me" })
+Button({ text: "Don't click me" })
+```
+
+每次需要修改 Button 组件的文案时，只需要修改数据，并重新调用组件，就可以让组件更新 UI 了。
+
+和这个方式相反的就是直接修改 button 组件的属性，来修改文字：
+
+```
+Button({ text: "Click me" })
+document.querySelector("#foo").textContent = "Don't click me"
+```
+
+这种直接对 UI 进行操作的方式，叫**命令行编程**。前一种通过数据驱动 UI 变化的方式，叫**声明式编程**。声明式编程只需要说明预期的 UI 状态是怎样的，然后让框架根据给出的状态，自动更新 UI。这是一种在思维上更高级和轻松的编程范式。
+
+我们可以总结出一个公式：**UI = f(data)**。f 就是组件函数，data 就是传给组件的参数。调用这个函数会渲染出 UI。
+
+但以上的组件有很多问题：
+
++ 重新调用时，之前的 DOM 元素没有被清除。需要在组件一开始加一个 document.body.removeChild(document.body, btn)。
++ 老的 DOM 元素如果被清除，元素上的绑定的事件如何被移除？
++ 最大的问题，就是这样的编写方式太繁琐，很难看懂代码，和 HTML 的方式差太远了。
+
+
+对此，我们需要引入一些 JS 库。所谓的 JS 库就是别人开发好的一些函数和类，做了一些基础的能力，我们拿来之后可以按照文档使用。
+
+在 UI 开发领域，这个 JS 库就是 [React](https://reactjs.org/)。使用 React 可以让我们快速和高效的开发 UI 组件。
+
+React 帮我们解决的问题：
+
++ 对于重新调用组件函数时，新老 DOM 冲突的问题，React 引入了虚拟 DOM 机制。我们可以用 React.createElement 创建虚拟 DOM 元素。React 会负责渲染这些元素为真实的 DOM 元素。DOM 的创建，更新和删除都不用我们操心。
++ React 还提供了 JSX 插件，我们可以用 HTML 的语法写虚拟 DOM 结构。
++ React 提供了合成事件机制，自动管理事件的监听和销毁，以及解决事件对象的兼容性问题。
++ 提供了 state 帮助我们在多次组件渲染之间，维护变化的状态。不用把状态放在整个组件树的顶端。
+
 
 ### React 基础
 
-// TODO
++ 组件的基本语法：组件即函数
++ JSX: 基本语法，插值，事件监听，如何循环。要理解 JSX，要明白 JSX 最后被编译为什么。JSX 中的插值就是一段 JS 表达式。
++ React 中如何使用 CSS
++ props
++ state 与 useState
++ props 与 state 的区别
++ useEffect，useEffect 的依赖
++ 组件的组合，props.children
+
 
 ### JavaSript 与移动端应用
 
 // TODO
 
++ Weex/RN/Flutter
+
 ### JavaSript 与小程序
 
 
-// TODO
++ 小程序原理：**JS 线程和浏览器渲染线程分离**。主要是为了限制能力（不然开发者可以随便访问各种浏览器 API），次要是为了提升性能和体验。因为小程序是一个开放平台，首要目的是不能让开发者做破坏性的事情。
++ 小程序渲染：浏览器的渲染内核，因此 CSS 基本和浏览器中的一致。
++ 小程序逻辑执行：JS，但是单独的 JS 引擎。没有任何多余的 API（Eloquent JS 13 章之后的都没有）。
++ 小程序 = 浏览器中的应用减去所有 API（DOM，BOM，Web API）
++ 小程序提供了自己的全套 API，来对应开发者的功能需求。比如 storage，网络，文件等等。具体看小程序的文档。
+
+Taro：模仿 React API实现，但不是真正的 React。需要仔细阅读文档。
