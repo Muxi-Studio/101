@@ -101,29 +101,44 @@ Android 是移动开发的一大巨头，从 Android 1.0 到现在的10.0，功�
 
 + Android学习
 
-+ 《权威指南》第14-16章，跟随案例写CriminalIntent
-  + 重点：**数据库的相关知识和SQLite的使用**、**隐式intent的组成和基本使用**、**使用隐式intent拍照**、**保存照片和加载本地照片**
-+ 完成挑战练习：10.6、14.8、15.6、16.6
+  + 《权威指南》第14-16章，跟随案例写CriminalIntent
+    + 重点：**数据库的相关知识和SQLite的使用**、**隐式intent的组成和基本使用**、**使用隐式intent拍照**、**保存照片和加载本地照片**
+  + 完成挑战练习：10.6、14.8、15.6、16.6
 
 ### week 10
 
 + Android学习
-+ 《权威指南》第17-19章，跟随案例写CriminalIntent
-  + 重点：
-+ 完成挑战练习：
+  + 《权威指南》第17章，写完CriminalIntent；20-21章，跟随案例写BeatBox
+    + 重点：
+
+  + 完成挑战练习：
 
 ### week 12
 
 + Android学习
 
-+ 《权威指南》第21-23章，跟随案例写BeatBox
+  + 《权威指南》第21-23章，跟随案例写BeatBox
 
 ### 冬令营
 
-+ 《权威指南》看完，跟随案例写项目
-  + NerdLauncher 
-  + PhotoGallery
-  + BoxDrawingView
-  + Sunset
-  + Locatr
++ 《权威指南》收尾
 
++ #### “网络数据处理”
+
+  > 暂时没有更好的学习计划，所以就先copy之前的培养方案里计划
+
+  学习顺序为『阮一峰对计算机网络协议、RESTful架构的文章』->『图解HTTP』->『了解Json』->『尝试POSTMAN对豆瓣的多个API发送GET、POST请求』->
+
+  在此阶段需要具备的知识和工具
+
+  JSONView 这个Chrome插件可以帮助你最直接得看到Get方法获得的Json数据（偶尔快速看一下）
+  PostMan这个Chrome插件可以帮助你熟悉和测试使用Http的各种姿势（开发常用）
+  强烈建议你们买一本图解HTTP，预计你们再慢2-3天也能看完，看完此书做这个任务有很好的帮助，对网络方面的东西也会有点启蒙
+  Android-Json方面，使用Google自家的Gson来解析Json数据
+  Android-Http方面，使用原生的HttpUrlConnection就可以，不要用Apache的HttpClient，被弃用了；后续需要学习一下Square的OkHttp，这个是现在效率最好的HTTP库；最后，平时常用的有Google的Volley，Square的Retrofit，这些都是基于上面的三个HTTP库封装的，主要做了线程优化，Restful优化等等，当然这些都是后话~
+  『使用HttpUrlConnection（需要子线程）和new Thread() 做简单的网络请求』->『使用AsyncTask替换直接new Thread()，并把结果刷新到UI上』
+
+  在此阶段需要具备的知识
+
+  关于线程和进程的初步理解，http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html
+  上面那些看完，就要写一个网络请求了；网络请求需要在子线程中运行，不能在主线程中运行，主要原因会阻塞主线程对UI的处理，Android4.0以上直接会报错。
