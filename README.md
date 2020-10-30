@@ -4,7 +4,7 @@
 
 首先要安装 nodejs。然后在这个仓库的目录下运行
 
-`npm install`
+`yarn install`
 
 `npm run docs:dev`
 
