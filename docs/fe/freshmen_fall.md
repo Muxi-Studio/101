@@ -78,8 +78,6 @@ _团队内同学可以访问蓝湖上的设计稿，看标注和样式比较方�
 
 ## 模块三：JavaScript 基础
 
-> TODO 补充 JS 的历史和介绍
-
 木犀前端组唯一官方指定权威教材：[Eloquent JavaScript (第三版)](http://eloquentjavascript.net/)
 
 - [中文翻译](https://wizardforcel.gitbooks.io/eloquent-js-3e/content/)
@@ -93,14 +91,18 @@ _可以提供 PDF 打印服务，完美装订，价格低廉，方便随时随�
 - [JavaScript学习指南 第3版](https://item.jd.com/12123997.html) 推荐购买，作为语言语法和特性的参考书
 - [MDN JavaScript 指南](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide)
 
-> TODO EloquentJS 每章的解（导）读
+### Task 0：导读
+
+阅读教材的[介绍（Introduction）章节](https://eloquentjavascript.net/00_intro.html)。并阅读这篇教程[EloquentJS 第一讲：介绍](https://www.yuque.com/docs/share/2bd2bbdc-b87e-4cae-9fa7-bf2bce7e88d1)。了解 Eloquent JS 这本书，作者对编程学习的看法，以及 JS 和前端的前世今生。
 
 ### Task 1：基础语法
 
 阅读教材第 **1-2** 章并**完成书上习题，上传到 Github**
 可以在[这里](https://eloquentjavascript.net/code/)测试代码
 
-推荐流程：先看书，W3cshool 和 MDN 的教程先看基础语法部分。然后试着自己写一下（自己练习 JS 可以用 JSBin/CodePen/本地 HTML 文件/浏览器 Console/Nodejs 等多种环境），刷题中遇到困难多 Google
+推荐流程：先看书，W3cshool 和 MDN 的教程先看基础语法部分。然后试着自己写一下（自己练习 JS 可以用 [JSBin](http://js.jirengu.com/)/[CodePen](https://codepen.io/)/本地 HTML 文件/浏览器 Console/Nodejs 等多种环境），刷题中遇到困难多 Google
+
+辅助教程[EloquentJS 第二讲：程序结构](https://www.yuque.com/docs/share/421c50f9-5bf4-403b-8284-1d1b9fe548d1)
 
 **知识要点：**
 
@@ -159,7 +161,8 @@ _第二章_
 + 编程语言中作用域的概念
 + JS ES6 新增的词法作用域是指什么？之前 JS 的作用域是什么样的（这部分和前一个 Task 的 let,const vs var 关键字有很大联系）
 + 词法作用域 vs 动态作用域
-+ 闭包的概念
++ 闭包（Closure）的概念
++ 递归（Recursion）的概念，[参考-用归纳法来理解递归](http://www.nowamagic.net/librarys/veda/detail/2314)-[参考-递归需要满足的两个条件](http://www.nowamagic.net/librarys/veda/detail/2315)。
 + 纯函数是指什么？什么时候应该写纯函数
 + 什么时候应该新增一个函数？（学好这个对于写优雅的代码至关重要）
 
