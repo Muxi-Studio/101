@@ -1,36 +1,36 @@
 # Golang爬虫简明教程
 
-pa虫大体上分为两种类型，一种是爬取网页源码，另一种就是模拟请求API获取数据。这里我们只讨论第一种形式。
+爬虫大体上分为两种类型，一种是爬取网页源码(一般是HTML)，另一种就是模拟请求API获取数据。这里我们只讨论第一种形式。
 
-# 分析网页
+假设你们了解HTTP相关知识(看完一半的图解HTTP)
 
-以[纵横中文网]([http://zongheng.com](http://zongheng.com/))为例，我们的目的是输入一个搜索的关键字，获取返回的数据。我们输入“火影”（因为这个数据比较多），发现会跳转到[这个页面]([http://search.zongheng.com/s?keyword=%E7%81%AB%E5%BD%B1](http://search.zongheng.com/s?keyword=火影))，然后再点击下一页，发现链接变成了`http://search.zongheng.com/s?keyword=火影&pageNo=2&sort=`，多了 `pageNo` 和 `sort` 这两个请求字段，很明显，它们分别是页码和排序方式。
+# 爬取HTML源码
+
+以[廖雪峰的官网]([https://www.liaoxuefeng.com/)为例(因为它网页内容基本不会变)
+
+> https://www.liaoxuefeng.com/
 
 这条链接就是我们要爬的目标链接了，或者说是目标网页。
 
-要爬取网页，首先要学会分析页面的元素。
+首先我们可以先尝试直接爬取网页HTML源码
 
-按下 F12（Fn+F12），进入开发者模式，在第一栏的元素（Elements）中，可以看到一堆 HTML 代码，鼠标移动到代码上发现页面有部分会高亮，那么这就是高亮的那部分页面内容的代码。挨个尝试，找到小说的标题，该 HTML 标签就是我们要爬取的东西。
+我们爬虫就是要模拟浏览器网络请求,用到"net/http"库
 
-![](./browser_crawler.png)
+> http 是Go语言提供的标准库之一，可以发起和接受 http 网络请求
+>
+> net/http[官方文档](https://golang.org/pkg/net/http/) 
+>
+> 要学会看官方文档，学会怎么调用标准库的函数
 
-# 代码实现
-
-分析完网页，知道了该爬什么标签后，就可以动手写代码了。
-
-## 获取网页源码
-
-首先要模拟浏览器发送网络请求，用到`"net/http"`库。
-
-http 是Go语言提供的标准库之一，可以发起和接受 http 网络请求。
-
->   net/http [官方文档](https://golang.org/pkg/net/http/)
+## 代码实现
 
 ```go
-requestUrl := "http://search.zongheng.com/s?keyword=火影&pageNo=1&sort="
-rp, err := http.Get(requestUrl)
+requestUrl := "https://www.liaoxuefeng.com/"   
+// 发送Get请求
+rsp, err := http.Get(requestUrl)    
 if err != nil {
-	panic(err)
+    log.Println(err.Error())
+    return
 }
 ```
 
@@ -39,12 +39,13 @@ if err != nil {
 >   io/ioutil [官方文档](https://golang.org/pkg/io/ioutil/)
 
 ```go
-body, err := ioutil.ReadAll(rp.Body)
+body, err := ioutil.ReadAll(rsp.Body)
 if err != nil {
-	panic(err)
+    log.Println(err.Error())
+    return
 }
 content := string(body)
-defer rp.Body.Close()
+defer rsp.Body.Close()
 ```
 
 可以尝试着输出着看一下内容：
@@ -53,69 +54,78 @@ defer rp.Body.Close()
 fmt.Println(content)
 ```
 
-## 爬文档树
 
-然后要从这个网页代码中找到我们所需要的东西，这里用到了 [`goquery`库](https://github.com/PuerkitoBio/goquery)，`goquery`将 HTML 文档解析成一个 DOM树，可以较为方便地获取 HTML 标签中的内容。具体怎么使用就需要自己去看文档了，这是一个主动学习和探(zhe)索(teng)的过程。
 
->   goquery [使用文档](https://godoc.org/github.com/PuerkitoBio/goquery)
+## 解析HTML
+
+***上面爬取的是HTML的源码，标签和内容混杂在一起，很杂乱。 接下来我们就要分析HTML网页，找到我们想要获取的信息是在哪个标签中***
+
+按下 F12（Fn+F12），进入开发者模式（下面是Chrome的界面），在第一栏的元素（Elements）中，可以看到一堆 HTML 代码，鼠标移动到代码上发现页面有部分会高亮，那么这就是高亮的那部分页面内容的代码。挨个尝试，找到标题，该 HTML 标签就是我们要爬取的东西。
+
+![](./parse_html.jpg)
+
+
+
+
+
+然后要从这个网页代码中提取我们所需要的东西，这里用到了 [`soup`库](https://github.com/anaskhan96/soup)，`soup库`将 HTML 文档解析成一个 DOM树，可以较为方便地获取 HTML 标签中的内容。具体怎么使用就需要自己去看文档了，这是一个主动学习和探(zhe)索(teng)的过程。
+
+>   soup库比较简单，没有很成熟的文档，自己可以去看它github下面的函数使用介绍以及Examples，学会怎么调用它的函数
+>
+>   它的Examples很重要很重要很重要，我也是看Example写的，，
+
+下面我要爬取所有文章的标题
 
 导入包：
 
 ```go
 import (
     // ...
-    "github.com/PuerkitoBio/goquery"
+   "github.com/anaskhan96/soup"
 )
 ```
 
 代码：
 
 ```go
-dom, err := goquery.NewDocumentFromReader(strings.NewReader(content))
-if err != nil {
-	panic(err)
-}
-dom.Find(".search-tab").Each(func(i int, selection *goquery.Selection){
-	selection.Find(".tit").Each(func(i int, title *goquery.Selection) {
-		fmt.Printf("%3d   ", num)
-		fmt.Println(title.Text())
-		num++
-	})
-})
+    requestUrl := "https://www.liaoxuefeng.com/"   
+    // 发送Get请求
+    rsp, err := http.Get(requestUrl)    
+    if err != nil {
+        log.Println(err.Error())
+        return
+    }
+	body, err := ioutil.ReadAll(rsp.Body)
+    if err != nil {
+        log.Println(err.Error())
+        return
+    }
+    content := string(body)
+    defer rsp.Body.Close()
+	
+// 下面主要是解析标签
+    doc:=soup.HTMLParse(content)
+    subDocs:=doc.FindAll("div","class","uk-margin")
+    for _,subDoc:=range subDocs{
+        link:=subDoc.Find("a")
+        fmt.Println(link.Text())
+    }
 ```
 
-相信你在获取标签内容的过程中，肯定会遇到很多困难，出现的许多情况都非如人意的，这十分正常，多多尝试，多多 `Println`，相信你会取得你想要的东西。
-
-## 优化
-
-按照上述的代码基本上是可以爬取到一个页面内的数据的，但我们并不满足于此，我们要求获得更多的搜索数据。注意链接了吗？我们可以通过改变页码来获得多个页面的查询数据。
-
-```go
-keyword := "火影"
-
-for i := 1; i <= 10; i++ {
-	requestUrl := "http://search.zongheng.com/s?keyword=" + keyword + "&pageNo=" + strconv.Itoa(i) + "&sort="
-    // ...
-}
-```
-
-搜索字段可以加一个`Scanf`来输入
-
-```go
-var keyword string
-fmt.Scanln(&keyword)
-```
-
-这样基本上就差不多了。
-
->   [完整代码](https://github.com/Shadowmaple/go/blob/master/muxi101/crawler/crawler.go)
-
-当然还有更多功能留待你去优化，在此举了两个例子：
-
-+   获取总页码（totalPage）来获取全部的搜索数据
-+   将爬取到的数据写入到一个文件中，而非输出到终端界面
-+   过滤标题不是搜索关键字的数据
+> 相信你在获取标签内容的过程中，肯定会遇到很多困难，出现的许多情况都非如人意的，这十分正常，多多尝试，相信你会取得你想要的东西。遇到问题要多尝试，多试几种方法，多用```Println```找错误
+>
+> 上面代码解析出来的标题其实是有一些问题的，有一些意料之外的空行（标题的标签匹配的范围太广导致）
+>
+> 我也是当天接触这个包，当天给你们写教程，对这个包研究不深入，通过解析标签，阅读文档和里面的Examples, 你可以自己琢磨出一些匹(sao)配(cao)方(zuo)法，来改进我的代码，去掉那些多余的空行
+>
+> 相信这是你们第一次看github上开源库的文档并学习如何使用它们，好好锻炼好好折腾吧
+>
+> 这个包连自己文档都写的不咋地，也别指望找中文教程了。 [doge]
 
 
 
-另外建议，有问题多上Google，很多问题都可以得到解决。若是觉得这篇文档太简略，也可以去看下别家的文档。
+### 进阶
+
+  当你在第一步爬取到源码之后，如果觉得有些信息无法通过解析标签获取，那个soup包用的也不是那么随心所欲， 有空的话可以看看正则表达式，用官方的[regexp库](https://golang.org/pkg/regexp/)，来自己手动写匹配模式，匹配到你想要的信息。 
+
+要用的话建议还是看标准库。实在看不懂就去中文社区找几个例子照着写。
