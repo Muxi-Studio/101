@@ -41,6 +41,13 @@
 
 ### 团队成员
 
+#### 2019 级
+
++ [HCLacids](https://github.com/HCLacids)
++ [yolo](https://github.com/liaoyulu)
++ [shi-zhong](https://github.com/shi-zhong)
++ [sjy](https://github.com/shenjiayao-sjy)
+
 #### 2018 级
 
 + [lilixuelian](https://github.com/lilixuelian)

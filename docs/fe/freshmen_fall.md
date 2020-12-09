@@ -272,11 +272,9 @@ JavaScript 当年是作为 NetScape 浏览器的一个特性出现的。后面 J
 2. [Understanding ECMAScript 6 - Modules](https://leanpub.com/understandinges6/read/#leanpub-auto-encapsulating-code-with-modules) 深度的参考手册
 
 
-小练习：
+**Lab 实战（推荐！！）：**
 
-使用 Webpack 打包 Chapter 7 的 Robot 项目，并用 Babel 把代码转译为 ES5。最后可以在本地用 HTML 看到项目。
-
-> TODO: 项目文档，项目代码准备。
+[使用 Webpack 对 JS 应用进行构建](/101/fe/lab_module.html)
 
 
 ### Task 3：DOM API 与事件处理
@@ -385,7 +383,9 @@ HTML 和 CSS 控制页面的结构和样式。在富交互的前端应用开发�
 + 现代 Web 应用的数据传输格式往往使用 JSON，对 JSON 不了解的话可以[回顾第四章讲到的 JSON](#task-3：对象，数组以及字符串)
 + [RESTful API 设计](https://www.ruanyifeng.com/blog/2011/09/restful.html)
 
-// TODO 设计一个基于 Postman 发 HTTP 请求的 Lab
+**Lab 实战（推荐！！）：**
+
+[使用 HTTP API 操作 Github issues](/101/fe/lab_http.html)
 
 ## 模块五：基于 Web 技术的多端 GUI 应用开发原理
 
@@ -456,6 +456,10 @@ React 帮我们解决的问题：
 + React 还提供了 JSX 插件，我们可以用 HTML 的语法写虚拟 DOM 结构。
 + React 提供了合成事件机制，自动管理事件的监听和销毁，以及解决事件对象的兼容性问题。
 + 提供了 state 帮助我们在多次组件渲染之间，维护变化的状态。不用把状态放在整个组件树的顶端。
+
+**Lab 实战（推荐！！）：**
+
+[使用 Hyperapp 编写 TodoList](/101/fe/lab_hyperapp.html)
 
 
 ### React 基础

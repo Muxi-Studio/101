@@ -32,6 +32,14 @@
 
 ### 团队成员
 
+#### 2019 级
+
++ [JacksieCheung](https://github.com/JacksieCheung)
++ [Chiwency](https://github.com/Chiwency)
++ [kocoler](https://github.com/kocoler)
++ [hlyyy](https://github.com/hlyyy)
++ [jepril](https://github.com/jepril)
+  
 #### 2018 级
 
 + [Shadowmaple](https://github.com/Shadowmaple)

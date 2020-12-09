@@ -38,6 +38,11 @@
 
 ### 团队成员
 
+#### 2019 级
+
++ [charming-c](https://github.com/charming-c)
++ [iulay1007](https://github.com/iulay1007)
+
 #### 2018 级
 
 + [zyflool](https://github.com/zyflool)

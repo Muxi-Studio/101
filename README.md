@@ -6,7 +6,7 @@
 
 `yarn install`
 
-`npm run docs:dev`
+`yarn run docs:dev`
 
 等构建完成，就可以看到类似以下输入：
 
