@@ -197,6 +197,7 @@ Issue 可以被评论，我们可以通过接口发表评论：
 + 除了 Postman，还有什么工具可以用来发送 HTTP 请求？尝试其他的工具，比如 `curl` 和 [`telnet`](https://blog.csdn.net/gobitan/article/details/4790049)。
 + 尝试在浏览器中，通过 fetch API 发送 HTTP 请求给 Github。
 + 在浏览器中有[跨域限制](https://cloud.tencent.com/developer/article/1504163)，为什么 Github API 不会报跨域错误？它是通过哪种办法实现跨域的？
++ 通过 Header 传信息认证是一种方式，HTTP 和浏览器支持一种叫 Cookie 的特性，这是更传统的传递认证信息的方式。这两者的差异是什么？我们应该如何选择？可以对 Cookie 做一些了解，然后参考 [Stack Overflow 回答](https://stackoverflow.com/a/35059874)。
 
 ### 总结
 
