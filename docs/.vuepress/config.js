@@ -19,37 +19,87 @@ module.exports = {
         {
           title: "前端",
           collapsable: false,
-          children: ["", "freshmen_fall", "project", "freshmen_spring", "sophomore_fall", 'lab_http', 'lab_module', 'lab_hyperapp']
-        }
+          children: [
+            "",
+            {
+              title: "学习指南",
+              collapsable: false,
+              children: [
+                "freshmen_fall",
+       
+                "freshmen_spring",
+                "sophomore_fall",
+              ],
+            },
+            {
+              title: "项目开发",
+              collapsable: false,
+              children: [
+                "project",
+              ],
+            },
+            {
+              title: "基础话题",
+              collapsable: false,
+              children: [
+                "component",
+              ],
+            },
+            {
+              title: "Labs",
+              collapsable: false,
+              children: [
+                "lab_http",
+                "lab_module",
+                "lab_hyperapp",
+              ],
+            },
+          ],
+        },
       ],
       "/cs/": [
         {
           title: "计算机基础",
           collapsable: false,
-          children: ["", "prepare", "culture", "freshmen_fall", "freshmen_spring", "c_study", "linux_study", "computer_study" ]
-        }
+          children: [
+            "",
+            "prepare",
+            "culture",
+            "freshmen_fall",
+            "freshmen_spring",
+            "c_study",
+            "linux_study",
+            "computer_study",
+          ],
+        },
       ],
       "/be/": [
         {
           title: "后端",
           collapsable: false,
-          children: ["", "freshmen_fall", "freshmen_spring", "sophomore_fall"]
-        }
+          children: ["", "freshmen_fall", "freshmen_spring", "sophomore_fall"],
+        },
       ],
       "/android/": [
         {
           title: "安卓",
           collapsable: false,
-          children: ["", "freshmen_fall", "appendix_java_quiz", "appendix_reference", "appendix_tech_direction"]
-        }
+          children: [
+            "",
+            "freshmen_fall",
+            "appendix_java_quiz",
+            "appendix_reference",
+            "appendix_tech_direction",
+          ],
+        },
       ],
       "/product/": [
         {
           title: "产品",
           collapsable: false,
-          children: ["", "freshmen_fall"]
-        }
-      ]
-    }
-  }
+          children: ["", "freshmen_fall"],
+        },
+      ],
+    },
+  },
 };
