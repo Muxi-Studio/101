@@ -27,8 +27,82 @@ GUI 编程其实就是一个搭积木的过程，拆分组件，若干个组件�
 
 ## Hyperapp 简介：`UI = f(state)`
 
+一般学一种新的技术，我们都会看一个 Hello World 例子。
 
-[Hyperapp](https://github.com/jorgebucaran/hyperapp) 的 Github 主页
+[Hyperapp](https://github.com/jorgebucaran/hyperapp) 的 Github 主页上就有一个例子：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module">
+      import { h, text, app } from "https://unpkg.com/hyperapp"
+
+      const AddTodo = (state) => ({
+        ...state,
+        todos: state.todos.concat(state.value),
+      })
+
+      const NewValue = (state, event) => ({
+        ...state,
+        value: event.target.value,
+      })
+
+      app({
+        init: { todos: [], value: "" },
+        view: ({ todos, value }) =>
+          h("main", {}, [
+            h("input", { type: "text", oninput: NewValue, value }),
+            h("button", { onclick: AddTodo }, text("Add")),
+            h("ul", {},
+              todos.map((todo) => h("li", {}, text(todo)))
+            ),
+          ]),
+        node: document.getElementById("app"),
+      })
+    </script>
+  </head>
+  <body>
+    <main id="app"></main>
+  </body>
+</html>
+```
+
+因为只是一个简单的例子，所以不会使用之前的 Lab 那样用 Webpack 做构建。大家可以在本地新建一个 HTML 复制以上内容，就可以运行例子了。如果是在线 Demo 的话，我们常用 [CodeSandbox](https://codesandbox.io/)。
+
+这个例子实现的就是一个简单的 TodoList，用户可以添加 todo，添加之后的 todo 会展示在列表中。但它没有删除 todo，编辑 todo，标记 todo 为完成，筛选等等功能，这也是后面我们需要完善的。
+
+在完善 Todo 之前，我们首先要学习 Hyperapp 这项技术。这是一个第三方 JS 库，可以简单的理解为是某一个开发者编写的一些 JS 包，这些包的可以帮助我们搭建组件化的的 Web 应用。在 GitHub 仓库里，我们可以看到 [index.js](https://github.com/jorgebucaran/hyperapp/blob/main/index.js)，这就是 Hyperapp 的源代码。一共 400 多行。讲这些是想告诉大家，我们 npm install 的那些包，也是用 JS 写的普通代码，并没有什么神奇的。我们以后也可以自己写一个库，发布成 npm 包。
+
+在学技术的时候，尤其是对于初学者，要注意**不求甚解**，也就是不要钻牛角尖，先有一个大概理解即可。因为一项技术往往会有自己的设计理念，会引入一些新的概念。我们首先要全盘接受，慢慢的理解，等到后期接触过很多相关技术了，就会有自己的认识和评判。
+
+> 以上的主要是针对值得学的技术，哪些技术值得学，哪些不值得，这也是大家要养成的一种鉴别能力。
+
+我们先笼统的看一下以上的例子。这段 JS 里最核心的是 app 的函数调用，调用时传入了一个对象作为参数。app 就指的是 application，就是一个 Web 应用。一般一个应用都会有一个初始化的地方，负责启动整个应用，在 Hyperapp 里，调用 app 函数就负责这点。
+
+app 的参数有三个，init，view 和 node。node 很好理解，就是这个 app 会渲染在哪个 DOM 节点里。在组件化的前端开发中，DOM 结构一般都是动态创建的，一般只需要给一个节点作为插入元素的父节点即可。
+
+view 是一个函数。view 返回的就是 app 的视图结构，其实就是 DOM 结构。里面用到了名为 h 的函数。我们可以简单的把 h 函数的作用理解为 document.createElement，是用来创建 DOM 元素的。这里不直接用 DOM API，而是用 hyperapp 提供的函数，是因为 hyperapp 会帮助处理真正的 DOM 操作，你只需要提供给它一个 DOM 结构的描述即可。
+
+这个函数第一个参数是所创建的 DOM 节点的标签名，第二个参数是传给 DOM 节点的属性，第三个参数是节点的子元素数组。调用之后返回的是一个对象：
+
+// todo console 图
+
+这种模式一般叫做虚拟 DOM 或者虚拟节点。就是说我们在写视图层代码时，只创建出 DOM 元素结构的描述，再由框架去帮我们真正创建节点。这样的好处在后面会讲到。目前大家只需要习惯用这种方式去描述 DOM 结构即可。
+
+> 用对象 + 属性的方式，去描述一个实体，这就是一种抽象。DOM 元素的主要特点是，有一个标签名，有一些属性，可能有一组子元素。这就对应了 h 函数的三个参数。是对实际 DOM 元素的一种抽象。这种技巧在编程中非常常见。软件开发本身，很大程度上是对现实世界的抽象。而在计算机系统的分层架构中，也存在着很多的抽象。抽象让我们抛开事物的繁杂，只抓住其中的重点。这样可以显著的降低用户或者软件开发者所面对的复杂度。
+
+小练习：使用 Hyperapp 创建 DOM 结构
+
+// todo 小练习
+
+
+Hyperapp 里面主要有这些 API 和概念：
+
+#### 视图（view）和状态（state）
+
+#### API：`app` 和 `h`
+
 
 
 ## 告别 h，使用 JSX
