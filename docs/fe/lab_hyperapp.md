@@ -24,8 +24,7 @@ GUI 编程其实就是一个搭积木的过程，拆分组件，若干个组件�
 看到这里，你可能对如何使用 JS 写一个应用，如何写一个组件，还是没有概念。接下来我们就会借助一个第三方库：Hyperapp，来实现 GUI 编程。
 
 
-
-## Hyperapp 简介：`UI = f(state)`
+## Hyperapp：入门实例
 
 一般学一种新的技术，我们都会看一个 Hello World 例子。
 
@@ -74,67 +73,320 @@ GUI 编程其实就是一个搭积木的过程，拆分组件，若干个组件�
 
 在完善 Todo 之前，我们首先要学习 Hyperapp 这项技术。这是一个第三方 JS 库，可以简单的理解为是某一个开发者编写的一些 JS 包，这些包的可以帮助我们搭建组件化的的 Web 应用。在 GitHub 仓库里，我们可以看到 [index.js](https://github.com/jorgebucaran/hyperapp/blob/main/index.js)，这就是 Hyperapp 的源代码。一共 400 多行。讲这些是想告诉大家，我们 npm install 的那些包，也是用 JS 写的普通代码，并没有什么神奇的。我们以后也可以自己写一个库，发布成 npm 包。
 
-在学技术的时候，尤其是对于初学者，要注意**不求甚解**，也就是不要钻牛角尖，先有一个大概理解即可。因为一项技术往往会有自己的设计理念，会引入一些新的概念。我们首先要全盘接受，慢慢的理解，等到后期接触过很多相关技术了，就会有自己的认识和评判。
+在学技术的时候，尤其是对于初学者，要注意**不求甚解**，也就是先对技术的使用有一个基本了解，不要太钻牛角尖。因为一项技术往往会有自己的设计理念，会引入一些新的概念。我们首先要充分吸收，然后慢慢的理解。等到后期接触过很多相关技术了，再回头看一些新技术，就会有自己的认知和评判。
 
-> 以上的主要是针对值得学的技术，哪些技术值得学，哪些不值得，这也是大家要养成的一种鉴别能力。在初学的阶段，直接按我们推荐的学即可。在后期养成鉴别能力之后，可以自己看技术的文档，代码等等，来评判。
+> 除了计算机基础知识和前端的基础（HTML/CSS/JS/Web API）之外，对于一些上层的框架和库，在初学的阶段，直接按本教程推荐的学即可。在后期养成鉴别能力之后，对于一项新技术，可以自通过看文档，源代码等等来评判一个框架是否值得学习。
 
-### 两个核心概念：视图（view）和状态（state）
+接下来我们首先来看看 Hyperapp 的一些基础概念：
 
-我们先笼统的看一下以上的例子。这段 JS 里最核心的是 app 的函数调用，调用时传入了一个对象作为参数。app 就指的是 application，就是一个 Web 应用。一般一个应用都会有一个初始化的地方，负责启动整个应用，在 Hyperapp 里，调用 app 函数就负责这点。
+## 核心概念：视图（view）
 
-app 的参数有三个，init，view 和 node。node 很好理解，就是这个 app 会渲染在哪个 DOM 节点里。在组件化的前端开发中，DOM 结构一般都是动态创建的，一般只需要给一个节点作为插入元素的父节点即可。
+我们先笼统的看一下以上的例子。这段 JS 里最核心的是 app 的函数调用，调用时传入了一个对象作为参数。app 就指的是 application，就是一个 Web 应用。一般一个应用都会有一个初始化的地方，负责启动整个应用，在 Hyperapp 里，调用 app 函数就初始化了整个应用。
 
-view 是一个函数。view 返回的就是 app 的视图结构，其实就是 DOM 结构。里面用到了名为 h 的函数。我们可以简单的把 h 函数的作用理解为 document.createElement，是用来创建 DOM 元素的。这里不直接用 DOM API，而是用 hyperapp 提供的函数，是因为 hyperapp 会帮助处理真正的 DOM 操作，你只需要提供给它一个 DOM 结构的描述即可。
+app 的参数有三个，init，view 和 node。node 很好理解，就是这个 app 会渲染在哪个 DOM 节点里。在组件化的前端开发中，DOM 结构一般都是动态创建的，所以需要给一个节点作为插入子元素的容器节点。
 
-这个函数第一个参数是所创建的 DOM 节点的标签名，第二个参数是传给 DOM 节点的属性，第三个参数是节点的子元素数组。调用之后返回的是一个对象：
+view 是一个函数。view 返回的就是 app 的视图结构，其实就是页面的 DOM 结构。里面用到了名为 h 的函数。我们可以简单的把 h 函数的作用理解为 `document.createElement`，是用来创建 DOM 元素的。这里不直接用 DOM API，而是用 Hyperapp 提供的函数，是因为 Hyperapp 会处理所有的 DOM 操作，你只需要提供给它一个 DOM 结构的**描述**即可。
 
-// todo console 图
+h 这个函数第一个参数是要创建的 DOM 节点的标签名，第二个参数是传给 DOM 节点的属性，第三个参数是节点的子元素数组。调用之后返回的是一个对象：
 
-这种模式一般叫做虚拟 DOM 或者虚拟节点。就是说我们在写视图层代码时，只创建出 DOM 元素结构的描述，再由框架去帮我们真正创建节点。这样的好处在后面会讲到。目前大家只需要习惯用这种方式去描述 DOM 结构即可。
+![vdom-node](./img/vdom-node.png)
+
+对象的结构是：
+
+```typescript
+interface VNode = {
+  type: string; // DOM 节点的标签名
+  props: Object; // DOM 节点的属性，key-value 对象
+  children: Array<VNode> // 子节点，节点结构一致
+  node: Element; // 对应的真实 DOM 节点
+  key?: string; 
+  tag?: string;
+}
+```
+
+这种模式一般叫做虚拟 DOM。就是说我们在写视图层代码时，只创建 JS 对象，描述 DOM 元素结构，再由框架去帮我们创建真正的 DOM 节点。这样的好处在后面会讲到。目前大家只需要习惯用这种方式去描述 DOM 结构即可。不要对 h 函数有畏惧。h 函数只是一个返回 JS 对象的函数而已。
 
 > 用对象 + 属性的方式，去描述一个实体，这就是一种抽象。DOM 元素的主要特点是，有一个标签名，有一些属性，可能有一组子元素。这就对应了 h 函数的三个参数。是对实际 DOM 元素的一种抽象。这种技巧在编程中非常常见。软件开发本身，很大程度上是对现实世界的抽象。而在计算机系统的分层架构中，也存在着很多的抽象。抽象让我们抛开事物的繁杂，只抓住其中的重点。这样可以显著的降低用户或者软件开发者所面对的复杂度。
 
-小练习：使用 Hyperapp 创建 DOM 结构
+## 小练习：使用 Hyperapp 创建 DOM 结构
 
-// todo 小练习
+让我们来练习一下使用 Hyperapp 的 view 和 h 函数来创建 DOM 结构，使用 Hyperapp，渲染如下的 HTML：
 
-总结一下，视图是对 UI 的结构化描述。由 h 返回是通过 children 属性层层嵌套的结构化的对象。而视图是一个函数，是因为视图是会变的，根据数据不同，展示不同的状态。所以 Hyperapp 里面 view 的参数就是数据。
+```html
+<div id="app" class="container">
+    <div class="filter">
+        Filter:
+        <span class="filter-word">ocean</span>
+        <button>&#9998;</button>
+    </div>
+    <div class="stories">
+        <ul>
+            <li class="unread">
+                <p class="title">The <em>Ocean </em>is Sinking</p>
+                <p class="author">Kat Stropher</p>
+            </li>
+            <li class="reading">
+                <p class="title"><em>Ocean </em>life is brutal</p>
+                <p class="author">Surphy McBrah</p>
+            </li>
+            <li>
+                <p class="title">
+                    Family friendly fun at the
+                    <em>ocean </em>exhibit
+                </p>
+                <p class="author">Guy Prosales</p>
+            </li>
+        </ul>
+    </div>
+    <div class="story">
+        <h1>Ocean life is brutal</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+        </p>
+        <p class="signature">Surphy McBrah</p>
+    </div>
+    <div class="autoupdate">
+        Auto update:
+        <input type="checkbox" />
+    </div>
+</div>
+```
 
-数据，也叫状态（State），是指 Web 应用中各类变量。这些变量有的存储了用户输入的数据，比如 todo 列表数组。有的存储了界面上的状态，比如某个按钮是否展示。
+配合 [CSS 代码](https://zaceno.github.io/hatut/style.css)，最终效果是这样的：
 
-我们可以看如下例子：
+![tut1.png](https://raw.githubusercontent.com/jorgebucaran/hyperapp/1fd42319051e686adb9819b7e154f764fa3b0d29/docs/src/pages/Tutorial/tut1.png)
 
-// todo 按钮例子
 
-这些状态往往存放在组件之外，因此需要作为视图的参数传入。
+你可以像上面 Todo 例子那样，用 HTML + ES Moudle 的形式来快速编写和调试。
 
-讲到这里，我们需要引入一个非常重要的理念：UI = f(state)。里面的 f 函数就是视图，所以也可以写成 UI = view(state)。
+> 这个练习来自 Hyperapp 的[官方 Tutorial](https://github.com/jorgebucaran/hyperapp/blob/main/docs/tutorial.md)
 
-这是目前 React 和 Vue 等组件化 UI 基础库所遵循的理念。是目前前端 UI 编程的核心观点。
+完成这个练习之后，相信你对 Hyperapp 的视图代码编写方式已经有了认识。
+
+总结一下，视图是对 UI 的**结构化描述**。由创建虚拟 DOM 节点的函数 h 返回的是通过 children 属性层层嵌套的结构化的对象。而视图是一个函数，是因为视图是会变的，根据数据不同，视图函数会返回不同的 UI 结构，对用户交互做出响应。所以 Hyperapp 里面 view 函数的参数就是数据。接下来我们就看看数据的作用是什么。
+
+
+## 核心概念：状态（State）
+
+要编写一个 GUI 应用程序，展示出一个用户界面，除了在视图层声明界面的结构外，我们还需要数据。
+
+比如一个新闻页面，里面的新闻每天都在变，这显然不是直接写死在前端 HTML 代码中的，而是存在服务端的数据库中，通过 JS 发送 HTTP 请求获取到之后，修改 DOM 
+
+又比如上面的 Todo 例子，当前输入的 todo 标题，和下面展示的 todo 列表，都属于数据。
+
+数据，也叫状态（state）是指 Web 应用中，控制 UI 展示内容的各类变量。这些变量有的存储了用户输入的数据，比如 todo 列表数组。有的存储了界面上的 UI 状态，比如某个按钮是否展示。
+
+我们可以看如下例子。
+
+点击按钮可以控制 div 的显示和隐藏：
+
+<iframe src="https://codesandbox.io/embed/morning-wave-2o8wn?fontsize=14&theme=dark"
+     style="width:100%; height:150px; border:0; border-radius: 4px; overflow:hidden;"
+     title="morning-wave-2o8wn"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+代码如下：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module">
+      import { h, text, app } from "https://unpkg.com/hyperapp";
+
+      const ChangeVisible = (state) => ({
+        ...state,
+        visible: !state.visible
+      });
+
+      app({
+        init: { visible: false },
+        view: ({ visible }) =>
+          h("main", {}, [
+            visible ? h("div", {}, text("Hello world")) : null,
+            h(
+              "button",
+              { onclick: ChangeVisible },
+              text(visible ? "Hide Text" : "Show Text")
+            )
+          ]),
+        node: document.getElementById("app")
+      });
+    </script>
+  </head>
+  <body>
+    <main id="app"></main>
+  </body>
+</html>
+
+```
+
+在这个例子里，我们使用 visible 这个变量来控制文字的显示和隐藏。visible 就是这个界面的一个状态。一个界面根据用户的交互，会在不同的状态之间流转切换。在 Hyperapp 中，状态是存储在 app 内部的，由 Hyperapp 管理，通过 view 函数的参数传入，通过事件回调的返回值进行修改。
+
+> 数据（Data）和状态（State），甚至模型（Model），在前端编程中往往是同义词，可以混用。这些词代表的都是应用中的数据。一般状态这个词侧重于 UI 状态，也就是文本的显示/隐藏，或者是 div 的背景色，等等。数据，或者模型，则侧重于从服务端请求到的，存在数据库中的数据。虽然有这样的区分，在应用代码中我们一般不会区分数据的来源，不管是服务端请求到的数据，还是 UI 状态，我们都会放在一起。前端的框架一般都会支持对数据的管理。比如 Hyperapp 里就支持数据的初始化，更新和使用。
+
+## 声明式编程范式：UI = f(state)
+
+
+在学习 EloquentJS 的过程中，我们知道 JS 中的函数是一等公民。函数可以作为参数和返回值。我们可以通过高阶函数来对函数进行组合。同时 JS 也支持面向对象的编程范式，通过类的继承来对父类进行拓展，来实现逻辑的复用。
+
+在编程语言世界中，一类语言是面向对象的，比如 Java 和 C++，一类是函数式的，比如 Haskell 和 Lisp。面向对象的概念比较好理解，[函数式编程](http://en.wikipedia.org/wiki/Functional_programming)语言则是另一个流派。这些语言中，函数是最核心的组成部分，可以通过函数的各种组合来构建出复杂的功能。这些语言往往有着底层的数理基础，可以通过公式来证明程序的正确性。因此函数式语言里的数据都是不可变的，副作用被严格隔离开来。这些特性让函数式语言的门槛更高，不适合大规模的推广。相比之下，面向对象语言的核心思想更容易理解，因此在软件开发中运用的更广泛一些。函数式编程语言也有着广泛的运用，包括金融，学术，高性能服务器开发等各个领域。
+
+JS 这门语言其实不属于纯粹的函数式语言或者面向对象语言。但相比面向对象，JS 拥有更多函数式特性，因此在 JS 生态中，我们会看到很多带有[函数式编程风格](https://coolshell.cn/articles/10822.html)的设计。
+
+了解了这块背景之后，我们可以用一个公式来总结 UI 编程：`UI = f(state)`。里面的 f 函数就是视图，所以也可以写成 `UI = view(state)`。
+
+这是目前 React 和 Vue 等组件化 UI 基础库所遵循的理念。这个理念很大程度上受了函数式编程风格的影响。
 
 在这套观点中，视图就是一个函数，通过不同的 state 来控制视图的变化。最终视图所返回的，就是 UI（用户界面）。
 
-这套观点背后的理念是声明式的编程范式。开发者只需要回答两个问题： UI 一开始长什么样？数据不同时，UI 会如何变化？就可以把 UI 编写出来了。开发者不用操心 DOM 节点的插入，删除，修改等等命令式操作，这些由基础库去搞定。
+这套观点背后的理念是声明式的编程范式。开发者只需要回答两个问题： 
 
-todo 附上声明式文章的链接。
++ UI 一开始长什么样？
++ 数据不同时，UI 会如何变化？
+  
+就可以把 UI 编写出来了。开发者不用操心 DOM 节点的插入，删除，修改等等命令式操作，这些由基础库去搞定。
 
-所以 init 参数的作用也很明显了，就是给出状态的初始值。
-
-> 之前说到，数据其实只是一些变量。理论上我们可以在 app 外面定义一个变量，然后传入 view 函数，但在 Hyperapp 这样一个背景下，把数据交给 app 去管理，是一种更轻松，更规范的设计。
-
-
-Hyperapp 里面主要有这些 API 和概念：
-#### API：`app` 和 `h`
+> 关于声明式编程范式，可以读这篇博客学习：[声明式 vs 命令式编程范式（可能需要翻墙）](https://medium.com/@zach.gollwitzer/imperative-vs-declarative-programming-procedural-functional-and-oop-b03a53ba745c)
 
 
+> 声明式的编程范式和函数式风格的编程语言不是强绑定的。组件可以是函数，也可以是类，不管是哪种，其实都可以实现声明式的编程范式。安卓和 iOS 中，组件其实都是类。但安卓和 iOS 开发中也有声明式的 UI 编写方式。
+> 在 GUI 开发中，不管是 Web/移动端/桌面端，都有类似组件的概念。因为模块化，抽象，分治，复用代码，避免重复，这些理念，都是编程的基础理念，而组件就恰好是这些理念在 GUI 开发中最好的体现。
 
 ## 告别 h，使用 JSX
 
+之前的 view 编写，使用的是嵌套的 h 函数调用。这种方式相比与 HTML 标签的方式，可读性低，维护难，因此着实蛋疼。
 
-## TodoList
+我们在 Webpack Lab 中提到过 Babel。Babel 是一个 JS 转译器，可以对 JS 代码的语法树做各种转换，并且和 Webpack 构建流程整合。
+
+利用 Babel 的转换能力，JSX 语法就诞生了。
+
+以下代码：
+
+```jsx
+view: () => {
+  return (
+    <main onclick={handleOnClick}>
+      <div>hello world</div>
+    </main>
+  )
+}
+```
+
+等效于：
+
+```js
+ view: ({ visible }) =>
+  h("main", {
+    onclick: handleOnClick
+  }, [
+    h(
+      "div",
+      { },
+      text("hello world")
+    )
+  ]),
+```
+
+简单的说，JSX 会把一个标签声明，转换为一个函数调用。标签名是第一个参数，标签上传入的属性统一作为一个对象，是第二个参数，标签内部的子元素，作为数组，是第三个参数。
+
+在 JSX 中，我们可以在花括号中写 JS 表达式。比如：
+
+```jsx
+view: ({ title, visible, styles }) => {
+  return (
+    <main style={styles}>
+      <div>{title}</div>
+      { visible ? <div>Text</div> : null}
+    </main>
+  )
+}
+```
+
+JSX 只能出现表达式，不能出现语句（比如 if），变量声明。这个原因很容易理解，因为 JSX 的一组标签最终被转换为一个函数调用表达式（Call Expression）。表达式里自然只能包含表达式，而不能放其他东西了。
+
+如果需要用到表达式之外的能力，可以在 view 函数 return 之前的地方写：
+
+```jsx
+view: ({ title, visible, styles }) => {
+  const text = <div>Text</div>;
+  if (!visible) {
+    text = null
+  }
+  return (
+    <main>
+      {text}
+    </main>
+  )
+}
+```
+
+记住，JSX 标签就是一个 `h()` 调用，所以返回的结果可以被保存到变量，在后续的 JSX 标签内使用。
+
+> 当你对 JSX 的使用产生疑惑时，可以去 [Babel REPL](https://babeljs.io/repl) 里，复制 JSX 代码，查看转译的结果。牢记 JSX 就是 JS，所以看转译后的 JS 代码就清楚了。
+
+配置 Hyperapp app 的 JSX 支持，首先我们需要一个 Webpack + Babel 的架子。然后添加 [babel-plugin-transform-react-jsx 插件](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx)。设置插件的 pragma 参数为 `"h"` 即可。pragma 就表示 JSX 标签转换函数调用时，所调用的函数名。
+
+插件相关配置如下：
+
+```json
+{
+  "plugins": [
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "h"
+      }
+    ]
+  ]
+}
+```
+
+请大家尝试上述配置，并使用 JSX 编写上面的[小练习](#小练习：使用-hyperapp-创建-dom-结构)。用 JSX 其实只需要把 HTML 代码复制一下就 OK 了，大大提升了编写视图结构代码的效率！！
+
+可以以上次 Webpack Lab 的 Webpack + Babel 代码为基础做尝试。完成后可以推到 hyperapp-jsx 仓库。
+
+## 完善 TodoList
 
 
+尝试用 Hyperapp 实现这个 TodoList [TodoMVC](http://todomvc.com/examples/vanilla-es6/) 的功能，主要需求点：
 
++ 可以标记 Todo 是否完成
++ 可以删除已添加的 Todo
++ 可以编辑已添加的 Todo
++ 左下角显示有剩余未完成的 Todo 数量
++ 右下角有对列表的状态筛选
+
+在 Github 上新建仓库 hyperapp-todomvc。样式代码可以复用上述网站的。使用 Webpack + Webpack-dev-server + Babel 搭建开发环境。最后部署到 Github Pages。
+
+可能你现在觉得，这个 Lab 是这样的：
+
+![画马](https://pic.17qq.com/uploads/seuceurcrx.jpeg)
+
+
+为了让大家不那么懵逼，我们先讲一下使用 Hyperapp 写这个 Todo 的核心思路：
+
+**数据结构设计**
+
+我们在 UI 层设计了很多的状态，比如 Todo 可以是编辑态，渲染一个 input，也可以是展示态，展示文本。列表可以是筛选态，只展示未完成的 todo。所以第一步，我们需要设计一下整个 App 的数据是长什么样的。
+
+首先我们需要一个属性存放 todo，每个 todo 则有 value
+
+```js
+{
+  todos: []
+}
+```
+
+todo
+
+
+**组件化**
 
 
 ## 拓展：React 与 Hyperapp
