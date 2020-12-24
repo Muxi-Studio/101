@@ -366,7 +366,7 @@ view: ({ title, visible, styles }) => {
 
 可能你现在觉得，这个 Lab 是这样的：
 
-![画马](https://pic.17qq.com/uploads/seuceurcrx.jpeg)
+![画马](./img/draw-horse.jpeg)
 
 
 为了让大家不那么懵逼，我们先讲一下使用 Hyperapp 写这个 Todo 的核心思路：
@@ -375,23 +375,115 @@ view: ({ title, visible, styles }) => {
 
 我们在 UI 层设计了很多的状态，比如 Todo 可以是编辑态，渲染一个 input，也可以是展示态，展示文本。列表可以是筛选态，只展示未完成的 todo。所以第一步，我们需要设计一下整个 App 的数据是长什么样的。
 
-首先我们需要一个属性存放 todo，每个 todo 则有 value
+> 如果你想自己尝试设计，可以先思考，再看底下的内容。
+
+首先我们需要一个属性存放 todo，每个 todo 则有一些属性。id 标识 todo 的序号，这个序号必须是唯一的，不然我们就没法区分两个内容相同的 todo 了。content 用于存放 todo 的内容。completed 用于标识是否完成。editing 标识是否处于编辑状态。
+
+所以大致是这样的结构：
 
 ```js
 {
-  todos: []
+  todos: [{
+    id: 0,
+    content: "Write Code",
+    completed: false,
+    editing: false,
+  },
+  {
+    id: 1,
+    content: "Change world",
+    completed: false,
+    editing: true,
+  }]
 }
 ```
 
-todo
+我们还需要一些状态，用来存储新增 todo 的输入框的值，以及列表的筛选状态：
 
+```js
+{
+  input: "",
+  filter: "all", // 还可以是 "active" 或者 "completed"
+}
+```
+
+把以上两个对象合起来就是 todo list 需要的所有状态了。
 
 **组件化**
 
+设计好状态的结构之后，我们就可以开始编写代码了。
 
+在编写的时候，如果我们把所有的 view 层代码都写在 view 函数里，那我们会得到一个很长的函数，里面混杂了所有的 UI 逻辑。
+
+这显然不是一种好的习惯。我们希望我们的应用的组件化的，可维护的。所以我们需要拆分组件。
+
+> 同样，你可以先自己思考一下 todo list 的组件拆分，再对比看看是否对的上。
+
+Todo List 的组件树是这样的：
+
+```js
+App
+  - Input // 输入框，输入后回车可以添加一条 todo，添加完后内容清空
+  - List // 展示当前的 todo 列表
+    - ListItem
+  - Filter // 筛选器，左侧展示未完成的 todo 状态。右侧是 All/Completed/Active 的状态筛选。
+```
+
+其实很简单。上中下拆分为三部分，之后针对列表的每个 item，需要单独写一个组件。这个组件包括的功能：
+
++ 展示左侧的完成 icon，点击后可以标识完成，或者反选，标识未完成
++ 中间展示 todo 的内容，有展示态和编辑态之分。完成时显示中划线的完成样式。双击进入编辑状态，此时显示一个初始值为 todo 内容的 input，回车保存修改，回到展示态。
++ 右侧展示 x 号，点击后可以删除 todo。
+
+从功能去分析，我们可以看出每个组件都有自己的独立功能，这也是组件拆分的思路。一般一个 App 在设计的时候，都是按功能模块去设计的，本身就是组件化的。
+
+好了，以上就是 Todo List 的核心思路了。大家完成后还可以思考一下拓展功能：
+
++ 如果想让 Todo List 的状态持久化，就是刷新页面之后也能保持当前的 Todo List 内容，应该如何做？（提示：使用某种浏览器提供的存储机制）
++ 如果 Todo List 的内容是通过 HTTP 请求获取到的，在 Hyperapp 中应该使用什么特性编写代码？（提示：看 Hyperapp 文档，关注副作用）
+  
 ## 拓展：React 与 Hyperapp
 
+React 是 Facebook 于 2013 年开源的 JS 库，用于构建用户界面。这也是目前前端界最流行的 UI 基础库。
 
+我们首先让大家接触 Hyperapp 就是因为 React 本身的设计思想，其实很简单。就是 UI = f(state)。而 Hyperapp 就是基于这个思想做的一个简化版的 React。
+
+所以 React 相比 Hyperapp，更强大，适合真正的生产级别应用。但核心思想其实是一致的。懂了 Hyperapp，你可以很快上手 React。
+
+React 的组件也是一个函数（React 16 之前只支持 Class 组件，不过目前我们一般都使用 React 16+，所以可以使用函数式组件）。函数返回的是 JSX 表示的虚拟 DOM 节点树，和 Hyperapp 一致。
+
+但相比 Hyperapp，React 的每个组件都可以有自己的状态，而不是只有顶层的 App 才存储状态。
+
+> React 可以通过 Redux 这样的状态管理工具去拥有全局状态，组件局部状态和全局状态可以混合使用。Redux 同样和 Hyperapp 的状态管理有相似之处。
+
+React 在函数式组件中的局部状态和副作用，是通过 Hook 来实现的。本身单纯的函数式组件是没有状态，也不能产生副作用的（比如发送网络请求），Hook 的出现改变了这一点。目前我们可以不用了解 Hook 具体的原理，只要掌握 Hook 的使用即可。
+
+让我们来看一个简单的例子：
+
+```jsx
+import React, { useState } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+
+`useState` 是用于获取状态的 Hook。Hook 其实就是普通的函数调用。`useState` 调用之后会返回一个数组，第一项是状态的值，第二项是一个用来修改状态的函数。
+
+我们只要记住，每次组件被调用，组件（函数）就会执行，然后 `useState` 就会被调用。调用之后就可以拿到最新的状态。
+
+通过这个例子，我们就可以实现一个计数器，需要注意的是，React 的事件回调属性是驼峰的形式，并且回调只是普通的函数，里面可以执行任意逻辑，无需像 Hyperapp 那样返回新的 state。
+
+> Hooks 相关的，请看 [React 官方文档](https://reactjs.org/docs/hooks-intro.html)。初学 React 也要看一下官网的[教程](https://reactjs.org/tutorial/tutorial.html) 和 [Main Concepts](https://reactjs.org/docs/hello-world.html)
 
 ## 拓展：No Magic!! Hyperapp 源码解析
 
