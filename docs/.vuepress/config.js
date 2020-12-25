@@ -22,37 +22,35 @@ module.exports = {
           children: [
             "",
             {
-              title: "学习指南",
+              title: "学习路线",
               collapsable: false,
-              children: [
-                "freshmen_fall",
-       
-                "freshmen_spring",
-                "sophomore_fall",
-              ],
+              children: ["freshmen_fall", "freshmen_spring", "sophomore_fall"],
             },
             {
               title: "项目开发",
               collapsable: false,
-              children: [
-                "project",
-              ],
+              children: ["project"],
             },
+            // {
+            //   title: "专题学习",
+            //   collapsable: false,
+            //   children: [
+            //     "react_road_map",
+            //     "infra",
+            //     "mobile",
+            //     "cg_road_map",
+            //     "ui_lib_design",
+            //   ],
+            // },
             {
               title: "基础话题",
               collapsable: false,
-              children: [
-                "component",
-              ],
+              children: ["component"],
             },
             {
               title: "Labs",
               collapsable: false,
-              children: [
-                "lab_http",
-                "lab_module",
-                "lab_hyperapp",
-              ],
+              children: ["lab_http", "lab_module", "lab_hyperapp"],
             },
           ],
         },

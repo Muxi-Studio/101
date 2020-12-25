@@ -260,11 +260,11 @@ JS 这门语言其实不属于纯粹的函数式语言或者面向对象语言�
 
 ## 告别 h，使用 JSX
 
-之前的 view 编写，使用的是嵌套的 h 函数调用。这种方式相比与 HTML 标签的方式，可读性低，维护难，因此着实蛋疼。
+之前的 view 编写，使用的是嵌套的 h 函数调用。这种方式相比写 HTML 标签的方式，可读性低，维护困难，因此着实蛋疼。
 
 我们在 Webpack Lab 中提到过 Babel。Babel 是一个 JS 转译器，可以对 JS 代码的语法树做各种转换，并且和 Webpack 构建流程整合。
 
-利用 Babel 的转换能力，JSX 语法就诞生了。
+利用 Babel 的转换能力，[JSX](https://reactjs.org/docs/introducing-jsx.html) 语法就诞生了。
 
 以下代码：
 
@@ -293,7 +293,7 @@ view: () => {
   ]),
 ```
 
-简单的说，JSX 会把一个标签声明，转换为一个函数调用。标签名是第一个参数，标签上传入的属性统一作为一个对象，是第二个参数，标签内部的子元素，作为数组，是第三个参数。
+简单的说，JSX 会把一个 XML 标签声明，转换为一个函数调用。标签名是第一个参数，标签上的所有属性作为对象传给第二个参数，标签内部的所有子元素作为数组传给第三个参数。
 
 在 JSX 中，我们可以在花括号中写 JS 表达式。比如：
 
@@ -308,9 +308,9 @@ view: ({ title, visible, styles }) => {
 }
 ```
 
-JSX 只能出现表达式，不能出现语句（比如 if），变量声明。这个原因很容易理解，因为 JSX 的一组标签最终被转换为一个函数调用表达式（Call Expression）。表达式里自然只能包含表达式，而不能放其他东西了。
+JSX **只能出现表达式，不能出现语句（比如 if），变量声明**。这个原因很容易理解，因为 JSX 的一组标签最终被转换为一个函数调用表达式（Call Expression）。表达式里自然只能包含表达式，而不能放其他东西了。
 
-如果需要用到表达式之外的能力，可以在 view 函数 return 之前的地方写：
+如果需要用到表达式之外的能力，也就是写任意的 JS 代码，可以在 view 函数 return 之前的地方写：
 
 ```jsx
 view: ({ title, visible, styles }) => {
@@ -330,7 +330,7 @@ view: ({ title, visible, styles }) => {
 
 > 当你对 JSX 的使用产生疑惑时，可以去 [Babel REPL](https://babeljs.io/repl) 里，复制 JSX 代码，查看转译的结果。牢记 JSX 就是 JS，所以看转译后的 JS 代码就清楚了。
 
-配置 Hyperapp app 的 JSX 支持，首先我们需要一个 Webpack + Babel 的架子。然后添加 [babel-plugin-transform-react-jsx 插件](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx)。设置插件的 pragma 参数为 `"h"` 即可。pragma 就表示 JSX 标签转换函数调用时，所调用的函数名。
+接下来，我们来配置 Hyperapp app 的 JSX 支持，首先我们需要一个 Webpack + Babel 的架子。然后添加 [babel-plugin-transform-react-jsx 插件](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx)。设置插件的 pragma 参数为 `"h"` 即可。pragma 表示 JSX 标签转换为函数调用时所调用的函数名。
 
 插件相关配置如下：
 
@@ -347,29 +347,30 @@ view: ({ title, visible, styles }) => {
 }
 ```
 
-请大家尝试上述配置，并使用 JSX 编写上面的[小练习](#小练习：使用-hyperapp-创建-dom-结构)。用 JSX 其实只需要把 HTML 代码复制一下就 OK 了，大大提升了编写视图结构代码的效率！！
+请大家尝试上述配置，并使用 JSX 编写上面的[小练习](#小练习：使用-hyperapp-创建-dom-结构)。用 JSX 其实只需要把 HTML 代码复制一下就 OK 了，大大提升了编写视图结构代码的效率！！这也是 JSX 的最大优点。
 
-可以以上次 Webpack Lab 的 Webpack + Babel 代码为基础做尝试。完成后可以推到 hyperapp-jsx 仓库。
+可以使用上次 Webpack Lab 中搭建的 Webpack + Babel 架子为基础做尝试。完成后可以推到 hyperapp-jsx 仓库。
 
-## 完善 TodoList
+## 实现全功能 TodoList
 
+在介绍了 Hyperapp 框架以及 JSX 语法之后，让我们开始实战环节，实现一个全功能的 TodoList。
 
-尝试用 Hyperapp 实现这个 TodoList [TodoMVC](http://todomvc.com/examples/vanilla-es6/) 的功能，主要需求点：
+尝试用 Hyperapp 实现[这个 TodoList](http://todomvc.com/examples/vanilla-es6/) 的所有功能，主要需求点：
 
 + 可以标记 Todo 是否完成
 + 可以删除已添加的 Todo
 + 可以编辑已添加的 Todo
-+ 左下角显示有剩余未完成的 Todo 数量
-+ 右下角有对列表的状态筛选
++ 左下角显示剩余未完成的 Todo 数量
++ 右下角有列表筛选，分 全部/已完成/未完成 三种状态
 
-在 Github 上新建仓库 hyperapp-todomvc。样式代码可以复用上述网站的。使用 Webpack + Webpack-dev-server + Babel 搭建开发环境。最后部署到 Github Pages。
+在 Github 上新建仓库 hyperapp-todomvc。样式和图片可以复用上述网站的（开发者工具看样式）。使用 Webpack + Webpack-dev-server + Babel 搭建开发环境（Webpack Lab 搭过）。最后部署到 Github Pages。
 
-可能你现在觉得，这个 Lab 是这样的：
+说了这么多要求，可能你现在觉得这个 Lab 是这样的：
 
 ![画马](./img/draw-horse.jpeg)
 
 
-为了让大家不那么懵逼，我们先讲一下使用 Hyperapp 写这个 Todo 的核心思路：
+为了让大家不那么懵逼，我们先讲一下使用 Hyperapp 写这个 TodoList 的核心思路：
 
 **数据结构设计**
 
