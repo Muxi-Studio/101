@@ -31,17 +31,17 @@ module.exports = {
               collapsable: false,
               children: ["project"],
             },
-            // {
-            //   title: "专题学习",
-            //   collapsable: false,
-            //   children: [
-            //     "react_road_map",
-            //     "infra",
-            //     "mobile",
-            //     "cg_road_map",
-            //     "ui_lib_design",
-            //   ],
-            // },
+            {
+              title: "专题学习",
+              collapsable: false,
+              children: [
+                "react_road_map",
+                // "infra",
+                // "mobile",
+                // "cg_road_map",
+                // "ui_lib_design",
+              ],
+            },
             {
               title: "基础话题",
               collapsable: false,

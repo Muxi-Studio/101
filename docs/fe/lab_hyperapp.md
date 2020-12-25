@@ -443,61 +443,32 @@ App
 + 如果想让 Todo List 的状态持久化，就是刷新页面之后也能保持当前的 Todo List 内容，应该如何做？（提示：使用某种浏览器提供的存储机制）
 + 如果 Todo List 的内容是通过 HTTP 请求获取到的，在 Hyperapp 中应该使用什么特性编写代码？（提示：看 Hyperapp 文档，关注副作用）
   
-## 拓展：React 与 Hyperapp
 
-React 是 Facebook 于 2013 年开源的 JS 库，用于构建用户界面。这也是目前前端界最流行的 UI 基础库。
+## 彩蛋：No Magic!! Hyperapp 源码解析
 
-我们首先让大家接触 Hyperapp 就是因为 React 本身的设计思想，其实很简单。就是 UI = f(state)。而 Hyperapp 就是基于这个思想做的一个简化版的 React。
+完成了以上练习之后，不知道你是否会惊叹于 UI = f(state) 的魅力。脱离这个概念，去实现一个 TodoList，将会是混乱而无序的。如果想用原生 JS 优雅的写一个 TodoList，其实也是在某种程度上，实现了一部分 UI 基础库的功能。
 
-所以 React 相比 Hyperapp，更强大，适合真正的生产级别应用。但核心思想其实是一致的。懂了 Hyperapp，你可以很快上手 React。
+在今后的前端之旅中，作为一个职业的软件开发者，你需要记得一件事，**No Magic**。这是一个很朴素的理念，你必须搞懂你所使用的工具（在这个场景下，是第三方库），并且有自己实现这个工具的能力，你才可以真正驾驭这个工具。
 
-React 的组件也是一个函数（React 16 之前只支持 Class 组件，不过目前我们一般都使用 React 16+，所以可以使用函数式组件）。函数返回的是 JSX 表示的虚拟 DOM 节点树，和 Hyperapp 一致。
+第三方 JS 库，其实也是用 JS 写的，和你自己写的 JS 代码并不存在什么区别。这个库也不是一个黑盒子。只要你懂 JS，它对你来说就是透明的。当然理解这个库的原理会需要你理解一些 Web GUI 编程的设计理念，花费一些时间专研，但绝对不是一件难事。
 
-但相比 Hyperapp，React 的每个组件都可以有自己的状态，而不是只有顶层的 App 才存储状态。
-
-> React 可以通过 Redux 这样的状态管理工具去拥有全局状态，组件局部状态和全局状态可以混合使用。Redux 同样和 Hyperapp 的状态管理有相似之处。
-
-React 在函数式组件中的局部状态和副作用，是通过 Hook 来实现的。本身单纯的函数式组件是没有状态，也不能产生副作用的（比如发送网络请求），Hook 的出现改变了这一点。目前我们可以不用了解 Hook 具体的原理，只要掌握 Hook 的使用即可。
-
-让我们来看一个简单的例子：
-
-```jsx
-import React, { useState } from 'react';
-
-function Example() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  );
-}
-```
-
-`useState` 是用于获取状态的 Hook。Hook 其实就是普通的函数调用。`useState` 调用之后会返回一个数组，第一项是状态的值，第二项是一个用来修改状态的函数。
-
-我们只要记住，每次组件被调用，组件（函数）就会执行，然后 `useState` 就会被调用。调用之后就可以拿到最新的状态。
-
-通过这个例子，我们就可以实现一个计数器，需要注意的是，React 的事件回调属性是驼峰的形式，并且回调只是普通的函数，里面可以执行任意逻辑，无需像 Hyperapp 那样返回新的 state。
-
-> Hooks 相关的，请看 [React 官方文档](https://reactjs.org/docs/hooks-intro.html)。初学 React 也要看一下官网的[教程](https://reactjs.org/tutorial/tutorial.html) 和 [Main Concepts](https://reactjs.org/docs/hello-world.html)
-
-## 拓展：No Magic!! Hyperapp 源码解析
+我们在教大家使用 React 进行前端开发之前，首先引入 Hyperapp，就是因为这个库足够简单，但又包含了编写组件化 Web APP 所需要的必要元素。用过 Hyperapp 之后，你可以通过看它的源代码，来理解 UI 组件基础库的本质。这对于未来的前端开发之路有很大的帮助，因为你知道，这些东西都是普通的 JS 代码而已，**没有魔法**。
 
 
-你需要记得一件事，**No Magic**。这是一个很朴素的理念，你必须搞懂你所使用的工具（在这个场景下，是第三方库），并且有自己实现这个工具的能力，你才可以真正驾驭这个工具。
+按 No Magic 的理念，我们是否需要知道浏览器的原理呢？其实这个理念是相对而言的。我们的目标是职业的软件工程师，所以“透明”的东西只限于软件。硬件则不需要了解的那么透彻。如果是硬件工程师，那就需要理解到电路层面了。所以这个 No Magic 理念是有边界的。
 
-第三方 JS 库，其实也是用 JS 写的，和你自己写的 JS 代码并不存在什么区别。这个库也不是一个黑盒子。只要你懂 JS，它对你来说就应该是透明的。当然理解这个库的原理会需要你理解一些 Web GUI 编程的设计理念，花费一些时间专研，但绝对不是一件难事。
+软件层面，也有一些细微的差别。计算机系统由许多不同软硬件技术共同构成，这些技术是分层的。比如操作系统层，编程语言层
 
-我们在教大家使用 React 进行前端开发之前，首先引入 Hyperapp，就是因为这个库足够简单，但又包含了编写一个组件化 Web APP 所需要的的必要元素。用过 Hyperapp 之后，你可以看懂它的源代码，从而理解这种 UI 组件基础库的本质。这对于未来的前端开发之路有很大的帮助，因为你知道，这些东西都是普通的，没有魔法。
+![layered](./img/component/layerer.jpg)
+
+对 JS 这项基础技术来说，如果你掌握了 JS 本身，那用 JS 写出来的东西，都不应该是什么秘密（这些都属于 JS 相关的范畴）。探究 JS 本身是怎么实现的，其实已经进入了另一个领域（编程语言实现）了，所以就算你不了解 JS 是怎么被编译运行的，你也能写出好的 Web App。但如果你对浏览器和 JS 引擎的原理有了解，肯定会对你有很大的帮助。
+
+总的来说，作为一个前端开发，你不需要精通浏览器和 JS 引擎的 C++ 源码，但你至少需要了解浏览器和 JS 引擎的一些关键原理，能看懂一点点源码。相比用 Hyperapp 写东西 + 读懂 Hyperapp 源码这种组合，这个要求要低很多。计算机的世界有一个很重要的理念，就是分层。不同层之间通过某种协议和接口进行联系。我们要有分辨一项技术属于哪一层的能力。对于同一层里面的技术，你应该有看懂源码的能力。
 
 
-> 按 No Magic 的理念，我们是否需要知道浏览器的原理呢？其实这个理念是相对而言的。计算机系统由许多不同软硬件技术共同构成，这些技术是分层的。比如操作系统层面，编程语言层面，
-对 JS 这项基础技术来说，如果你掌握了 JS 本身，那用 JS 写出来的东西，都不应该是什么秘密（这些都属于 JS 相关的范畴）。探究 JS 本身是怎么实现的，其实已经进入了另一个领域（编程语言实现）了，所以就算你不了解 JS 是怎么被编译运行的，你也能写出好的 Web App。但如果你对浏览器和 JS 引擎的原理有了解，肯定会对你有很大的帮助。总的来说，作为一个前端开发，你不需要看懂浏览器和 JS 引擎的 C++ 源码，但你至少需要了解浏览器和 JS 引擎的一些关键原理。相比用 Hyperapp 写东西 + 读懂 Hyperapp 源码这种组合，这个要求要低很多。计算机的世界有一个很重要的理念，就是分层。不同层之间通过某种协议和接口进行联系。我们要有分辨一项技术属于哪一层的能力。对于同一层里面的技术，你应该有看懂源码的能力。
+好了，接下来就进入正题，让我们来看看 Hyperapp 的[源码](https://github.com/jorgebucaran/hyperapp/blob/main/index.js)。
 
->![layered](./img/component/layerer.jpg)
-> *计算机系统的分层架构*
+
+源码分析请看！！！：[Google 自行搜索！！！](https://www.google.com/search?source=hp&ei=k8DlX4r9FYnY0gTR0rOIAw&q=Hyperapp+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&oq=Hyperapp+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAE6BQgAEMkDOgIIADoECAAQCjoJCAAQyQMQFhAeOgYIABAWEB46BwghEAoQoAFQjgFYxSNgpyZoBHAAeAGAAYIDiAHbG5IBBDMtMTCYAQCgAQKgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjKkuLt9-jtAhUJrJQKHVHpDDEQ4dUDCAk&uact=5)
+
+手动狗头，这边会补上一篇源码分析的。不过网上已经有很多分析博客了。大家可以先看这些材料。毕竟源码只有 400 行。
