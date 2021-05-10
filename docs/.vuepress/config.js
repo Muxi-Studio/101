@@ -85,6 +85,7 @@ module.exports = {
           children: [
             "",
             "freshmen_fall",
+            "freshmen_spring",
             "appendix_java_quiz",
             "appendix_reference",
             "appendix_tech_direction",

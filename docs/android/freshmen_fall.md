@@ -17,11 +17,11 @@ Android 是移动开发的一大巨头，从 Android 1.0 到现在的11.0，功�
 
 ### 预备期
 
-+ 安装Ubuntu系统（建议可以先自己搜索尝试一下，然后再去找学长帮忙）（W1）
++ 安装Ubuntu/Deepin系统（建议可以先自己搜索尝试一下，然后再去找学长帮忙）（W1）
 + 注册github账号、学习使用简单的git命令进行操作（W1）
 + C语言学习
   + week 1
-    + **准备《明解C语言》、安装Dev cpp**
+    + **准备《明解C语言》、安装Dev cpp或者vscode**
     + 《明解C语言》第1-2章
   + week 2
     + 《明解C语言》第3-5章
@@ -35,7 +35,7 @@ Android 是移动开发的一大巨头，从 Android 1.0 到现在的11.0，功�
 + **提前准备：**
   + 参考教材：《Java 核心技术 卷 I（第11版）》
   + JDK: 1.8
-  + IDE: IntelliJ IDEA
+  + IDE: IntelliJ IDEA（最新版本）
 
 + Java 学习：《核心技术》第 3 章、第 4 章
   + 第 3 章是 Java 的基本知识，和 C 语言的相关内容有一定的重复，所以不需要很仔细的看，重点注意一下 C 语言和 Java 中不同的地方
@@ -57,7 +57,7 @@ Android 是移动开发的一大巨头，从 Android 1.0 到现在的11.0，功�
     - 重点：**异常**、**日志**、**调试**
   - 做题
     - [Quiz](https://github.com/Muxi-Studio/Android-Wiki/blob/master/Java101/JavaQuiz.md) Java特性，第二题，并构造一个自定义异常，在异常发生时输出自定义的一段日志，以及断点到异常发生时的堆栈都有哪些
-+ Android学习
++ 开始Android学习
   + **提前准备**
     + 参考教材《Android 编程权威指南（第3版）》（从第四版开始就是 Kotlin Base）
     + IDE: Android Studio
@@ -124,20 +124,23 @@ Android 是移动开发的一大巨头，从 Android 1.0 到现在的11.0，功�
 
 + 《权威指南》收尾
 
-+ #### “网络数据处理”
++ #### 『网络数据处理』
 
-  学习顺序为『阮一峰对计算机网络协议、RESTful架构的文章』->『图解HTTP』->『了解Json』->『尝试POSTMAN对豆瓣的多个API发送GET、POST请求』->
+  学习顺序为『阮一峰对计算机网络协议、RESTful架构的文章』->『图解HTTP』->『了解Json』->『尝试POSTMAN对豆瓣的多个API发送GET、POST请求』-> 『网络请求demo』
 
   在此阶段需要具备的知识和工具
 
   JSONView 这个Chrome插件可以帮助你最直接得看到Get方法获得的Json数据（偶尔快速看一下）
-PostMan这个Chrome插件可以帮助你熟悉和测试使用Http的各种姿势（开发常用）
+  PostMan这个Chrome插件（现在已经是一个桌面应用了）可以帮助你熟悉和测试使用Http的各种姿势（开发常用）
   强烈建议你们买一本图解HTTP，预计你们再慢2-3天也能看完，看完此书做这个任务有很好的帮助，对网络方面的东西也会有点启蒙
-  Android-Json方面，使用Google自家的Gson来解析Json数据
+
+  
+
+  Android-Json方面，通常使用使用Google自家的Gson来解析Json数据
   Android-Http方面，使用原生的HttpUrlConnection就可以，不要用Apache的HttpClient，被弃用了；后续需要学习一下Square的OkHttp，这个是现在效率最好的HTTP库；最后，平时常用的有Google的Volley，Square的Retrofit，这些都是基于上面的三个HTTP库封装的，主要做了线程优化，Restful优化等等，当然这些都是后话~
   『使用HttpUrlConnection（需要子线程）和new Thread() 做简单的网络请求』->『使用AsyncTask替换直接new Thread()，并把结果刷新到UI上』
-  
+
   在此阶段需要具备的知识
 
   关于线程和进程的初步理解，http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html
-上面那些看完，就要写一个网络请求了；网络请求需要在子线程中运行，不能在主线程中运行，主要原因会阻塞主线程对UI的处理，Android4.0以上直接会报错。
+  上面那些看完，就要写一个网络请求了；网络请求需要在子线程中运行，不能在主线程中运行，主要原因会阻塞主线程对UI的处理，Android4.0以上直接会报错。
