@@ -5,13 +5,13 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: "前端", link: "/fe/" },
-      { text: "安卓", link: "/android/" },
+      { text: "移动端", link: "/mobile/" },
       { text: "后端", link: "/be/" },
       { text: "产品", link: "/product/" },
       { text: "设计", link: "/design/" },
       { text: "计算机基础", link: "/cs/" },
-      { text: "软技能", link: "/soft/" },
-      { text: "求职", link: "/job/" },
+      // { text: "软技能", link: "/soft/" },
+      // { text: "求职", link: "/job/" },
     ],
     // displayAllHeaders: true, // 默认值：false
     sidebar: {
@@ -78,7 +78,7 @@ module.exports = {
           children: ["", "freshmen_fall", "freshmen_spring", "sophomore_fall"],
         },
       ],
-      "/android/": [
+      "/mobile/": [
         {
           title: "安卓",
           collapsable: false,
@@ -89,6 +89,13 @@ module.exports = {
             "appendix_java_quiz",
             "appendix_reference",
             "appendix_tech_direction",
+          ],
+        },
+        {
+          title: "iOS",
+          collapsable: false,
+          children: [
+            "ios",
           ],
         },
       ],
