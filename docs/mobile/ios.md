@@ -31,7 +31,7 @@ iOS 写起来很简单，XCode 装好就可以，不用配置很多东西，编�
 ![](https://raw.githubusercontent.com/zxc0328/for-picgo/master/ios_book.png)
 
 这本书有中文版：[iOS编程（第6版）](https://book.douban.com/subject/33431782/) （看翻译的书基本很难及时看到最新版，你懂的，所以学好英语很重要）
-第七版英文版的 PDF 在此：
+第七版英文版的 PDF [在此下载](https://salttiger.com/ios-programming-the-big-nerd-ranch-guide-7th-edition/)
 
 这本书基本讲的很全了，各方面都有涉及。在学的时候一边是看理论内容，更重要的是练习。这本书的特点就是练习驱动，所以可以把书里面的例子的代码都自己写一下练习一下。基本就会了。
 
