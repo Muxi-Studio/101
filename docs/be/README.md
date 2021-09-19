@@ -32,6 +32,15 @@
 
 ### 团队成员
 
+#### 2020 级
+
++ [TAODEI](https://github.com/TAODEI)
++ [royal-dargon](https://github.com/royal-dargon)
++ [HX-Ray](https://github.com/HX-Ray)
++ [kuangkuangkuangha](https://github.com/kuangkuangkuangha)
++ [Lemonade](https://github.com/zxy-lgtm)
++ [gongna-au](https://github.com/gongna-au)
+
 #### 2019 级
 
 + [JacksieCheung](https://github.com/JacksieCheung)
@@ -39,6 +48,7 @@
 + [kocoler](https://github.com/kocoler)
 + [hlyyy](https://github.com/hlyyy)
 + [jepril](https://github.com/jepril)
++ [Mochigo](https://github.com/Mochigo)
   
 #### 2018 级
 
