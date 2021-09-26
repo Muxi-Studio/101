@@ -41,6 +41,14 @@
 
 ### 团队成员
 
+#### 2020级
++ [joker0231] (https://github.com/joker0231)
++ [Lruler] (https://github.com/Lruler)
++ [qingxiangying] (https://github.com/qingxiangying)
++ [KiteU] (https://github.com/demoinmuxi)
++ [jitu] (https://github.com/jiut)
++ [EuniceGithub] (https://github.com/EuniceGithub)
+
 #### 2019 级
 
 + [HCLacids](https://github.com/HCLacids)
