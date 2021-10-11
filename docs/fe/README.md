@@ -44,7 +44,7 @@
 #### 2020级
 + [joker0231](https://github.com/joker0231)
 + [Lruler](https://github.com/Lruler)
-+ [qingxiangying](https://github.com/qingxiangying)
++ [qingxuanying](https://github.com/qingxuanying)
 + [KiteU](https://github.com/demoinmuxi)
 + [jitu](https://github.com/jiut)
 + [EuniceGithub](https://github.com/EuniceGithub)
