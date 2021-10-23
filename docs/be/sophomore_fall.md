@@ -61,7 +61,7 @@
 + [《高性能MySQL》](http://product.dangdang.com/23214590.html)
 + 《MySQL 实战45讲-极客时间》（网盘链接团队内获取）
 + [MySQL 是怎样运行的：从根儿上理解 MySQL](https://juejin.im/book/5bffcbc9f265da614b11b731)
- 
+
 这些材料，其实都是从原理和概念上做了解释，如果想从事数据库开发，或者对数据库有更底层的理解，那关系型数据库具体的内部实现，那就需要跟一门国外的数据库课程，然后在真实的数据库代码里面进行修改和增加。这个内容在下学期会提到。
 
 ### Redis 相关
@@ -98,10 +98,17 @@ Docker 是目前的容器标准。容器是目前应用部署的通用标准。�
 
 ## 进阶任务：A Web Server called Liso（进阶级：有实力，有更高追求的同学可以尝试）
 
-
 [传送门](/be/liso)
 
+该lab是用C语言实现一个简单的HTTP服务器。 分为三个checkpoint，checkpoint1应该最难，要对传来的HTTP请求做语法和词法解析，这个涉及编译原理，可以不用深入研究，这部分代码直接抄就可，但是需要大致看懂代码，自己根据需求做一些改动。
 
+代码可以参考[这里 ](https://github.com/Chiwency/Liso-Web-Server)  里面还有一个爬坑总结，做之前可以参考下。
+
+## 进阶任务 6.S081: Operating System Engineering
+
+[传送门](https://pdos.csail.mit.edu/6.828/2021/index.html)
+
+操作系统相关lab，用C语言分阶段实现一个简易操作系统的各种必备功能。
 
 ## 附录
 
@@ -115,5 +122,5 @@ Golang 相关的实战项目课程，对于了解企业级的项目开发和特�
 + [Go语言实战流媒体视频网站](https://coding.imooc.com/class/227.html)
 
 如果对[慕课网Go分类下其他实战课程](https://coding.imooc.com/?c=go)有兴趣的，也可以在团队内提出，一起想办法解决。
- 
+
   
