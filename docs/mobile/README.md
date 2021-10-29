@@ -35,8 +35,16 @@
 
 更广泛的职业技术方向，可以参考[这篇文章](/mobile/appendix_tech_direction.html)。
 
-
 ### 团队成员
+
+#### 2020 级
+
++ [xiaozhu-sorce](https://github.com/xiaozhu-sorce)
++ [tiddster](https://github.com/tiddster)
++ [huangxinhere](https://github.com/huangxinhere)
++ [qiu-yunhao](https://github.com/qiu-yunhao)
++ [liuyuxin-cloud](https://github.com/liuyuxin-cloud)
++ [hyl-code](https://github.com/hyl-code)
 
 #### 2019 级
 
@@ -70,5 +78,4 @@
 #### 2012 级
 
 + [2BAB](https://github.com/2bab)（顾问）
-
 
