@@ -41,6 +41,12 @@
 
 ### 团队成员
 
+#### 2022级
++ [BlackishGreen33](https://github.com/BlackishGreen33)
++ [konodioda727](https://github.com/konodioda727)
++ [poememory](https://github.com/poememory)
++ [MaggieMii](https://github.com/MaggieMii)
+
 #### 2021级
 + [OldSecond](https://github.com/Old-Second)
 + [MUMU](https://github.com/MUMU46)
