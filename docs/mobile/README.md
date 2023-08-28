@@ -37,6 +37,22 @@
 
 ### 团队成员
 
+#### 2022 级
+
++ [continuematical](https://github.com/continuematical)
++ [Gyicyo](https://github.com/Gyicyo)
++ [Edmund-Liz](https://github.com/Edmund-Liz)
++ [dwqing](https://github.com/dwqing)
++ [PureLipper](https://github.com/PureLipper)
++ [hydrogenair](https://github.com/hydrogenair)
+
+#### 2021 级
+
++ [jie-junyi](https://github.com/jie-junyi)
++ [flsdqm](https://github.com/flsdqm)
++ [Nutcra-yu](https://github.com/Nutcra-yu)
++ [caohuisheng](https://github.com/caohuisheng)
+
 #### 2020 级
 
 + [xiaozhu-sorce](https://github.com/xiaozhu-sorce)
