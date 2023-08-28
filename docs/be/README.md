@@ -32,6 +32,23 @@
 
 ### 团队成员
 
+#### 2022 级
+
++ [big-dust](https://github.com/big-dust)
++ [KitZhangYs](https://github.com/KitZhangYs)
++ [Cg1028](https://github.com/Cg1028)
++ [a48zhang](https://github.com/a48zhang)
++ [CielWaaah](https://github.com/CielWaaah)
++ [serlarde](https://github.com/serlarde)
++ [LogSingleDog](https://github.com/LogSingleDog)
+
+#### 2021 级
+
++ [Wishforpeace](https://github.com/Wishforpeace)
++ [SUIYUELIANYI](https://github.com/SUIYUELIANYI)
++ [Eternal-Faith](https://github.com/Eternal-Faith)
++ [jackj-ohn1](https://github.com/jackj-ohn1)
+
 #### 2020 级
 
 + [TAODEI](https://github.com/TAODEI)
