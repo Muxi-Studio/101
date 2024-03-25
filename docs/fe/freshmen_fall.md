@@ -264,7 +264,7 @@ JavaScript 当年是作为 NetScape 浏览器的一个特性出现的。后面 J
 
 **Lab 实战（推荐！！）：**
 
-[使用 Webpack 对 JS 应用进行构建](/101/fe/lab_module.html)
+[使用 Webpack 对 JS 应用进行构建](/fe/lab_module.html)
 
 ### Task 3：DOM API 与事件处理
 
@@ -371,7 +371,7 @@ HTML 和 CSS 控制页面的结构和样式。在富交互的前端应用开发�
 
 **Lab 实战（推荐！！）：**
 
-[使用 HTTP API 操作 Github issues](/101/fe/lab_http.html)
+[使用 HTTP API 操作 Github issues](/fe/lab_http.html)
 
 ## 模块五：构建 Web 应用：以 Hyperapp 为基础
 
@@ -444,7 +444,7 @@ document.querySelector("#foo").textContent = "Don't click me";
 
 这些问题的答案，在底下的 [Lab 实战](#todolist-实战（强烈推荐）)中，都会得到解决！
 
-另外，拿到一个页面的设计稿之后，我们还要学会如何拆分组件。这方面可以看[组件化专题](/101/fe/component.html)进行学习。
+另外，拿到一个页面的设计稿之后，我们还要学会如何拆分组件。这方面可以看[组件化专题](/fe/component.html)进行学习。
 
 <!-- 对此，我们需要引入一些 JS 库。所谓的 JS 库就是别人开发好的一些函数和类，做了一些基础的能力，我们拿来之后可以按照文档使用。
 
