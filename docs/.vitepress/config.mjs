@@ -33,7 +33,7 @@ export default defineConfig({
 		},
 		outline: [1, 6],
 		editLink: {
-			pattern: "https://github.com/",
+			pattern: "https://github.com/Muxi-Studio/101/edit/main/docs/:path",
 			text: "在 GitHub 上编辑此页",
 		},
 		externalLinkIcon: true,
@@ -45,7 +45,7 @@ export default defineConfig({
 			},
 		},
 		socialLinks: [
-			{ icon: "github", link: "https://github.com/vuejs/vitepress" },
+			{ icon: "github", link: "https://muxi-studio.github.io/101/" },
 		],
 		nav: [
 			{ text: "前端", link: "/fe/" },
