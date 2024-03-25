@@ -6,7 +6,7 @@ export default defineConfig({
 	title: "木犀 101",
 	description: "木犀沉淀的互联网学习入门指南",
 	themeConfig: {
-		logo: "/cf.png",
+		logo: "/favicon.ico",
 		footer: {
 			message: "Hello from CCNU.",
 			copyright: "Copyright © 2014-present Muxistudio",
