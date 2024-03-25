@@ -2,7 +2,6 @@
 	"name": "101",
 	"version": "1.0.0",
 	"type": "module",
-	"packageManager": "pnpm",
 	"description": "木犀沉淀的互联网学习计划",
 	"main": "index.js",
 	"author": "Muxistudio",
