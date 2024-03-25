@@ -4,9 +4,9 @@
 
 现在大多数网站都有反爬虫机制，验证的规则也五花八样，想找到一个能练手的网站实在不容易。好在[豆瓣](https://www.douban.com/)算是比较宽容的，它只有在发送登录请求十分频繁的条件下，才会放滑块验证这个大招。所以我们现在便以豆瓣为例。
 
-# 找到账户验证的 url
+# 找到账户验证的url
 
-> 如果已经登录了豆瓣的，要先退出登录
+>   如果已经登录了豆瓣的，要先退出登录
 
 打开豆瓣，按下 F12 （Fn+F12），审查元素，在最上面的一栏选择网络（Network），可以按下 Ctrl+R 刷新一下，然后就可以看到下方的列表里有很多条目，这些都是该网页在获取数据时请求的痕迹。
 
@@ -24,7 +24,7 @@
 
 找到了验证的 url 后，我们不应该马上动手写代码，而是应该用 postman 来进行模拟请求，确认是否可以成功通过验证。
 
-> postman 请自行去[官网下载](https://www.getpostman.com/downloads/)
+>   postman请自行去[官网下载](https://www.getpostman.com/downloads/)
 
 ## 分析请求数据
 
@@ -36,7 +36,7 @@
 
 ![](./browser_inspect2.png)
 
-现在来观察 Form Data 的数据，有 5 个字段，其中对我们比较重要的就是 name 和 password 了。另外还有一个 ck 比较重要，这个我们之后再说。
+现在来观察Form Data的数据，有5个字段，其中对我们比较重要的就是 name 和 password 了。另外还有一个 ck 比较重要，这个我们之后再说。
 
 ```shell
 ck:
@@ -58,13 +58,17 @@ ticket:
 
 ![](./postman_test2.png)
 
+
+
 请求成功，postman 将 response 数据自动显示为 json 格式。
+
+
 
 ![](./postman_test3.png)
 
 ## 意外的失败
 
-可能你会发现照着这样做请求却失败了，或是第一次请求成功，第二次请求却失败了，这就要我们来更改一下 ck 字段的值。可以回到浏览器，在已经登录的界面中，打开审查元素，点击元素（Elements）那栏，Ctrl+F，填入 ck 进行搜索，找到 `<input type="hidden" name="ck" value="Qg5w">` 这栏，其中 value 的值就是我们要的值，将 Qg5w 填入 postman 中的 ck 字段，这样 就可以重新请求了。
+可能你会发现照着这样做请求却失败了，或是第一次请求成功，第二次请求却失败了，这就要我们来更改一下ck字段的值。可以回到浏览器，在已经登录的界面中，打开审查元素，点击元素（Elements）那栏，Ctrl+F，填入 ck进行搜索，找到 `<input type="hidden" name="ck" value="Qg5w">` 这栏，其中 value 的值就是我们要的值，将 Qg5w 填入 postman 中的 ck 字段，这样 就可以重新请求了。
 
 # 代码实现
 
@@ -74,11 +78,11 @@ ticket:
 
 要用到的包有：`net/http`，`net/url`，`io/ioutil`
 
-> net/http [官方文档](https://godoc.org/net/http)
+>   net/http [官方文档](https://godoc.org/net/http)
 >
-> net/url [官方文档](https://godoc.org/net/url)
+>   net/url [官方文档](https://godoc.org/net/url)
 >
-> io/ioutil [官方文档](https://golang.org/pkg/io/ioutil/)
+>   io/ioutil [官方文档](https://golang.org/pkg/io/ioutil/)
 
 ```go
 // 请求url
@@ -128,7 +132,7 @@ if err != nil {
 defer res.Body.Close()
 ```
 
-解析请求 body，这里要用到`io/ioutil`包
+解析请求body，这里要用到`io/ioutil`包
 
 ```go
 body, err := ioutil.ReadAll(res.Body)
@@ -154,7 +158,7 @@ fmt.Println(string(body))
 
 虽然实现了请求，但还有一个问题需要完善一下，那就是我们的账号和密码是写在代码中的，极不安全。我们可以通过交互模式让用户在终端输入。另外密码的输入应当是隐性的、保密的，这就用到了 [`gopass`库](https://github.com/howeyc/gopass)。gopass 库的使用算是非常简单的了，自己看文档吧。
 
-> gopass [官方文档](https://godoc.org/github.com/howeyc/gopass)
+>   gopass [官方文档](https://godoc.org/github.com/howeyc/gopass)
 
 实现输入：
 
@@ -168,4 +172,4 @@ password, _ := gopass.GetPasswdMasked()
 
 这样就算是比较完善了
 
-> [完整代码](https://github.com/Shadowmaple/go/blob/master/crawler/doubanLogin.go)
+>   [完整代码](https://github.com/Shadowmaple/go/blob/master/crawler/doubanLogin.go)

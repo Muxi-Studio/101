@@ -1,6 +1,8 @@
 # Lab: 使用 Hyperapp 编写 TodoList
 
+
 ## GUI 编程：一个由组件构成的世界
+
 
 前端方向所编写的主要是运行在 Web 浏览器中的 GUI（图形化用户界面）应用程序。包括简单的新闻页面，到复杂的在线 [Office 等应用](https://shimo.im/)，都可以在浏览器内实现。
 
@@ -10,8 +12,8 @@
 
 写组件，主要是通过 JavaScript 实现的。原因如下：
 
-- 像之前写页面那样，直接写 HTML 和 CSS，就无法实现组件化的，因为组件化的前提是模块化。**只有 JS 有模块化的能力**。
-- 组件除了结构（HTML）和样式（CSS）之外，最主要的是**交互逻辑**，也就是这个组件会响应用户的操作，对页面进行动态的修改。以及和服务端交互，发送网络请求获取数据，展示在页面中等等。这部分逻辑是通过浏览器的 API 实现的，主要是 DOM 相关。比如我们可以使用 DOM API 去动态的增加元素，修改元素。我们可以用 `addEventListener` 来添加事件，响应用户交互。用 fetch API 发送网络请求。这些交互逻辑显然只能在 JS 中实现。
++ 像之前写页面那样，直接写 HTML 和 CSS，就无法实现组件化的，因为组件化的前提是模块化。**只有 JS 有模块化的能力**。
++ 组件除了结构（HTML）和样式（CSS）之外，最主要的是**交互逻辑**，也就是这个组件会响应用户的操作，对页面进行动态的修改。以及和服务端交互，发送网络请求获取数据，展示在页面中等等。这部分逻辑是通过浏览器的 API 实现的，主要是 DOM 相关。比如我们可以使用 DOM API 去动态的增加元素，修改元素。我们可以用 `addEventListener` 来添加事件，响应用户交互。用 fetch API 发送网络请求。这些交互逻辑显然只能在 JS 中实现。
 
 所以对于前端中的组件化，一个组件就是一个 JS 模块，这个模块控制了页面某块区域的**结构，样式，和用户交互逻辑**。
 
@@ -20,6 +22,7 @@
 GUI 编程其实就是一个搭积木的过程，拆分组件，若干个组件拼成一个页面，所有的页面加起来，就构成了一个应用程序（Application）。
 
 看到这里，你可能对如何使用 JS 写一个应用，如何写一个组件，还是没有概念。接下来我们就会借助一个第三方库：Hyperapp，来实现 GUI 编程。
+
 
 ## Hyperapp：入门实例
 
@@ -30,39 +33,37 @@ GUI 编程其实就是一个搭积木的过程，拆分组件，若干个组件�
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<script type="module">
-			import { h, text, app } from "https://unpkg.com/hyperapp";
+  <head>
+    <script type="module">
+      import { h, text, app } from "https://unpkg.com/hyperapp"
 
-			const AddTodo = (state) => ({
-				...state,
-				todos: state.todos.concat(state.value),
-			});
+      const AddTodo = (state) => ({
+        ...state,
+        todos: state.todos.concat(state.value),
+      })
 
-			const NewValue = (state, event) => ({
-				...state,
-				value: event.target.value,
-			});
+      const NewValue = (state, event) => ({
+        ...state,
+        value: event.target.value,
+      })
 
-			app({
-				init: { todos: [], value: "" },
-				view: ({ todos, value }) =>
-					h("main", {}, [
-						h("input", { type: "text", oninput: NewValue, value }),
-						h("button", { onclick: AddTodo }, text("Add")),
-						h(
-							"ul",
-							{},
-							todos.map((todo) => h("li", {}, text(todo)))
-						),
-					]),
-				node: document.getElementById("app"),
-			});
-		</script>
-	</head>
-	<body>
-		<main id="app"></main>
-	</body>
+      app({
+        init: { todos: [], value: "" },
+        view: ({ todos, value }) =>
+          h("main", {}, [
+            h("input", { type: "text", oninput: NewValue, value }),
+            h("button", { onclick: AddTodo }, text("Add")),
+            h("ul", {},
+              todos.map((todo) => h("li", {}, text(todo)))
+            ),
+          ]),
+        node: document.getElementById("app"),
+      })
+    </script>
+  </head>
+  <body>
+    <main id="app"></main>
+  </body>
 </html>
 ```
 
@@ -98,7 +99,7 @@ interface VNode = {
   props: Object; // DOM 节点的属性，key-value 对象
   children: Array<VNode> // 子节点，节点结构一致
   node: Element; // 对应的真实 DOM 节点
-  key?: string;
+  key?: string; 
   tag?: string;
 }
 ```
@@ -113,50 +114,51 @@ interface VNode = {
 
 ```html
 <div id="app" class="container">
-	<div class="filter">
-		Filter:
-		<span class="filter-word">ocean</span>
-		<button>&#9998;</button>
-	</div>
-	<div class="stories">
-		<ul>
-			<li class="unread">
-				<p class="title">The <em>Ocean </em>is Sinking</p>
-				<p class="author">Kat Stropher</p>
-			</li>
-			<li class="reading">
-				<p class="title"><em>Ocean </em>life is brutal</p>
-				<p class="author">Surphy McBrah</p>
-			</li>
-			<li>
-				<p class="title">
-					Family friendly fun at the
-					<em>ocean </em>exhibit
-				</p>
-				<p class="author">Guy Prosales</p>
-			</li>
-		</ul>
-	</div>
-	<div class="story">
-		<h1>Ocean life is brutal</h1>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-			veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-			commodo consequat.
-		</p>
-		<p class="signature">Surphy McBrah</p>
-	</div>
-	<div class="autoupdate">
-		Auto update:
-		<input type="checkbox" />
-	</div>
+    <div class="filter">
+        Filter:
+        <span class="filter-word">ocean</span>
+        <button>&#9998;</button>
+    </div>
+    <div class="stories">
+        <ul>
+            <li class="unread">
+                <p class="title">The <em>Ocean </em>is Sinking</p>
+                <p class="author">Kat Stropher</p>
+            </li>
+            <li class="reading">
+                <p class="title"><em>Ocean </em>life is brutal</p>
+                <p class="author">Surphy McBrah</p>
+            </li>
+            <li>
+                <p class="title">
+                    Family friendly fun at the
+                    <em>ocean </em>exhibit
+                </p>
+                <p class="author">Guy Prosales</p>
+            </li>
+        </ul>
+    </div>
+    <div class="story">
+        <h1>Ocean life is brutal</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+        </p>
+        <p class="signature">Surphy McBrah</p>
+    </div>
+    <div class="autoupdate">
+        Auto update:
+        <input type="checkbox" />
+    </div>
 </div>
 ```
 
 配合 [CSS 代码](https://zaceno.github.io/hatut/style.css)，最终效果是这样的：
 
 ![tut1.png](https://raw.githubusercontent.com/jorgebucaran/hyperapp/1fd42319051e686adb9819b7e154f764fa3b0d29/docs/src/pages/Tutorial/tut1.png)
+
 
 你可以像上面 Todo 例子那样，用 HTML + ES Moudle 的形式来快速编写和调试。
 
@@ -166,11 +168,12 @@ interface VNode = {
 
 总结一下，视图是对 UI 的**结构化描述**。由创建虚拟 DOM 节点的函数 h 返回的是通过 children 属性层层嵌套的结构化的对象。而视图是一个函数，是因为视图是会变的，根据数据不同，视图函数会返回不同的 UI 结构，对用户交互做出响应。所以 Hyperapp 里面 view 函数的参数就是数据。接下来我们就看看数据的作用是什么。
 
+
 ## 核心概念：状态（State）
 
 要编写一个 GUI 应用程序，展示出一个用户界面，除了在视图层声明界面的结构外，我们还需要数据。
 
-比如一个新闻页面，里面的新闻每天都在变，这显然不是直接写死在前端 HTML 代码中的，而是存在服务端的数据库中，通过 JS 发送 HTTP 请求获取到之后，修改 DOM
+比如一个新闻页面，里面的新闻每天都在变，这显然不是直接写死在前端 HTML 代码中的，而是存在服务端的数据库中，通过 JS 发送 HTTP 请求获取到之后，修改 DOM 
 
 又比如上面的 Todo 例子，当前输入的 todo 标题，和下面展示的 todo 列表，都属于数据。
 
@@ -192,34 +195,35 @@ interface VNode = {
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<script type="module">
-			import { h, text, app } from "https://unpkg.com/hyperapp";
+  <head>
+    <script type="module">
+      import { h, text, app } from "https://unpkg.com/hyperapp";
 
-			const ChangeVisible = (state) => ({
-				...state,
-				visible: !state.visible,
-			});
+      const ChangeVisible = (state) => ({
+        ...state,
+        visible: !state.visible
+      });
 
-			app({
-				init: { visible: false },
-				view: ({ visible }) =>
-					h("main", {}, [
-						visible ? h("div", {}, text("Hello world")) : null,
-						h(
-							"button",
-							{ onclick: ChangeVisible },
-							text(visible ? "Hide Text" : "Show Text")
-						),
-					]),
-				node: document.getElementById("app"),
-			});
-		</script>
-	</head>
-	<body>
-		<main id="app"></main>
-	</body>
+      app({
+        init: { visible: false },
+        view: ({ visible }) =>
+          h("main", {}, [
+            visible ? h("div", {}, text("Hello world")) : null,
+            h(
+              "button",
+              { onclick: ChangeVisible },
+              text(visible ? "Hide Text" : "Show Text")
+            )
+          ]),
+        node: document.getElementById("app")
+      });
+    </script>
+  </head>
+  <body>
+    <main id="app"></main>
+  </body>
 </html>
+
 ```
 
 在这个例子里，我们使用 visible 这个变量来控制文字的显示和隐藏。visible 就是这个界面的一个状态。一个界面根据用户的交互，会在不同的状态之间流转切换。在 Hyperapp 中，状态是存储在 app 内部的，由 Hyperapp 管理，通过 view 函数的参数传入，通过事件回调的返回值进行修改。
@@ -227,6 +231,7 @@ interface VNode = {
 > 数据（Data）和状态（State），甚至模型（Model），在前端编程中往往是同义词，可以混用。这些词代表的都是应用中的数据。一般状态这个词侧重于 UI 状态，也就是文本的显示/隐藏，或者是 div 的背景色，等等。数据，或者模型，则侧重于从服务端请求到的，存在数据库中的数据。虽然有这样的区分，在应用代码中我们一般不会区分数据的来源，不管是服务端请求到的数据，还是 UI 状态，我们都会放在一起。前端的框架一般都会支持对数据的管理。比如 Hyperapp 里就支持数据的初始化，更新和使用。
 
 ## 声明式编程范式：UI = f(state)
+
 
 在学习 EloquentJS 的过程中，我们知道 JS 中的函数是一等公民。函数可以作为参数和返回值。我们可以通过高阶函数来对函数进行组合。同时 JS 也支持面向对象的编程范式，通过类的继承来对父类进行拓展，来实现逻辑的复用。
 
@@ -240,14 +245,15 @@ JS 这门语言其实不属于纯粹的函数式语言或者面向对象语言�
 
 在这套观点中，视图就是一个函数，通过不同的 state 来控制视图的变化。最终视图所返回的，就是 UI（用户界面）。
 
-这套观点背后的理念是声明式的编程范式。开发者只需要回答两个问题：
+这套观点背后的理念是声明式的编程范式。开发者只需要回答两个问题： 
 
-- UI 一开始长什么样？
-- 数据不同时，UI 会如何变化？
-
++ UI 一开始长什么样？
++ 数据不同时，UI 会如何变化？
+  
 就可以把 UI 编写出来了。开发者不用操心 DOM 节点的插入，删除，修改等等命令式操作，这些由基础库去搞定。
 
 > 关于声明式编程范式，可以读这篇博客学习：[声明式 vs 命令式编程范式（可能需要翻墙）](https://medium.com/@zach.gollwitzer/imperative-vs-declarative-programming-procedural-functional-and-oop-b03a53ba745c)
+
 
 > 声明式的编程范式和函数式风格的编程语言不是强绑定的。组件可以是函数，也可以是类，不管是哪种，其实都可以实现声明式的编程范式。安卓和 iOS 中，组件其实都是类。但安卓和 iOS 开发中也有声明式的 UI 编写方式。
 > 在 GUI 开发中，不管是 Web/移动端/桌面端，都有类似组件的概念。因为模块化，抽象，分治，复用代码，避免重复，这些理念，都是编程的基础理念，而组件就恰好是这些理念在 GUI 开发中最好的体现。
@@ -264,12 +270,12 @@ JS 这门语言其实不属于纯粹的函数式语言或者面向对象语言�
 
 ```jsx
 view: () => {
-	return (
-		<main onclick={handleOnClick}>
-			<div>hello world</div>
-		</main>
-	);
-};
+  return (
+    <main onclick={handleOnClick}>
+      <div>hello world</div>
+    </main>
+  )
+}
 ```
 
 等效于：
@@ -293,13 +299,13 @@ view: () => {
 
 ```jsx
 view: ({ title, visible, styles }) => {
-	return (
-		<main style={styles}>
-			<div>{title}</div>
-			{visible ? <div>Text</div> : null}
-		</main>
-	);
-};
+  return (
+    <main style={styles}>
+      <div>{title}</div>
+      { visible ? <div>Text</div> : null}
+    </main>
+  )
+}
 ```
 
 JSX **只能出现表达式，不能出现语句（比如 if），变量声明**。这个原因很容易理解，因为 JSX 的一组标签最终被转换为一个函数调用表达式（Call Expression）。表达式里自然只能包含表达式，而不能放其他东西了。
@@ -308,12 +314,16 @@ JSX **只能出现表达式，不能出现语句（比如 if），变量声明**
 
 ```jsx
 view: ({ title, visible, styles }) => {
-	const text = <div>Text</div>;
-	if (!visible) {
-		text = null;
-	}
-	return <main>{text}</main>;
-};
+  const text = <div>Text</div>;
+  if (!visible) {
+    text = null
+  }
+  return (
+    <main>
+      {text}
+    </main>
+  )
+}
 ```
 
 记住，JSX 标签就是一个 `h()` 调用，所以返回的结果可以被保存到变量，在后续的 JSX 标签内使用。
@@ -326,14 +336,14 @@ view: ({ title, visible, styles }) => {
 
 ```json
 {
-	"plugins": [
-		[
-			"@babel/plugin-transform-react-jsx",
-			{
-				"pragma": "h"
-			}
-		]
-	]
+  "plugins": [
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "h"
+      }
+    ]
+  ]
 }
 ```
 
@@ -347,17 +357,18 @@ view: ({ title, visible, styles }) => {
 
 尝试用 Hyperapp 实现[这个 TodoList](http://todomvc.com/examples/vanilla-es6/) 的所有功能，主要需求点：
 
-- 可以标记 Todo 是否完成
-- 可以删除已添加的 Todo
-- 可以编辑已添加的 Todo
-- 左下角显示剩余未完成的 Todo 数量
-- 右下角有列表筛选，分 全部/已完成/未完成 三种状态
++ 可以标记 Todo 是否完成
++ 可以删除已添加的 Todo
++ 可以编辑已添加的 Todo
++ 左下角显示剩余未完成的 Todo 数量
++ 右下角有列表筛选，分 全部/已完成/未完成 三种状态
 
 在 Github 上新建仓库 hyperapp-todomvc。样式和图片可以复用上述网站的（开发者工具看样式）。使用 Webpack + Webpack-dev-server + Babel 搭建开发环境（Webpack Lab 搭过）。最后部署到 Github Pages。
 
 说了这么多要求，可能你现在觉得这个 Lab 是这样的：
 
 ![画马](./img/draw-horse.jpeg)
+
 
 为了让大家不那么懵逼，我们先讲一下使用 Hyperapp 写这个 TodoList 的核心思路：
 
@@ -373,20 +384,18 @@ view: ({ title, visible, styles }) => {
 
 ```js
 {
-	todos: [
-		{
-			id: 0,
-			content: "Write Code",
-			completed: false,
-			editing: false,
-		},
-		{
-			id: 1,
-			content: "Change world",
-			completed: false,
-			editing: true,
-		},
-	];
+  todos: [{
+    id: 0,
+    content: "Write Code",
+    completed: false,
+    editing: false,
+  },
+  {
+    id: 1,
+    content: "Change world",
+    completed: false,
+    editing: true,
+  }]
 }
 ```
 
@@ -414,25 +423,26 @@ view: ({ title, visible, styles }) => {
 Todo List 的组件树是这样的：
 
 ```js
-App -
-	Input - // 输入框，输入后回车可以添加一条 todo，添加完后内容清空
-	List - // 展示当前的 todo 列表
-	ListItem -
-	Filter; // 筛选器，左侧展示未完成的 todo 状态。右侧是 All/Completed/Active 的状态筛选。
+App
+  - Input // 输入框，输入后回车可以添加一条 todo，添加完后内容清空
+  - List // 展示当前的 todo 列表
+    - ListItem
+  - Filter // 筛选器，左侧展示未完成的 todo 状态。右侧是 All/Completed/Active 的状态筛选。
 ```
 
 其实很简单。上中下拆分为三部分，之后针对列表的每个 item，需要单独写一个组件。这个组件包括的功能：
 
-- 展示左侧的完成 icon，点击后可以标识完成，或者反选，标识未完成
-- 中间展示 todo 的内容，有展示态和编辑态之分。完成时显示中划线的完成样式。双击进入编辑状态，此时显示一个初始值为 todo 内容的 input，回车保存修改，回到展示态。
-- 右侧展示 x 号，点击后可以删除 todo。
++ 展示左侧的完成 icon，点击后可以标识完成，或者反选，标识未完成
++ 中间展示 todo 的内容，有展示态和编辑态之分。完成时显示中划线的完成样式。双击进入编辑状态，此时显示一个初始值为 todo 内容的 input，回车保存修改，回到展示态。
++ 右侧展示 x 号，点击后可以删除 todo。
 
 从功能去分析，我们可以看出每个组件都有自己的独立功能，这也是组件拆分的思路。一般一个 App 在设计的时候，都是按功能模块去设计的，本身就是组件化的。
 
 好了，以上就是 Todo List 的核心思路了。大家完成后还可以思考一下拓展功能：
 
-- 如果想让 Todo List 的状态持久化，就是刷新页面之后也能保持当前的 Todo List 内容，应该如何做？（提示：使用某种浏览器提供的存储机制）
-- 如果 Todo List 的内容是通过 HTTP 请求获取到的，在 Hyperapp 中应该使用什么特性编写代码？（提示：看 Hyperapp 文档，关注副作用）
++ 如果想让 Todo List 的状态持久化，就是刷新页面之后也能保持当前的 Todo List 内容，应该如何做？（提示：使用某种浏览器提供的存储机制）
++ 如果 Todo List 的内容是通过 HTTP 请求获取到的，在 Hyperapp 中应该使用什么特性编写代码？（提示：看 Hyperapp 文档，关注副作用）
+  
 
 ## 彩蛋：No Magic!! Hyperapp 源码解析
 
@@ -444,6 +454,7 @@ App -
 
 我们在教大家使用 React 进行前端开发之前，首先引入 Hyperapp，就是因为这个库足够简单，但又包含了编写组件化 Web APP 所需要的必要元素。用过 Hyperapp 之后，你可以通过看它的源代码，来理解 UI 组件基础库的本质。这对于未来的前端开发之路有很大的帮助，因为你知道，这些东西都是普通的 JS 代码而已，**没有魔法**。
 
+
 按 No Magic 的理念，我们是否需要知道浏览器的原理呢？其实这个理念是相对而言的。我们的目标是职业的软件工程师，所以“透明”的东西只限于软件。硬件则不需要了解的那么透彻。如果是硬件工程师，那就需要理解到电路层面了。所以这个 No Magic 理念是有边界的。
 
 软件层面，也有一些细微的差别。计算机系统由许多不同软硬件技术共同构成，这些技术是分层的。比如操作系统层，编程语言层
@@ -454,7 +465,9 @@ App -
 
 总的来说，作为一个前端开发，你不需要精通浏览器和 JS 引擎的 C++ 源码，但你至少需要了解浏览器和 JS 引擎的一些关键原理，能看懂一点点源码。相比用 Hyperapp 写东西 + 读懂 Hyperapp 源码这种组合，这个要求要低很多。计算机的世界有一个很重要的理念，就是分层。不同层之间通过某种协议和接口进行联系。我们要有分辨一项技术属于哪一层的能力。对于同一层里面的技术，你应该有看懂源码的能力。
 
+
 好了，接下来就进入正题，让我们来看看 Hyperapp 的[源码](https://github.com/jorgebucaran/hyperapp/blob/main/index.js)。
+
 
 源码分析请看！！！：[Google 自行搜索！！！](https://www.google.com/search?source=hp&ei=k8DlX4r9FYnY0gTR0rOIAw&q=Hyperapp+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&oq=Hyperapp+%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAE6BQgAEMkDOgIIADoECAAQCjoJCAAQyQMQFhAeOgYIABAWEB46BwghEAoQoAFQjgFYxSNgpyZoBHAAeAGAAYIDiAHbG5IBBDMtMTCYAQCgAQKgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjKkuLt9-jtAhUJrJQKHVHpDDEQ4dUDCAk&uact=5)
 

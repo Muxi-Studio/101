@@ -1,5 +1,6 @@
 # Lab: 使用 Webpack 对 JS 应用进行构建
 
+
 ## 介绍
 
 Eloquent JS 第 10 章对模块、包管理器 NPM、JS 模块实现标准 CommonJS 和 ES Module 这些话题做了介绍。但里面并没有非常实际的项目作为例子。
@@ -15,6 +16,7 @@ Eloquent JS 第 10 章对模块、包管理器 NPM、JS 模块实现标准 Commo
 首先，书中没有提供每个项目的完整（独立 HTML + JS）代码。所以我们按书上的代码，配合 Github 上书本源码，把这个项目独立的拆出来了。在[这个仓库](https://github.com/Muxi-Studio/js-modular-lab)。
 
 cd 到项目目录下，跑一个 `http-server` 之后就可以访问这个项目了。
+
 
 > 本地开发不要直接把 HTML 用浏览器打开（使用 file 协议），这个协议和 HTTP 不同，所以可能会出现一些不一致的情况。最终项目都是要放到服务器上通过 HTTP 协议打开的，因此大家还是耗子尾汁，用 `http-server`。不知道如何安装的同学，先安装 Nodejs。然后 `yarn global add http-server`
 
@@ -66,14 +68,15 @@ runRobotAnimation(VillageState.random(), goalOrientedRobot, []);
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Robot</title>
-	</head>
-	<body></body>
-	<script src="./index.js" type="module"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robot</title>
+  </head>
+  <body></body>
+  <script src="./index.js" type="module"></script>
 </html>
+
 ```
 
 主要是把之前的两个 `<script/>` 标签改为一个，因为现在只需要引入入口 js 即可。然后我们需要给 `<script/>` 标签加一个 `type="module"`。这样浏览器就知道这个 JS 是一个 ES Module。
@@ -82,9 +85,10 @@ runRobotAnimation(VillageState.random(), goalOrientedRobot, []);
 
 看上去没什么特别的，但我们现在把整个应用改造为了模块化的结构。负责不同功能的代码都放在各自文件里面。这些文件里面声明的顶级变量也只能在模块内被访问。模块里面如果有需要暴露给外部的变量，可以通过 export 去显式声明。需要用到的其他模块的变量，可以通过 import 显式去引入。这样就让模块之间相互隔离，但又可以通过设计好的接口来相互调用，一切都是井井有条。**在模块化的架构下，我们就可以编写数万行代码的大型应用了**。
 
+
 ### 任务成果要求
 
-- 将使用 ES Module 改造过的模块化的 Robot 项目推到 esm-version 分支，并可以成功运行。
++ 将使用 ES Module 改造过的模块化的 Robot 项目推到 esm-version 分支，并可以成功运行。
 
 ## 任务二：使用 Webpack 对模块化的 Robot 项目做打包
 
@@ -153,14 +157,14 @@ yarn add webpack webpack-cli -D
 const path = require("path");
 
 module.exports = {
-	entry: "./index.js",
-	output: {
-		filename: "main.js",
-		path: path.resolve(__dirname, "dist"),
-	},
-	resolve: {
-		extensions: [".js"],
-	},
+  entry: "./index.js",
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+  resolve: {
+    extensions: [".js"],
+  },
 };
 ```
 
@@ -193,6 +197,7 @@ module.exports = {
 
 修改一下路径，然后去掉 type，因为现在我们引入的是单个的 js 文件，不需要浏览器解析 ES module 了。
 
+
 此时启动 `http-server`，你可以看到熟悉的机器人画面。
 
 **恭喜你，你完成了人生第一次 Webpack 构建！！**
@@ -202,6 +207,7 @@ module.exports = {
 基于 esm-version 分支，使用 Webpack 进行构建，最终可以成功运行机器人项目。推到 webpack-version 分支。
 
 ## 拓展练习：前端工程化
+
 
 相信你对 Webpack 的基本使用，已经有了一些经验。对于 Webpack 打包的作用，也有了一定的理解。但 Webpack 只是用来打包的吗？
 
@@ -219,12 +225,12 @@ CSS 也一样，有着很多的问题，比如类名的作用域是全局的，�
 
 ```less
 .foo {
-	.bar {
-		color: red;
-	}
-	.baz {
-		color: blue;
-	}
+  .bar {
+    color: red;
+  }
+  .baz {
+     color: blue;
+  }
 }
 ```
 
@@ -234,7 +240,7 @@ CSS 也一样，有着很多的问题，比如类名的作用域是全局的，�
 .foo .bar {
     color: red;
 }
-
+  
 .foo .baz {
      color: blue;
   }
@@ -247,6 +253,7 @@ CSS 也一样，有着很多的问题，比如类名的作用域是全局的，�
 
 Webpack 提供了 Loader 和插件等机制，让前端工程化相关的工具，都可以接入到 Webpack 体系中。Webpack 提供的是一个平台，各个插件和 Loader 可以对资源（JS/CSS/图片）做各种处理（转译，压缩等等），最终 Webpack 会把这些构建产物打成一个包（Bundle）输出。我们最后再把 HTML 和构建出的产物，上传到服务器上做部署。
 
+
 > Webpack 所能做的事情，远不止上述的。前端应用的开发，构建，部署中和工程化相关的任务，多多少少都和 Webpack 有着一些关系。目前大家可以先了解 Webpack 的基本使用，常用的配置项，常用的 Loader 这些基础概念。后面随着参与真正的项目开发，会接触到更多的使用场景。
 
 接下来就出几个场景，让大家感受和练习一下 Webpack 的相关生态。
@@ -257,6 +264,7 @@ Eloquent JS 第 10 章中有[讲到](https://eloquentjavascript.net/10_modules.h
 
 Npm 上有大量的 JS 包，每个包都提供了某种功能。对于一些常见的算法，我们可以直接复用 Npm 上的包，而不是自己重复写。对是否应该用 Npm 包，作者的练习题的 Hint 中也有讲到：
 
+
 > By offloading some work to NPM modules, the code became a little smaller. Each individual module does something rather simple and can be read on its own.
 
 > Is it a good idea to use NPM modules for things that we could have written ourselves? **In principle, yes—for nontrivial things like the pathfinding function you are likely to make mistakes and waste time writing them yourself. For tiny functions like random-item, writing them yourself is easy enough. But adding them wherever you need them does tend to clutter your modules**.
@@ -265,14 +273,16 @@ Npm 上有大量的 JS 包，每个包都提供了某种功能。对于一些常
 
 > So again, this is a **trade-off**, and you can decide either way depending on how much the packages help you.
 
+
 **trade-off**，这是有利有弊的，所以简单的说，it depends，视情况而论。
 
 > 软件工程中处处都是 **trade-off**，很少有十全十美的设计决策。只有最适合的。
 
 **任务要求：**
 
-- 使用 `dijkstrajs` 替换 Robot 中的寻路算法。
-- 思考：如果是 esm-version 的代码，可以直接使用 Npm 包吗？为什么？提示：Npm 的出现早于 ES Module。Npm 上包的模块规范大部分是 CommonJS。
++ 使用 `dijkstrajs` 替换 Robot 中的寻路算法。
++ 思考：如果是 esm-version 的代码，可以直接使用 Npm 包吗？为什么？提示：Npm 的出现早于 ES Module。Npm 上包的模块规范大部分是 CommonJS。
+
 
 ### 认识 Babel：在 IE 上运行 Robot
 
@@ -284,7 +294,9 @@ Npm 上有大量的 JS 包，每个包都提供了某种功能。对于一些常
 
 显然，在 IE 下这个页面会报错，因为我们使用了很多 ES6 特性。打开 F12 开发者工具我们可以看到：
 
+
 // TODO 报错截图
+
 
 这是因为 IE 不支持 ES6 的特性导致的。比如 IE 不支持 const 这样的变量声明。
 
@@ -292,14 +304,18 @@ Npm 上有大量的 JS 包，每个包都提供了某种功能。对于一些常
 
 这个工具就是 [Babel](https://babeljs.io/)。Babel 就是巴别塔的意思，隐含了翻译的意思。最初 Babel 的项目名叫 Six To Five，就是 ES6 转为 ES5 的意思。发展到今天，Babel 已经不只是用于做 ES6 转换 ES5 了，因为随着 IE 被抛弃，其他的主流浏览器都支持 ES6，所以现在我们的项目一般也不需要做太多转译。Babel 现在可以理解为一个插件化的 JS 解析器，可以提供插件，让我们对 JS 的语法树做分析和修改（涉及一些编译原理常识，不理解正常）。利用 Babel，我们可以实现一些自定义的语法，比如 React 中的 JSX（后面会接触）。
 
+
 **任务要求：**
 
-- 为 Webpack 配置 Babel，使用 babel-preset-env 并设置 `targets` 为 ie11。提示：教程用谷歌搜 `Webpack Babel`。
-- Webpack 生成的 JS 中，有一部分代码是 Webpack 自己插入的，是为了把各个模块连接起来。所以我们要给 Webpack 配置 target 属性，值为 `['web', 'es5']`。这可以保证 Webpack 自己生成的代码也是 ES5 的。
-- 代码基于 `webpack-version` 分支，拉取一个 `babel-version` 分支。
-- 把这个代码部署到 Github Page 并在 IE 上成功运行。
+
++ 为 Webpack 配置 Babel，使用 babel-preset-env 并设置 `targets` 为 ie11。提示：教程用谷歌搜 `Webpack Babel`。
++ Webpack 生成的 JS 中，有一部分代码是 Webpack 自己插入的，是为了把各个模块连接起来。所以我们要给 Webpack 配置 target 属性，值为 `['web', 'es5']`。这可以保证 Webpack 自己生成的代码也是 ES5 的。
++ 代码基于 `webpack-version` 分支，拉取一个 `babel-version` 分支。
++ 把这个代码部署到 Github Page 并在 IE 上成功运行。
+
 
 ### 加速本地开发：初识 Webpack-dev-server
+
 
 `webpack-version` 分支有一个问题，如果我们要基于 Robot 代码继续做开发，每次修改代码后，我们都要运行 `yarn run build` 才能刷新页面看到最新的效果。这样的效率太低了！
 
@@ -321,6 +337,7 @@ Npm 上有大量的 JS 包，每个包都提供了某种功能。对于一些常
 
 > 其实直接用 esm-version 那种方式的开发体验是最好的，直接刷新页面即可。所以现在出现了很多基于 ES Module 的开发工具，比如 [Snowpack](https://www.snowpack.dev/)，这种方式叫 Bundleless。也就是不对 JS 做打包，只是运行一下 Babel/SASS 之类的转换，然后让浏览器直接做 import。不过目前来看，生产构建必须使用 Webpack 做打包（因为之前说过的网络原因和 Webpack 现存的庞大插件生态）。对普通规模的项目来说，Webpack 的本地开发体验也不算差，所以 Bundleless 可能在这几年还不会是主流。
 
+
 ### 脚手架 Create React App 的秘密（研究性学习）
 
 在实际的项目开发中，我们通常会使用**脚手架**来初始化项目。因为配置 Webpack 是一项繁复的工作，所以如果有一个工具可以自动生成配置，就可以大大加速项目的搭建。
@@ -329,11 +346,13 @@ Npm 上有大量的 JS 包，每个包都提供了某种功能。对于一些常
 
 在这个任务中，希望大家尝试使用 Create React App 初始化一个项目，并且对 Create React App 的原理做一些探究。
 
+
 **任务要求：**
 
-- 使用 Create React App 创建一个项目，并在本地可以启动。（不懂 React 什么的没关系，就当是一个和 Robot 一样的普通 JS 应用）。
-- Create React App 似乎没有用到 Webpack，就可以实现构建，本地开发等等功能，这究竟是如何实现的呢？提示：使用 [eject](https://create-react-app.dev/docs/available-scripts#npm-run-eject) 功能。
-- 写一篇博客，分析 Create React App 本质上是如何进行构建的（包装了 Webpack）。分析他的 Webpack 配置，看看有哪些不懂的，搜索这些配置，写下你的收获。
++ 使用 Create React App 创建一个项目，并在本地可以启动。（不懂 React 什么的没关系，就当是一个和 Robot 一样的普通 JS 应用）。
++ Create React App 似乎没有用到 Webpack，就可以实现构建，本地开发等等功能，这究竟是如何实现的呢？提示：使用 [eject](https://create-react-app.dev/docs/available-scripts#npm-run-eject) 功能。
++ 写一篇博客，分析 Create React App 本质上是如何进行构建的（包装了 Webpack）。分析他的 Webpack 配置，看看有哪些不懂的，搜索这些配置，写下你的收获。
+
 
 ### 探究 Webpack 原理：分析 Webpack 构建产物（研究性学习）
 
@@ -343,10 +362,19 @@ Npm 上有大量的 JS 包，每个包都提供了某种功能。对于一些常
 
 **任务要求：**
 
-- 这个任务是一个开放性的命题。主要是通过对 Webpack 构建产物的分析来理解 Webpack 的实际作用。可以谷歌搜索 `Webpack  构建产物` 和 `实现简单的 Webpack` 这些关键词来寻找相关的资料。注意看资料要和实际动手观察结合。最终如果有成果，可以写一篇博客。
++ 这个任务是一个开放性的命题。主要是通过对 Webpack 构建产物的分析来理解 Webpack 的实际作用。可以谷歌搜索 `Webpack  构建产物` 和 `实现简单的 Webpack` 这些关键词来寻找相关的资料。注意看资料要和实际动手观察结合。最终如果有成果，可以写一篇博客。
+
 
 ## 结语
 
 祝贺你，如果你完成了上述的拓展任务，现在你已经是 **前端工程化** 的专家了！！在未来的项目实战中，不管是使用脚手架，还是直接使用 Webpack，都要搞清楚自己的项目是如何构建的，npm scripts 里面的那些命令又是如何工作的。这样在遇到问题的时候，才会认清问题的本质出在哪，从而快速定位和解决问题。
 
 前端工程化并不难，如果觉得难，就是没有学好基础。像本次实验一样，从源头来一步一步的学习项目的构建，也是以后学习其他工程化相关工具的一个范本。有问题多试验，多思考，问题的本质总归是简单的。
+
+
+
+
+
+
+
+

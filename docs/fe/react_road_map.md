@@ -1,7 +1,7 @@
 # React 学习指南
 
-## 初学者看这里
 
+## 初学者看这里
 ### 引子：React 与 Hyperapp
 
 React 是 Facebook 于 2013 年开源的 JS 库，用于构建用户界面。这也是目前前端界最流行的 UI 基础库。
@@ -21,17 +21,19 @@ React 在函数式组件中的局部状态和副作用，是通过 Hook 来实�
 让我们来看一个简单的例子：
 
 ```jsx
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function Example() {
-	const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
-	return (
-		<div>
-			<p>You clicked {count} times</p>
-			<button onClick={() => setCount(count + 1)}>Click me</button>
-		</div>
-	);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
 }
 ```
 
@@ -43,13 +45,15 @@ Codepen 实例
 
 通过这个例子，我们就可以实现一个计数器，需要注意的是，React 的事件回调属性是驼峰的形式，并且回调只是普通的函数，里面可以执行任意逻辑，无需像 Hyperapp 那样返回新的 state。
 
+
 此外 React 比起 Hyperapp 还有一些核心功能
 
-- 支持合成事件，抹平了不同浏览器的事件兼容性
-- 内置了调度系统，会根据情况安排最合适的渲染时机，避免卡顿
-- 使用 fiber 架构，可以把组件的渲染工作拆分到多次完成，避免卡顿
-- 支持跨端，可以通过 React-native 编写 安卓/iOS/Web 三段通用的 App
-- Context，Ref，Suspense，Fragment，Portal，各种 Hooks 等等多种多样的 API
++ 支持合成事件，抹平了不同浏览器的事件兼容性
++ 内置了调度系统，会根据情况安排最合适的渲染时机，避免卡顿
++ 使用 fiber 架构，可以把组件的渲染工作拆分到多次完成，避免卡顿
++ 支持跨端，可以通过 React-native 编写 安卓/iOS/Web 三段通用的 App
++ Context，Ref，Suspense，Fragment，Portal，各种 Hooks 等等多种多样的 API
+
 
 ### 学习材料推荐
 
@@ -71,8 +75,9 @@ Codepen 实例
 
 这本书的食用方式：
 
-- 这本书用一个 Hacker News 程序员论坛的例子，贯穿全书，每一节后面都有源码链接，是在线的，可以看当前章节完成之后书本例子的代码。一定要结合代码看，最好可以自己在本地起一个项目，跟着写。
-- 每章结束后会有一些链接，主要是章节里提到的 JS 知识点，如果觉得有不懂的 JS 知识点，不妨先停下来复习一下。
++ 这本书用一个 Hacker News 程序员论坛的例子，贯穿全书，每一节后面都有源码链接，是在线的，可以看当前章节完成之后书本例子的代码。一定要结合代码看，最好可以自己在本地起一个项目，跟着写。
++ 每章结束后会有一些链接，主要是章节里提到的 JS 知识点，如果觉得有不懂的 JS 知识点，不妨先停下来复习一下。
+
 
 ### 小练习
 
@@ -80,16 +85,18 @@ Codepen 实例
 
 ## 进阶内容
 
-- 受控 vs 非受控
-- Advanced Topics
-- 合成事件
-- ErrorBourbonry
-- 设计模式：HOC + renderProps
-- 自定义 Hooks
-- Suspense
++ 受控 vs 非受控
++ Advanced Topics
++ 合成事件
++ ErrorBourbonry
++ 设计模式：HOC + renderProps
++ 自定义 Hooks
++ Suspense
 
 // todo
 
+
 ## 原理
+
 
 // todo
