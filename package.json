@@ -1,0 +1,24 @@
+{
+	"name": "101",
+	"version": "1.0.0",
+	"description": "木犀沉淀的互联网学习计划",
+	"main": "index.js",
+	"author": "Muxistudio",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Muxi-Studio/101/issues"
+	},
+	"homepage": "https://github.com/Muxi-Studio/101#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Muxi-Studio/101.git"
+	},
+	"scripts": {
+		"docs:dev": "vitepress dev docs",
+		"docs:build": "vitepress build docs",
+		"docs:serve": "vitepress serve docs"
+	},
+	"devDependencies": {
+		"vitepress": "^1.0.1"
+	}
+}
