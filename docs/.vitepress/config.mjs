@@ -9,7 +9,7 @@ export default defineConfig({
   lastUpdated: true,
   srcExclude: ['**/README.md', '**/TODO.md'],
   head: [
-    ['link', {rel: 'icon', type: 'image/png', href: '/101/muxilogo.png'}],
+    ['link', {rel: 'icon', type: 'image/ico', href: '/101/muxilogo.ico'}],
   ],
   markdown: {
     lineNumbers: true,
