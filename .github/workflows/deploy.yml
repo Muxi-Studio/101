@@ -37,8 +37,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Install pnpm
-          run: npm install -g pnpm
+          cache: 'pnpm'
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
