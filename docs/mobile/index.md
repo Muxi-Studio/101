@@ -21,7 +21,7 @@
 
 ### 培养理念
 
-这里描述的主要是公共CS基础培养之外的专业方向的培养。大一上学习 Java 和 Android 基础（UI、网络数据交互、本地数据存储、App 的基础分层等）。大一下学习更多 Android 进阶(kotlin，jetpack等）的相关技术（例如 Service、Webview、多线程与任务优化等），进行 Mini Project 和项目上线的实践。大二以后，会作为主力参与一个团队正式项目的开发，并学习 Kotlin/系统源码/优秀框架源码/打包流程与优化。大三根据自己的兴趣方向，可以选择性在下述技术方向或职业方向中选择 1-2 个进行深造。
+这里描述的主要是公共 CS 基础培养之外的专业方向的培养。大一上学习 Java 和 Android 基础（UI、网络数据交互、本地数据存储、App 的基础分层等）。大一下学习更多 Android 进阶(kotlin，jetpack 等）的相关技术（例如 Service、Webview、多线程与任务优化等），进行 Mini Project 和项目上线的实践。大二以后，会作为主力参与一个团队正式项目的开发，并学习 Kotlin/系统源码/优秀框架源码/打包流程与优化。大三根据自己的兴趣方向，可以选择性在下述技术方向或职业方向中选择 1-2 个进行深造。
 
 总的培养理念就是深度 + 广度，两个方向发展，同时要有扎实的基础。在端侧领域可以有一定的视野，不局限于端侧技术本身，同时又可以深入框架原理，养成不错的代码功底，有参与组件库之类公共基础设施开发的能力。
 
@@ -39,59 +39,58 @@
 
 #### 2022 级
 
-+ [continuematical](https://github.com/continuematical)
-+ [Gyicyo](https://github.com/Gyicyo)
-+ [Edmund-Liz](https://github.com/Edmund-Liz)
-+ [dwqing](https://github.com/dwqing)
-+ [PureLipper](https://github.com/PureLipper)
-+ [hydrogenair](https://github.com/hydrogenair)
+- [continuematical](https://github.com/continuematical)
+- [Gyicyo](https://github.com/Gyicyo)
+- [Edmund-Liz](https://github.com/Edmund-Liz)
+- [dwqing](https://github.com/dwqing)
+- [PureLipper](https://github.com/PureLipper)
+- [hydrogenair](https://github.com/hydrogenair)
 
 #### 2021 级
 
-+ [jie-junyi](https://github.com/jie-junyi)
-+ [flsdqm](https://github.com/flsdqm)
-+ [Nutcra-yu](https://github.com/Nutcra-yu)
-+ [caohuisheng](https://github.com/caohuisheng)
+- [jie-junyi](https://github.com/jie-junyi)
+- [flsdqm](https://github.com/flsdqm)
+- [Nutcra-yu](https://github.com/Nutcra-yu)
+- [caohuisheng](https://github.com/caohuisheng)
 
 #### 2020 级
 
-+ [xiaozhu-sorce](https://github.com/xiaozhu-sorce)
-+ [tiddster](https://github.com/tiddster)
-+ [huangxinhere](https://github.com/huangxinhere)
-+ [qiu-yunhao](https://github.com/qiu-yunhao)
-+ [liuyuxin-cloud](https://github.com/liuyuxin-cloud)
-+ [hyl-code](https://github.com/hyl-code)
+- [xiaozhu-sorce](https://github.com/xiaozhu-sorce)
+- [tiddster](https://github.com/tiddster)
+- [huangxinhere](https://github.com/huangxinhere)
+- [qiu-yunhao](https://github.com/qiu-yunhao)
+- [liuyuxin-cloud](https://github.com/liuyuxin-cloud)
+- [hyl-code](https://github.com/hyl-code)
 
 #### 2019 级
 
-+ [charming-c](https://github.com/charming-c)
-+ [iulay1007](https://github.com/iulay1007)
+- [charming-c](https://github.com/charming-c)
+- [iulay1007](https://github.com/iulay1007)
 
 #### 2018 级
 
-+ [zyflool](https://github.com/zyflool)
-+ [Ljl](https://github.com/Ljl233)
-+ [wenxiny](https://github.com/wenxiy)
+- [zyflool](https://github.com/zyflool)
+- [Ljl](https://github.com/Ljl233)
+- [wenxiny](https://github.com/wenxiy)
 
 #### 2017 级
 
-+ [messi-wpy](https://github.com/messi-wpy)
-+ [BAHUANNN](https://github.com/BAHUANNN)
-+ [yueyy](https://github.com/yueyy)
+- [messi-wpy](https://github.com/messi-wpy)
+- [BAHUANNN](https://github.com/BAHUANNN)
+- [yueyy](https://github.com/yueyy)
 
 #### 2016 级
 
-+ [kolibreath](https://github.com/kolibreath)
+- [kolibreath](https://github.com/kolibreath)
 
 #### 2015 级
 
-+ [December1900](https://github.com/December1900)
+- [December1900](https://github.com/December1900)
 
 #### 2014 级
 
-+ [fengminchao](https://github.com/fengminchao)
+- [fengminchao](https://github.com/fengminchao)
 
 #### 2012 级
 
-+ [2BAB](https://github.com/2bab)（顾问）
-
+- [2BAB](https://github.com/2bab)（顾问）
