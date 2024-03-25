@@ -6,7 +6,7 @@
 
 # 爬取 HTML 源码
 
-以[廖雪峰的官网]([https://www.liaoxuefeng.com/)为例(因为它网页内容基本不会变)
+以[廖雪峰的官网](https://www.liaoxuefeng.com/)为例(因为它网页内容基本不会变)
 
 > https://www.liaoxuefeng.com/
 
