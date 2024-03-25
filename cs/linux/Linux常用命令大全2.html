@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux 常用命令大全 2 | 木犀 101</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="木犀沉淀的互联网学习入门指南">
+    
+    <link rel="preload" href="/101/assets/css/0.styles.468aa852.css" as="style"><link rel="preload" href="/101/assets/js/app.e846d27b.js" as="script"><link rel="preload" href="/101/assets/js/2.62095aff.js" as="script"><link rel="preload" href="/101/assets/js/37.988694a6.js" as="script"><link rel="prefetch" href="/101/assets/js/10.fcbd24e6.js"><link rel="prefetch" href="/101/assets/js/11.5b37a291.js"><link rel="prefetch" href="/101/assets/js/12.368e3d38.js"><link rel="prefetch" href="/101/assets/js/13.991ddc31.js"><link rel="prefetch" href="/101/assets/js/14.7a3837af.js"><link rel="prefetch" href="/101/assets/js/15.5d307abe.js"><link rel="prefetch" href="/101/assets/js/16.dcebab3d.js"><link rel="prefetch" href="/101/assets/js/17.7d9998d2.js"><link rel="prefetch" href="/101/assets/js/18.d6632dd6.js"><link rel="prefetch" href="/101/assets/js/19.f67f1073.js"><link rel="prefetch" href="/101/assets/js/20.31298780.js"><link rel="prefetch" href="/101/assets/js/21.a445b245.js"><link rel="prefetch" href="/101/assets/js/22.8d9aef1d.js"><link rel="prefetch" href="/101/assets/js/23.61c5a46c.js"><link rel="prefetch" href="/101/assets/js/24.730654fb.js"><link rel="prefetch" href="/101/assets/js/25.a93260ec.js"><link rel="prefetch" href="/101/assets/js/26.40172075.js"><link rel="prefetch" href="/101/assets/js/27.0e7cb050.js"><link rel="prefetch" href="/101/assets/js/28.1cbc516b.js"><link rel="prefetch" href="/101/assets/js/29.2bd554c3.js"><link rel="prefetch" href="/101/assets/js/3.77bdc59d.js"><link rel="prefetch" href="/101/assets/js/30.9183ae20.js"><link rel="prefetch" href="/101/assets/js/31.07563caa.js"><link rel="prefetch" href="/101/assets/js/32.7c5fa521.js"><link rel="prefetch" href="/101/assets/js/33.58ae898d.js"><link rel="prefetch" href="/101/assets/js/34.25b7c5be.js"><link rel="prefetch" href="/101/assets/js/35.e7c0fc1f.js"><link rel="prefetch" href="/101/assets/js/36.78b758a4.js"><link rel="prefetch" href="/101/assets/js/38.5c532b03.js"><link rel="prefetch" href="/101/assets/js/39.5cac79ed.js"><link rel="prefetch" href="/101/assets/js/4.2d395967.js"><link rel="prefetch" href="/101/assets/js/40.7264971d.js"><link rel="prefetch" href="/101/assets/js/41.79e10bbd.js"><link rel="prefetch" href="/101/assets/js/42.d2f8c35d.js"><link rel="prefetch" href="/101/assets/js/43.40e77d43.js"><link rel="prefetch" href="/101/assets/js/44.1dcb58dd.js"><link rel="prefetch" href="/101/assets/js/45.c7616dc0.js"><link rel="prefetch" href="/101/assets/js/46.e94ba3cd.js"><link rel="prefetch" href="/101/assets/js/47.f623bb5f.js"><link rel="prefetch" href="/101/assets/js/48.a881b6e7.js"><link rel="prefetch" href="/101/assets/js/49.27b07f6a.js"><link rel="prefetch" href="/101/assets/js/5.de44bd6c.js"><link rel="prefetch" href="/101/assets/js/50.26a4d27b.js"><link rel="prefetch" href="/101/assets/js/51.93d76270.js"><link rel="prefetch" href="/101/assets/js/52.7cda6b50.js"><link rel="prefetch" href="/101/assets/js/53.92f88595.js"><link rel="prefetch" href="/101/assets/js/54.a4f8674c.js"><link rel="prefetch" href="/101/assets/js/55.d85521b8.js"><link rel="prefetch" href="/101/assets/js/56.43fdbeb5.js"><link rel="prefetch" href="/101/assets/js/57.408f3691.js"><link rel="prefetch" href="/101/assets/js/58.1d6b5f7b.js"><link rel="prefetch" href="/101/assets/js/59.1ceea8b4.js"><link rel="prefetch" href="/101/assets/js/6.2fef63e8.js"><link rel="prefetch" href="/101/assets/js/60.9bcb17b1.js"><link rel="prefetch" href="/101/assets/js/61.b496143d.js"><link rel="prefetch" href="/101/assets/js/62.d6745da0.js"><link rel="prefetch" href="/101/assets/js/63.85e9dd75.js"><link rel="prefetch" href="/101/assets/js/64.f951e5e5.js"><link rel="prefetch" href="/101/assets/js/65.304ecc5d.js"><link rel="prefetch" href="/101/assets/js/66.7c1618ef.js"><link rel="prefetch" href="/101/assets/js/7.fd59375b.js"><link rel="prefetch" href="/101/assets/js/8.8f25dafa.js"><link rel="prefetch" href="/101/assets/js/9.25f49b1a.js">
+    <link rel="stylesheet" href="/101/assets/css/0.styles.468aa852.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/101/" class="home-link router-link-active"><!----> <span class="site-name">木犀 101</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/101/fe/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/101/mobile/" class="nav-link">
+  移动端
+</a></div><div class="nav-item"><a href="/101/be/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/101/product/" class="nav-link">
+  产品
+</a></div><div class="nav-item"><a href="/101/design/" class="nav-link">
+  设计
+</a></div><div class="nav-item"><a href="/101/cs/" class="nav-link router-link-active">
+  计算机基础
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/101/fe/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/101/mobile/" class="nav-link">
+  移动端
+</a></div><div class="nav-item"><a href="/101/be/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/101/product/" class="nav-link">
+  产品
+</a></div><div class="nav-item"><a href="/101/design/" class="nav-link">
+  设计
+</a></div><div class="nav-item"><a href="/101/cs/" class="nav-link router-link-active">
+  计算机基础
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>计算机基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/101/cs/" aria-current="page" class="sidebar-link">简介</a></li><li><a href="/101/cs/prepare.html" class="sidebar-link">预备知识</a></li><li><a href="/101/cs/culture.html" class="sidebar-link">计算机文化：推荐资源</a></li><li><a href="/101/cs/freshmen_fall.html" class="sidebar-link">大一上学期</a></li><li><a href="/101/cs/freshmen_spring.html" class="sidebar-link">大一下学期</a></li><li><a href="/101/cs/c_study.html" class="sidebar-link">C 语言专题</a></li><li><a href="/101/cs/linux_study.html" class="sidebar-link">Linux 专题</a></li><li><a href="/101/cs/computer_study.html" class="sidebar-link">计算机专题</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux-常用命令大全-2"><a href="#linux-常用命令大全-2" class="header-anchor">#</a> Linux 常用命令大全 2</h1> <h2 id="目录结构"><a href="#目录结构" class="header-anchor">#</a> 目录结构</h2> <p><strong>ls [OPTION]... [FILE]... 列出目录内容</strong></p> <p>当执行 ls 命令时，默认显示的只有非隐藏文件的文件名、以文件名进行排序及文件名代表的颜色显示。当不加参数时，默认列出当前目录的列表信息。</p> <div class="language- extra-class"><pre class="language-text"><code>-a：--all的缩写，显示所有的文件，包括隐藏文件(以.开头的文件)
+-A：--almost-all的缩写，显示所有的文件，包括隐藏文件，但不包括表示当前目录.和上级目录..这两个文件。
+-h：将文件内容大小以GB、KB等易读的方式显示
+-l：列出长数据串，显示出文件的属性与权限等数据信息(常用)  其中时间为ctime
+-d：--directory的缩写，仅列出目录本身，而不是列出目录里的内容列表
+</code></pre></div><p><strong>tree 以树状图列出当前目录结构</strong></p> <h2 id="磁盘管理"><a href="#磁盘管理" class="header-anchor">#</a> 磁盘管理</h2> <p><strong>df [OPTION] [FILE] 显示文件系统（某一分区）磁盘使用量</strong></p> <div class="language- extra-class"><pre class="language-text"><code>-a  列出所有挂在的文件系统
+-t  限制列出文件系统的类型  例如 ext4
+-h  使用人类可读的格式
+-T  显示文件系统的形式
+例如：
+df /etc/passwd  -hT  查看/etc/passwd文件所在的文件系统，显示文件系统的类型，列出相关信息
+df /dev/sda1 -h
+df / -h
+df -aT |grep sd
+</code></pre></div><p><strong>du [OPTION]... [FILE]... 显示目录或文件的大小</strong><br> <em>如果[FILE]为文件，则显示文件的大小</em><br> <em>如果[FILE]为文件夹，则列出所有子文件夹，并分别统计文件夹大小（计算了文件，但默认不列出）</em></p> <div class="language- extra-class"><pre class="language-text"><code>-a  列出所有文件（包括文件和文件夹）
+-h  使用人类可读的格式
+-s 或 --summarize 仅显示总计（不显示子文件夹）
+例如：
+du -sh /etc   显示/etc 文件夹的大小
+du -h /etc/passwd   显示某个文件的大小
+du -ah /var/log | sort -h  列出/var/log下所有文件和文件夹的大小，并从小到大排序
+</code></pre></div><p><strong>mount [-t vfstype] [-o options] device dir</strong></p> <p>-t vfstype 指定文件系统的类型，通常不必指定，mount 会自动选择正确的类型。</p> <blockquote><p>光盘或光盘镜像：iso9660
+DOS fat16 文件系统：msdos
+Windows 9x fat32 文件系统：vfat
+Windows NT ntfs 文件系统：ntfs
+Mount Windows 文件网络共享：smbfs
+UNIX(LINUX) 文件网络共享：nfs</p></blockquote> <p>-o options 主要用来描述设备或档案的挂接方式。</p> <div class="language- extra-class"><pre class="language-text"><code>loop：用来把一个文件当成硬盘分区挂接上系统
+ro：采用只读方式挂接设备
+rw：采用读写方式挂接设备
+iocharset：指定访问文件系统所用字符集
+</code></pre></div><p>--bind 建立两个目录的映射关系（完全同步）</p> <blockquote><p>有时候需要在一个目前下，映射另一个目录下的内容。或者在开通 FTP 账号的时候，两个目录不在一起，而又需要可以在一个账号下访问这两个目录。第一种方法就是像 Server-U 一样添加多个目录，另一种就是建立两个目录的映射。<br>
+我们可以使用 mount --bind 源目录 映射到的目标路径<br>
+如： mount --bind /www/dir1 /www/xxr.so/dir2<br>
+/www/dir1 为源目录<br>
+/www/xxr.so/dir2 为需要映射到的目录。<br>
+注意： dir2 目录必须是已经创建的目录，如果 dir2 目录不存在是无法完成操作的。<br>
+当我们执行完上面的操作后我们可在 dir2 中看到 dir1 中的所有内容，如果我们对 dir2 中的内容进行修改或增删那么 dir1 中的内容也会跟着变化。因为 dir2 中其实并没有内容。他的所有内容都是映射自 dir1，你看到内容也都是 dir1k 中的内容。<br>
+内容来自 CSDN https://blog.csdn.net/hotlinhao/article/details/8958704</p></blockquote> <p><strong>umount [FILE_SYS]</strong></p> <p>下面两条命令分别通过设备名和挂载点卸载文件系统，同时输出详细信息：</p> <div class="language- extra-class"><pre class="language-text"><code># umount -v /dev/sda1          通过设备名卸载
+/dev/sda1 umounted
+# umount -v /mnt/mymount/      通过挂载点卸载
+/tmp/diskboot.img umounted
+</code></pre></div><p><strong>sync</strong></p> <p>Linux sync 命令用于数据同步,sync 命令是在关闭 Linux 系统时使用的。<br>
+Linux 系统中欲写入硬盘的资料有的时候会了效率起见，会写到 filesystem buffer 中，这个 buffer 是一块记忆体空间，如果欲写入硬盘的资料存于此 buffer 中，而系统又突然断电的话，那么资料就会流失了，sync 指令会将存于 buffer 中的资料强制写入硬盘中。</p> <h2 id="磁盘分区"><a href="#磁盘分区" class="header-anchor">#</a> 磁盘分区</h2> <p><strong>fdisk [options] [device] 操作硬盘分区表（MBR）</strong> 【过时技术】，不推荐使用</p> <div class="language- extra-class"><pre class="language-text"><code>-l 列出指定设备的分区表
+例如：
+sudo fdisk -l /dev/sda 查看sda硬盘上的分区表
+sudo fdisk -l  列出所有设备上的分区表（/proc/partitions）
+sudo fdisk /dev/sda    根据提示操作，对sda硬盘分区
+</code></pre></div><p><strong>gdisk [-l] [device] 操作硬盘分区表（GPT）</strong></p> <p>推荐使用 GUID 磁盘分区表，操作方式与 fdisk 类似<br> <code>-l 列出指定设备的分区表</code></p> <p><strong>parted [options] [device [command [options...]...]] 分区</strong></p> <div class="language- extra-class"><pre class="language-text"><code>-l --list 打印出所有block设备的分区信息
+-m --machine 打印出方便机器解析的输出
+-s --script 不进入用户交互模式
+-a --alignment 对齐分区
+</code></pre></div><h2 id="文件转换"><a href="#文件转换" class="header-anchor">#</a> 文件转换</h2> <p><strong>dd [option] 读取、转换并输出数据</strong></p> <div class="language- extra-class"><pre class="language-text"><code>if=文件名：输入文件名，缺省为标准输入。即指定源文件。
+of=文件名：输出文件名，缺省为标准输出。即指定目的文件。
+bs=bytes：同时设置读入/输出的块大小为bytes个字节
+count=blocks：仅拷贝blocks个块，块大小等于ibs指定的字节数。
+</code></pre></div><p>实例：</p> <div class="language- extra-class"><pre class="language-text"><code>1.将本地的/dev/hdb整盘备份到/dev/hdd
+
+dd if=/dev/hdb of=/dev/hdd
+
+2.将/dev/hdb全盘数据备份到指定路径的image文件
+
+dd if=/dev/hdb of=/root/image
+
+注意！ 用dd备份磁盘生成的文件和源磁盘总空间差不多大
+
+3.备份磁盘开始的512个字节大小的MBR信息到指定文件
+
+dd if=/dev/hda of=/root/image count=1 bs=512
+
+4.增加swap分区文件大小
+
+第一步:创建一个大小为256M的文件:
+dd if=/dev/zero of=/swapfile bs=1024 count=262144
+第二步:把这个文件变成swap文件:
+mkswap /swapfile
+第三步:启用这个swap文件:
+swapon /swapfile
+第四步:编辑/etc/fstab文件,使在每次开机时自动加载swap文件:
+/swapfile swap swap default 0 0
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/101/assets/js/app.e846d27b.js" defer></script><script src="/101/assets/js/2.62095aff.js" defer></script><script src="/101/assets/js/37.988694a6.js" defer></script>
+  </body>
+</html>

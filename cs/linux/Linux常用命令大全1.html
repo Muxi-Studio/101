@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux 常用命令大全 1 | 木犀 101</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="木犀沉淀的互联网学习入门指南">
+    
+    <link rel="preload" href="/101/assets/css/0.styles.468aa852.css" as="style"><link rel="preload" href="/101/assets/js/app.e846d27b.js" as="script"><link rel="preload" href="/101/assets/js/2.62095aff.js" as="script"><link rel="preload" href="/101/assets/js/36.78b758a4.js" as="script"><link rel="prefetch" href="/101/assets/js/10.fcbd24e6.js"><link rel="prefetch" href="/101/assets/js/11.5b37a291.js"><link rel="prefetch" href="/101/assets/js/12.368e3d38.js"><link rel="prefetch" href="/101/assets/js/13.991ddc31.js"><link rel="prefetch" href="/101/assets/js/14.7a3837af.js"><link rel="prefetch" href="/101/assets/js/15.5d307abe.js"><link rel="prefetch" href="/101/assets/js/16.dcebab3d.js"><link rel="prefetch" href="/101/assets/js/17.7d9998d2.js"><link rel="prefetch" href="/101/assets/js/18.d6632dd6.js"><link rel="prefetch" href="/101/assets/js/19.f67f1073.js"><link rel="prefetch" href="/101/assets/js/20.31298780.js"><link rel="prefetch" href="/101/assets/js/21.a445b245.js"><link rel="prefetch" href="/101/assets/js/22.8d9aef1d.js"><link rel="prefetch" href="/101/assets/js/23.61c5a46c.js"><link rel="prefetch" href="/101/assets/js/24.730654fb.js"><link rel="prefetch" href="/101/assets/js/25.a93260ec.js"><link rel="prefetch" href="/101/assets/js/26.40172075.js"><link rel="prefetch" href="/101/assets/js/27.0e7cb050.js"><link rel="prefetch" href="/101/assets/js/28.1cbc516b.js"><link rel="prefetch" href="/101/assets/js/29.2bd554c3.js"><link rel="prefetch" href="/101/assets/js/3.77bdc59d.js"><link rel="prefetch" href="/101/assets/js/30.9183ae20.js"><link rel="prefetch" href="/101/assets/js/31.07563caa.js"><link rel="prefetch" href="/101/assets/js/32.7c5fa521.js"><link rel="prefetch" href="/101/assets/js/33.58ae898d.js"><link rel="prefetch" href="/101/assets/js/34.25b7c5be.js"><link rel="prefetch" href="/101/assets/js/35.e7c0fc1f.js"><link rel="prefetch" href="/101/assets/js/37.988694a6.js"><link rel="prefetch" href="/101/assets/js/38.5c532b03.js"><link rel="prefetch" href="/101/assets/js/39.5cac79ed.js"><link rel="prefetch" href="/101/assets/js/4.2d395967.js"><link rel="prefetch" href="/101/assets/js/40.7264971d.js"><link rel="prefetch" href="/101/assets/js/41.79e10bbd.js"><link rel="prefetch" href="/101/assets/js/42.d2f8c35d.js"><link rel="prefetch" href="/101/assets/js/43.40e77d43.js"><link rel="prefetch" href="/101/assets/js/44.1dcb58dd.js"><link rel="prefetch" href="/101/assets/js/45.c7616dc0.js"><link rel="prefetch" href="/101/assets/js/46.e94ba3cd.js"><link rel="prefetch" href="/101/assets/js/47.f623bb5f.js"><link rel="prefetch" href="/101/assets/js/48.a881b6e7.js"><link rel="prefetch" href="/101/assets/js/49.27b07f6a.js"><link rel="prefetch" href="/101/assets/js/5.de44bd6c.js"><link rel="prefetch" href="/101/assets/js/50.26a4d27b.js"><link rel="prefetch" href="/101/assets/js/51.93d76270.js"><link rel="prefetch" href="/101/assets/js/52.7cda6b50.js"><link rel="prefetch" href="/101/assets/js/53.92f88595.js"><link rel="prefetch" href="/101/assets/js/54.a4f8674c.js"><link rel="prefetch" href="/101/assets/js/55.d85521b8.js"><link rel="prefetch" href="/101/assets/js/56.43fdbeb5.js"><link rel="prefetch" href="/101/assets/js/57.408f3691.js"><link rel="prefetch" href="/101/assets/js/58.1d6b5f7b.js"><link rel="prefetch" href="/101/assets/js/59.1ceea8b4.js"><link rel="prefetch" href="/101/assets/js/6.2fef63e8.js"><link rel="prefetch" href="/101/assets/js/60.9bcb17b1.js"><link rel="prefetch" href="/101/assets/js/61.b496143d.js"><link rel="prefetch" href="/101/assets/js/62.d6745da0.js"><link rel="prefetch" href="/101/assets/js/63.85e9dd75.js"><link rel="prefetch" href="/101/assets/js/64.f951e5e5.js"><link rel="prefetch" href="/101/assets/js/65.304ecc5d.js"><link rel="prefetch" href="/101/assets/js/66.7c1618ef.js"><link rel="prefetch" href="/101/assets/js/7.fd59375b.js"><link rel="prefetch" href="/101/assets/js/8.8f25dafa.js"><link rel="prefetch" href="/101/assets/js/9.25f49b1a.js">
+    <link rel="stylesheet" href="/101/assets/css/0.styles.468aa852.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/101/" class="home-link router-link-active"><!----> <span class="site-name">木犀 101</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/101/fe/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/101/mobile/" class="nav-link">
+  移动端
+</a></div><div class="nav-item"><a href="/101/be/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/101/product/" class="nav-link">
+  产品
+</a></div><div class="nav-item"><a href="/101/design/" class="nav-link">
+  设计
+</a></div><div class="nav-item"><a href="/101/cs/" class="nav-link router-link-active">
+  计算机基础
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/101/fe/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/101/mobile/" class="nav-link">
+  移动端
+</a></div><div class="nav-item"><a href="/101/be/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/101/product/" class="nav-link">
+  产品
+</a></div><div class="nav-item"><a href="/101/design/" class="nav-link">
+  设计
+</a></div><div class="nav-item"><a href="/101/cs/" class="nav-link router-link-active">
+  计算机基础
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>计算机基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/101/cs/" aria-current="page" class="sidebar-link">简介</a></li><li><a href="/101/cs/prepare.html" class="sidebar-link">预备知识</a></li><li><a href="/101/cs/culture.html" class="sidebar-link">计算机文化：推荐资源</a></li><li><a href="/101/cs/freshmen_fall.html" class="sidebar-link">大一上学期</a></li><li><a href="/101/cs/freshmen_spring.html" class="sidebar-link">大一下学期</a></li><li><a href="/101/cs/c_study.html" class="sidebar-link">C 语言专题</a></li><li><a href="/101/cs/linux_study.html" class="sidebar-link">Linux 专题</a></li><li><a href="/101/cs/computer_study.html" class="sidebar-link">计算机专题</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux-常用命令大全-1"><a href="#linux-常用命令大全-1" class="header-anchor">#</a> Linux 常用命令大全 1</h1> <h2 id="文件"><a href="#文件" class="header-anchor">#</a> 文件</h2> <h3 id="文件内容查阅"><a href="#文件内容查阅" class="header-anchor">#</a> 文件内容查阅</h3> <ol><li>cat [-An] [FILE1] [FILE2] ... 　输出文件内容<div class="language- extra-class"><pre class="language-text"><code>-A 显示特殊字符 $行尾  ^I TAB
+-n 标出行号
+</code></pre></div></li> <li>tac 反向输出文件内容（从最后一行开始）</li> <li>more 翻页显示<div class="language- extra-class"><pre class="language-text"><code>[Enter]　下一行
+[Space]　下一页
+[q] 退出
+</code></pre></div></li> <li>less 一页一页翻动<div class="language- extra-class"><pre class="language-text"><code>[pageup] [pagedown] 　翻页
+/Str 　向下搜索
+?Str 　向上搜索
+[n] 　　搜索下一个
+[N] 　　搜索上一个
+</code></pre></div></li> <li>head [-n num] [FILE]　　取出前面几行</li> <li>tail [-n num] [FILE]　　取出后面几行</li> <li>od [-t TYPE] [FILE]　　输出二进制文件</li></ol> <h3 id="文件内容搜索"><a href="#文件内容搜索" class="header-anchor">#</a> 文件内容搜索</h3> <p>grep 　搜索正则表达式并把匹配的行打印出来<br>
+grep (global search regular expression(RE) and print out the line,全面搜索正则表达式并把行打印出来)是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。<br> <strong>正则表达式简单来说有三大流派：PCRE、BRE、ERE。grep 默认使用 BRE</strong></p> <p><strong>推荐使用 Perl 正则表达式 grep -P 简洁优美，通用强大</strong><br>
+关于基本、扩展正则表达式的问题参考 http://blog.51cto.com/linuxkeep/956155<br>
+关于正则流派、引擎的问题参考 https://yelf.me/notes/computer/re/<br>
+语法：</p> <div class="language- extra-class"><pre class="language-text"><code>grep [OPTIONS] PATTERN [FILE...]
+grep [OPTIONS] -e PATTERN ... [FILE...]
+grep [OPTIONS] -f FILE ... [FILE...]
+</code></pre></div><ul><li>正则流派选项</li></ul> <div class="language- extra-class"><pre class="language-text"><code>Matcher Selection
+       -E, --extended-regexp
+         Interpret PATTERN as an extended regular expression (ERE, see below).
+       -F, --fixed-strings
+         Interpret  PATTERN as a list of fixed strings (instead of regular expressions), separated by newlines, any of which is to be matched.
+       -G, --basic-regexp
+          Interpret PATTERN as a basic regular expression (BRE, see below).  This is the default.
+       -P, --perl-regexp
+          Interpret the pattern as a Perl-compatible regular expression (PCRE).  This is experimental and grep -P  may  warn  of unimplemented features.
+</code></pre></div><ul><li>匹配控制选项</li></ul> <div class="language- extra-class"><pre class="language-text"><code>-i, --ignore-case
+      Ignore case distinctions, so that characters that differ only in case match each other.
+-v, --invert-match
+      Invert the sense of matching, to select non-matching lines.
+-e PATTERN, --regexp=PATTERN
+      Use  PATTERN as the pattern.  If this option is used multiple times or is combined with the -f (--file) option, search for all patterns given.  This option can be used to protect a pattern beginning with “-”.
+</code></pre></div><ul><li>文件与文件夹选项</li></ul> <div class="language- extra-class"><pre class="language-text"><code>-r, --recursive
+     Read all files under each directory, recursively, following symbolic links only if they are on the command line.  Note that if no file operand is given, grep searches the working directory.  This is equivalent to the -d recurse option.
+</code></pre></div><h3 id="文件搜索"><a href="#文件搜索" class="header-anchor">#</a> 文件搜索</h3> <ol><li>which [-a] command 　　搜索命令程序的位置<div class="language- extra-class"><pre class="language-text"><code>-a 列出所有出现的位置
+which -a ls　　搜索ls命令的位置
+</code></pre></div></li> <li>whereis [FILE] 　　搜索二进制文件、手册文件、源文件</li> <li>locate [-ir] keyword 　　　利用数据库搜索文件<div class="language- extra-class"><pre class="language-text"><code>-i  　忽略大小写的差异；
+-r  　后面可接正规表示法的显示方式
+</code></pre></div>sudo updatedb 　　更新数据库<br>
+updatedb：根据 /etc/updatedb.conf 的配置去搜寻系统硬盘内的档名，并升级 /var/lib/mlocate 内的数据库文件<br>
+locate：依据 /var/lib/mlocate 内的数据库记载，找出使用者输入的关键字档名。</li> <li>find [PATH] [option] [action] 　　从硬盘上搜索文件（复杂）<br>
+与时间有关的选项：共有 -atime, -ctime 与 -mtime ，以 -mtime 说明
+<code>-mtime n ：n 为数字，意义为在 n 天之前的『一天之内』被更动过内容的文件； -mtime +n ：列出在 n 天之前(不含 n 天本身)被更动过内容的文件档名； -mtime -n ：列出在 n 天之内(含 n 天本身)被更动过内容的文件档名。 -newer file ：file 为一个存在的文件，列出比 file 还要新的文件档名 +4代表大於等於5天前的档名：`ex&gt; find /var -mtime +4` -4代表小於等於4天内的文件档名：`ex&gt; find /var -mtime -4` 4则是代表4-5那一天的文件档名：`ex&gt; find /var -mtime 4`</code><br>
+与使用者或群组名称有关的参数：
+<code>-uid n ：n 为数字，这个数字是使用者的帐号 ID，亦即 UID ，这个 UID 是记录在 /etc/passwd 里面与帐号名称对应的数字。这方面我们会在第四篇介绍。 -gid n ：n 为数字，这个数字是群组名称的 ID，亦即 GID，这个 GID 记录在/etc/group -user name ：name 为使用者帐号名称喔！例如 dmtsai -group name：name 为群组名称喔，例如 users ； -nouser ：寻找文件的拥有者不存在 /etc/passwd 的人！ -nogroup ：寻找文件的拥有群组不存在於 /etc/group 的文件！当你自行安装软件时，很可能该软件的属性当中并没有文件拥有者，这是可能的！在这个时候，就可以使用 -nouser 与 -nogroup 搜寻。</code><br>
+与文件权限及名称有关的参数：<br> <code>-name filename：搜寻文件名称为 filename 的文件； -size [+-]SIZE：搜寻比 SIZE 还要大(+)或小(-)的文件。这个 SIZE 的规格有：c: 代表 byte， k: 代表 1024bytes。所以，要找比 50KB还要大的文件，就是『 -size +50k 』 -type TYPE ：搜寻文件的类型为 TYPE 的，类型主要有：一般正规文件 (f),装置文件 (b, c), 目录 (d), 连结档 (l), socket (s),及 FIFO (p) 等属性。 -perm mode ：搜寻文件权限『刚好等於』 mode 的文件，这个 mode 为类似 chmod的属性值，举例来说， -rwsr-xr-x 的属性为 4755 ！ -perm -mode ：搜寻文件权限『必须要全部囊括 mode 的权限』的文件，举例来说，我们要搜寻 -rwxr--r-- ，亦即 0744 的文件，使用 -perm -0744，当一个文件的权限为 -rwsr-xr-x ，亦即 4755 时，也会被列出来，因为 -rwsr-xr-x 的属性已经囊括了 -rwxr--r-- 的属性了。 -perm +mode ：搜寻文件权限『包含任一 mode 的权限』的文件，举例来说，我们搜寻-rwxr-xr-x ，亦即 -perm +755 时，但一个文件属性为 -rw-------也会被列出来，因为他有 -rw.... 的属性存在！</code>
+额外可进行的动作：
+<code>-exec command ：command 为其他命令，-exec 后面可再接额外的命令来处理搜寻到的结果。 -print ：将结果列印到萤幕上，这个动作是默认动作！</code>
+find 的特殊功能就是能够进行额外的动作(action)。例如：<br> <code>sudo find /var/log -type f -name &quot;*.gz&quot; -exec rm -f {} \;</code><br>
+该范例中特殊的地方有 {} 以及 ; 还有 -exec 这个关键字，这些东西的意义为：<br>
+{} 代表的是『由 find 找到的内容』，如上图所示，find 的结果会被放置到 {} 位置中；<br>
+-exec 一直到 ; 是关键字，代表 find 额外动作的开始 (-exec) 到结束 (😉 ，在这中间的就是 find 命令内的额外动作。<br>
+因为『 ; 』在 bash 环境下是有特殊意义的，因此利用反斜线来跳脱。</li></ol> <h3 id="文件操作与管理"><a href="#文件操作与管理" class="header-anchor">#</a> 文件操作与管理</h3> <ol><li>ls [-aAdfFhilnrRSt] [DIR]　　文件与目录的检阅<div class="language- extra-class"><pre class="language-text"><code>-a  ：全部的文件，连同隐藏档( 开头为 . 的文件) 一起列出来(常用)
+-d  ：仅列出目录本身，而不是列出目录内的文件数据(常用)
+-h  ：将文件容量以人类较易读的方式(例如 GB, KB 等等)列出来(常用)；
+-l  ：长数据串列出，包含文件的属性与权限等等数据；(常用)
+-f  ：直接列出结果，而不进行排序 (ls 默认会以档名排序！)
+-i  ：列出 inode 号码，inode 的意义下一章将会介绍；
+-n  ：列出 UID 与 GID 而非使用者与群组的名称 (UID与GID会在帐号管理提到！)
+-R  ：连同子目录内容一起列出来，等於该目录下的所有文件都会显示出来；
+</code></pre></div></li> <li>cp [-adfilprsu] [source] [destination]　　复制<div class="language- extra-class"><pre class="language-text"><code>-a  ：相当於 -pdr 的意思，至於 pdr 请参考下列说明；(常用)
+-d  ：若来源档为连结档的属性(link file)，则复制连结档属性而非文件本身；
+-f  ：为强制(force)的意思，若目标文件已经存在且无法开启，则移除后再尝试一次；
+-i  ：若目标档(destination)已经存在时，在覆盖时会先询问动作的进行(常用)
+-l  ：进行硬式连结(hard link)的连结档创建，而非复制文件本身；
+-p  ：连同文件的属性一起复制过去，而非使用默认属性(备份常用)；
+-r  ：递回持续复制，用於目录的复制行为；(常用)
+-s  ：复制成为符号连结档 (symbolic link)，亦即『捷径』文件；
+-u  ：若 destination 比 source 旧才升级 destination ！
+</code></pre></div></li> <li>rm [-fir] [FILE|DIR]　　删除<div class="language- extra-class"><pre class="language-text"><code>-f  ：就是 force 的意思，忽略不存在的文件，不会出现警告信息；
+-i  ：互动模式，在删除前会询问使用者是否动作
+-r  ：递回删除啊！最常用在目录的删除了！这是非常危险的选项！！！
+</code></pre></div></li> <li>mv [-fiu] [source] [destination]　　移动、重命名<div class="language- extra-class"><pre class="language-text"><code>-f  ：force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；
+-i  ：若目标文件 (destination) 已经存在时，就会询问是否覆盖！
+-u  ：若目标文件已经存在，且 source 比较新，才会升级 (update)
+</code></pre></div></li> <li>basename [path]　　获取文件名</li> <li>dirname [path]　　获取目录名<div class="language- extra-class"><pre class="language-text"><code>[root@www ~]# basename /etc/sysconfig/network
+network         &lt;== 很简单！就取得最后的档名～
+[root@www ~]# dirname /etc/sysconfig/network
+/etc/sysconfig  &lt;== 取得的变成目录名了！
+</code></pre></div></li></ol> <h3 id="文件状态"><a href="#文件状态" class="header-anchor">#</a> 文件状态</h3> <ol><li>file [-i] [FILE]　　辨识文件类型<br>
+它是通过查看文件的头部信息来获取文件类型，而不是像 Windows 通过扩展名来确定文件类型的。<div class="language- extra-class"><pre class="language-text"><code>-i 显示文件的多媒体类型(text/plain)，而不是更易理解的描述(UTF-8 Unicode text)
+[root@localhost ~]# file install.log
+install.log: UTF-8 Unicode text
+</code></pre></div></li> <li>stat 查看文件状态</li> <li>touch 新建文件或修改文件时间</li></ol> <h3 id="差异与校验"><a href="#差异与校验" class="header-anchor">#</a> 差异与校验</h3> <p>经常用 Linux 系统下载软件的人，一定会有一个良好的习惯：校验文件的 hash，以确定文件的完整性甚至是安全性。校验方法当前一般是 MD5，SHA1。</p> <ol><li>md5sum [-c] [FILE]　　 md5 校验<div class="language- extra-class"><pre class="language-text"><code>-c 从文件中读取校验码和文件名进行确认
+md5sum aa
+a0a2ae54db7177569d620befdc589aff  aa
+</code></pre></div></li> <li>sha1sum [FILE]　　 sha1 校验</li> <li>cksum [FILE]　　 CRC 校验</li> <li>diff [FILE1] [FILE2] 　比较两个文本文件的差异<br>
+diff 分析两个文件，并输出两个文件的不同的行。diff 的输出结果表明需要对一个文件做怎样的操作之后才能与第二个文件相匹配。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>我们使用diff比较他们的不同：
+diff file1.txt file2.txt
+输出如下结果：
+2,4c2,4
+&lt; I need to run the laundry.
+&lt; I need to wash the dog.
+&lt; I need to get the car detailed.
+&gt; I need to do the laundry.
+&gt; I need to wash the car.
+&gt; I need to get the dog detailed.
+我们来说明一下该输出结果的含义，要明白diff比较结果的含义，我们必须牢记一点，diff描述两个文件不同的方式是告诉我们怎么样改变第一个文件之后与第二个文件匹配。我们看看上面的比较结果中的第一行 2,4c2,4 前面的数字2,4表示第一个文件中的行，中间有一个字母c表示需要在第一个文件上做的操作(a=add,c=change,d=delete)，后面的数字2,4表示第二个文件中的行。
+2,4c2,4 的含义是：第一个文件中的第[2,4]行(注意这是一个闭合区间，包括第2行和第4行)需要做出修改才能与第二个文件中的[2,4]行相匹配。
+接下来的内容则告诉我们需要修改的地方，前面带 &lt; 的部分表示左边文件的第[2,4]行的内容，而带&gt; 的部分表示右边文件的第[2,4]行的内容，中间的 --- 则是两个文件内容的分隔符号。
+</code></pre></div><div class="language- extra-class"><pre><code>参考资料： https://www.cnblogs.com/wf-linux/p/9488257.html
+</code></pre></div><h3 id="权限与属性"><a href="#权限与属性" class="header-anchor">#</a> 权限与属性</h3> <ol><li>chown</li> <li>chgrp</li> <li>chmod</li> <li>chattr</li> <li>lsattr</li> <li>umask</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/101/assets/js/app.e846d27b.js" defer></script><script src="/101/assets/js/2.62095aff.js" defer></script><script src="/101/assets/js/36.78b758a4.js" defer></script>
+  </body>
+</html>
