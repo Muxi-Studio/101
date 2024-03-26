@@ -61,7 +61,7 @@ export default defineConfig({
       },
     },
     socialLinks: [
-      {icon: "github", link: "https://muxi-studio.github.io/101/"},
+      {icon: "github", link: "https://github.com/Muxi-Studio/101"},
     ],
     nav: [
       {text: "前端", link: "/fe/"},
