@@ -84,6 +84,10 @@ export default defineConfig({
               link: "/fe/",
             },
             {
+              text: "团队成员",
+              link: "/fe/team",
+            },
+            {
               text: "学习路线",
               items: [
                 {text: "大一上学期", link: "/fe/freshmen_fall"},
