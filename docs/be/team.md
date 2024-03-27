@@ -323,7 +323,7 @@ layout: page
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>木犀团队 后端组</template>
-    <template #lead>...</template>
+    <template #lead>兄弟  你好香</template>
   </VPTeamPageTitle>
   <VPTeamPageSection>
     <template #title>2022 级</template>

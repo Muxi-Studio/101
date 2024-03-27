@@ -34,14 +34,3 @@
 - 音视频等数字媒体技术
 
 更广泛的职业技术方向，可以参考[这篇文章](/mobile/appendix_tech_direction.html)。
-
-### 团队成员
-
-#### 2022 级
-
-- [continuematical](https://github.com/continuematical)
-- [Gyicyo](https://github.com/Gyicyo)
-- [Edmund-Liz](https://github.com/Edmund-Liz)
-- [dwqing](https://github.com/dwqing)
-- [PureLipper](https://github.com/PureLipper)
-- [hydrogenair](https://github.com/hydrogenair)
