@@ -165,6 +165,7 @@ export default defineConfig({
 					text: "安卓",
 					items: [
 						{ text: "安卓组简介", link: "/mobile/" },
+						{ text: "团队成员", link: "/mobile/team" },
 						{ text: "大一上学期", link: "/mobile/freshmen_fall" },
 						{ text: "大一下学期", link: "/mobile/freshmen_spring" },
 						{ text: "附录 - Java 习题", link: "/mobile/appendix_java_quiz" },
