@@ -20,6 +20,7 @@
     "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
-    "vitepress": "^1.0.1"
+    "vitepress": "^1.0.1",
+    "vitepress-plugin-comment-with-giscus": "^1.1.12"
   }
 }
