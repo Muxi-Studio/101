@@ -193,6 +193,15 @@ export default defineConfig({
 					],
 				},
 			],
+			"/design/": [
+				{
+					text: "设计",
+					items: [
+						{ text: "设计组简介", link: "/design/" },
+						{ text: "团队成员", link: "/design/team" },
+					],
+				},
+			],
 		},
 	},
 });
