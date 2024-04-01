@@ -324,7 +324,7 @@ layout: page
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>木犀团队 前端组</template>
-    <template #lead>来前端是不是有很多学妹</template>
+    <template #lead>...</template>
   </VPTeamPageTitle>
   <VPTeamPageSection>
     <template #title>2022 级</template>

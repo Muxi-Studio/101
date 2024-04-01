@@ -246,7 +246,7 @@ layout: page
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>木犀团队 安卓组</template>
-    <template #lead>噢  我知道  就写匣子的那个嘛</template>
+    <template #lead>...</template>
   </VPTeamPageTitle>
   <VPTeamPageSection>
     <template #title>2022 级</template>
