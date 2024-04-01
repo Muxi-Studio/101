@@ -189,6 +189,7 @@ export default defineConfig({
 					text: "产品",
 					items: [
 						{ text: "产品组简介", link: "/product/" },
+						{ text: "团队成员", link: "/product/team" },
 						{ text: "大一上学期", link: "/product/freshmen_fall" },
 					],
 				},
