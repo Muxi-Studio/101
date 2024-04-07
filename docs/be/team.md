@@ -213,10 +213,10 @@ layout: page
       ]
     },
     {
-      avatar: 'https://www.github.com/Bowser.png',
-      name: 'Bowser',
+      avatar: 'https://www.github.com/Bowser1704.png',
+      name: 'Bowser1704',
       links: [
-        { icon: 'github', link: 'https://github.com/Bowser' },
+        { icon: 'github', link: 'https://github.com/Bowser1704' },
       ]
     },
     {
