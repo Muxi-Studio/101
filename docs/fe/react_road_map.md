@@ -82,14 +82,15 @@ Codepen 实例
 
 - 受控 vs 非受控
 - Advanced Topics
-- 合成事件
 - ErrorBourbonry
 - 设计模式：HOC + renderProps
 - 自定义 Hooks
 - Suspense
+- cocurrent
 
-// todo
 
 ## 原理
 
-// todo
+- 基本流程
+- 合成事件
+- fiber

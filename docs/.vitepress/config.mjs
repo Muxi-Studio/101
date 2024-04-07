@@ -103,6 +103,7 @@ export default defineConfig({
 							text: "专题学习",
 							items: [
 								{ text: "React 学习指南", link: "/fe/react_road_map" },
+								{ text: "小程序学习指南", link: "/fe/micro_app"},
 								// "infra",
 								// "mobile",
 								// "cg_road_map",
@@ -111,7 +112,10 @@ export default defineConfig({
 						},
 						{
 							text: "基础话题",
-							items: [{ text: "组件化", link: "/fe/component" }],
+							items: [
+								{ text: "组件化", link: "/fe/component" },
+								{ text: "前端工程化", link: "/fe/infra"}
+							],
 						},
 						{
 							text: "Labs",
