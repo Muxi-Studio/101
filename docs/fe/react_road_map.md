@@ -82,11 +82,12 @@ Codepen 实例
 
 - 受控 vs 非受控
 - Advanced Topics
-- ErrorBourbonry
+- ErrorBoundary
 - 设计模式：HOC + renderProps
 - 自定义 Hooks
 - Suspense
 - cocurrent
+- rsc
 
 
 ## 原理
