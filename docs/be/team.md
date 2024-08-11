@@ -9,7 +9,53 @@ layout: page
     VPTeamMembers,
     VPTeamPageSection
   } from 'vitepress/theme';
-
+  const members2023= [
+    {
+      avatar: 'https://avatars.githubusercontent.com/u/110370811?v=4',
+      name: 'sunjunnan79',
+      desc: `前端转前台，后端转后厨。我们都有光明的未来`,
+      org: '信息管理学院',
+      links: [
+        { icon: 'github', link: 'https://github.com/sunjunnan79' },
+      ]
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/09/82b99c8-e41d15e3-7f48-4fea-b79f-39e59777dc3.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: 'bugoutianzhen123',
+      desc: `后端擦玻璃的`,
+      org: '计算机学院',
+      links: [
+        { icon: 'github', link: 'https://github.com/bugoutianzhen123' },
+      ]
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/09/82b99c8-b89afe87-abc4-4395-9c15-39e51bc91b1.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: 'Wslydgithub',
+      desc: `后端小透明，眼神清澈大学生`,
+      org: '信息管理学院',
+      links: [
+        { icon: 'github', link: 'https://github.com/wslydgithub' },
+      ]
+    },
+    {
+      avatar: 'https://avatars.githubusercontent.com/u/140409375?v=4',
+      name: 'wslydgithub',
+      desc: `Hello World`,
+      org: '计算机学院',
+      links: [
+        { icon: 'github', link: 'https://github.com/wslydgithub' },
+      ]
+    },
+    {
+      avatar: 'https://www.github.com/chencheng8888.png',
+      name: 'chencheng8888',
+      desc: `学就对了`,
+      org: '计算机学院',
+      links: [
+        { icon: 'github', link: 'https://github.com/chencheng8888' },
+      ]
+    }
+  ]
   const members2022 = [
     {
       avatar: 'https://www.github.com/big-dust.png',
@@ -325,6 +371,13 @@ layout: page
     <template #title>木犀团队 后端组</template>
     <template #lead>...</template>
   </VPTeamPageTitle>
+   <VPTeamPageSection>
+    <template #title>2023 级</template>
+    <template #lead>...</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="members2023"/>
+    </template>
+  </VPTeamPageSection>
   <VPTeamPageSection>
     <template #title>2022 级</template>
     <template #lead>...</template>

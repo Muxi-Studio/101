@@ -9,7 +9,28 @@ layout: page
     VPTeamMembers,
     VPTeamPageSection
   } from 'vitepress/theme';
-
+  const members2023 = [
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/09/82b99c8-d753ec96-1a58-44d5-a103-36c35acb0e6.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '许月红',
+      desc: `“幸福的生活，就是每天有事做，有人爱，有期待。”`,
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/09/82b99c8-55bb971c-36eb-4483-b381-362285dfb1a.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '柏佳慧',
+      desc: `戏称“摸鱼开柏”（但是很少能摸到鱼…）。喜欢的格言是“人生即产品”。野心勃勃，奋发向上！`,
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/09/82b99c8-d5b542f0-4a8a-4036-b0fe-39e538cfd86.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '池若萱',
+      desc: `极限加班的产品`,
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/10/82b99c8-aab0be3f-7a88-46f3-a9e6-39e50a4581b.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '翁伟恩',
+      desc: `学习做出一款好产品`,
+    },
+  ]
   const members2022 = [
     {
       avatar: 'https://workbench-static.muxixyz.com/1669470225.246666.365AAB60-BF4E-4A23-AF17-80D6C3E56F13.jpeg ',
@@ -152,6 +173,13 @@ layout: page
     <template #title>木犀团队 产品组</template>
     <template #lead>...</template>
   </VPTeamPageTitle>
+  <VPTeamPageSection>
+    <template #title>2023 级</template>
+    <template #lead>...</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="members2023"/>
+    </template>
+  </VPTeamPageSection>
   <VPTeamPageSection>
     <template #title>2022 级</template>
     <template #lead>...</template>

@@ -9,7 +9,49 @@ layout: page
     VPTeamMembers,
     VPTeamPageSection
   } from 'vitepress/theme';
-
+  //TODO =>23级的头像问题 
+  const members2023 = [
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/10/82b99c8-36f8078f-9660-47d0-80dc-2fc9689d3ea.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '刘翠蝶',
+      desc: `努力成为好设计ing～`,
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/10/82b99c8-48ebcc17-e18c-412a-9dba-387d1c431a8.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '丁鼎峰',
+      desc: `我叫丁鼎峰，热爱UI设计`,
+    },
+    {
+      avatar:'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/10/82b99c8-3f99994e-da09-4145-b792-39e50956723.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '时丽静',
+      desc: `最好的状态是保持进步`,
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/09/82b99c8-68752536-49a4-4193-b6a4-39e5aa937f9.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '陈瑜伦',
+      desc: `一个沉默的郎，比较随心所欲`,
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/09/82b99c8-c2019adf-9e88-4dcb-a861-39e41dcc9cd.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '李畅龙',
+      desc: `喜欢排球的设计少年.....`,
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/09/82b99c8-5c54ada2-af8b-413a-baf2-36afaefe762.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '马丽敏',
+      desc: `Better`,
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/09/82b99c8-96bfa6e0-4700-44fd-914d-39e5097ddfc.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '余佳颖',
+      desc: `我来自数字媒体技术专业~`,
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/09/82b99c8-66bf53d8-856c-4acf-9b60-39e5095bbd5.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: '赵宇轩',
+      desc: `正在努力向技术栈进发`,
+    },
+  ]
   const members2022 = [
     {
       avatar: 'https://workbench-static.muxixyz.com/1679245329.5890565.DB71F9512A79177FDF139F968632F78F.jpg',
@@ -98,6 +140,13 @@ layout: page
     <template #title>木犀团队 设计组</template>
     <template #lead>...</template>
   </VPTeamPageTitle>
+  <VPTeamPageSection>
+    <template #title>2023 级</template>
+    <template #lead>...</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="members2023"/>
+    </template>
+  </VPTeamPageSection>
   <VPTeamPageSection>
     <template #title>2022 级</template>
     <template #lead>...</template>

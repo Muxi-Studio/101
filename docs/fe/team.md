@@ -9,6 +9,44 @@ layout: page
     VPTeamMembers,
     VPTeamPageSection
   } from 'vitepress/theme';
+  const members2023 = [
+    {
+      avatar: 'https://www.github.com/eleliauk.png',
+      name: 'eleliauk',
+      desc: `繁花似锦寻安宁 \n  淡水流云渡此生`,
+      org: '计算机学院',
+      links: [
+        { icon: 'github', link: 'https://github.com/eleliauk' },
+      ]
+    },
+    {
+      avatar: 'https://www.github.com/ynnnny.png',
+      name: 'ynnnny',
+      desc: `梦想成真！！`,
+      org: '计算机学院',
+      links: [
+        { icon: 'github', link: 'https://github.com/ynnnny' },
+      ]
+    },
+    {
+      avatar: 'https://www.github.com/kuangkuang0326.png',
+      name: 'kuangkuang0326',
+      desc: `每天睡前祈祷明天没有小组作业`,
+      org: '人工智能教育学部',
+      links: [
+        { icon: 'github', link: 'https://github.com/kuangkuang0326' },
+      ]
+    },
+    {
+      avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/10/82b99c8-d490388b-7662-4440-af2f-37bef005bcc.jpg?x-image-process=image/format,webp/quality,q_60',
+      name: 'yaoyaoyiyi216',
+      desc: `想法超多，执行为0.1的微死人`,
+      org: '信息管理学院',
+      links: [
+        { icon: 'github', link: 'https://github.com/yaoyaoyiyi216' },
+      ]
+    },
+  ]
 
   const members2022 = [
     {
@@ -326,6 +364,13 @@ layout: page
     <template #title>木犀团队 前端组</template>
     <template #lead>...</template>
   </VPTeamPageTitle>
+  <VPTeamPageSection>
+    <template #title>2023 级</template>
+    <template #lead>...</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="members2023"/>
+    </template>
+  </VPTeamPageSection>
   <VPTeamPageSection>
     <template #title>2022 级</template>
     <template #lead>...</template>

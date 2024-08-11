@@ -9,7 +9,35 @@ layout: page
     VPTeamMembers,
     VPTeamPageSection
   } from 'vitepress/theme';
-
+  const members2023 = [
+    {
+      avatar: 'https://www.github.com/drunksweet.png',
+      name: 'drunksweet',
+      desc: `广告位招租嗷，别不识抬举嗷`,
+      org: '计算机学院',
+      links: [
+        { icon: 'github', link: 'https://github.com/drunksweet' },
+      ]
+    },
+    {
+      avatar: 'https://www.github.com/soubai2.png',
+      name: 'flsdqm',
+      desc: `安卓组成员`,
+      org: '计算机学院',
+      links: [
+        { icon: 'github', link: 'https://github.com/soubai2' },
+      ]
+    },
+    {
+      avatar: 'https://www.github.com/gitGurugu.png',
+      name: 'Sleeping',
+      desc: `男的`,
+      org: '计算机学院',
+      links: [
+        { icon: 'github', link: 'https://github.com/gitGurugu' },
+      ]
+    },
+  ]
   const members2022 = [
     {
       avatar: 'https://www.github.com/continuematical.png',
@@ -248,6 +276,13 @@ layout: page
     <template #title>木犀团队 安卓组</template>
     <template #lead>...</template>
   </VPTeamPageTitle>
+  <VPTeamPageSection>
+    <template #title>2023 级</template>
+    <template #lead>...</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="members2023"/>
+    </template>
+  </VPTeamPageSection>
   <VPTeamPageSection>
     <template #title>2022 级</template>
     <template #lead>...</template>
