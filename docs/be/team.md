@@ -39,11 +39,11 @@ layout: page
     },
     {
       avatar: 'https://avatars.githubusercontent.com/u/140409375?v=4',
-      name: 'wslydgithub',
+      name: 'serendipity565',
       desc: `Hello World`,
       org: '计算机学院',
       links: [
-        { icon: 'github', link: 'https://github.com/wslydgithub' },
+        { icon: 'github', link: 'https://github.com/serendipity565' },
       ]
     },
     {
