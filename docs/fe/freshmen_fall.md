@@ -58,7 +58,7 @@ Tips:两个扇形定位在矩形的两角，矩形水平垂直居中，通过绝
 
 ### Task 1
 
-重构[学而](https://github.com/Muxi-Studio/101/blob/master/docs/fe/img/xueer.png)首页，做出一个和它一模一样的页面出来。并使用 Github 的 gh-pages 分支部署静态页面。
+重构[学而](/xueer.png)首页，做出一个和它一模一样的页面出来。并使用 Github 的 gh-pages 分支部署静态页面。
 
 _团队内同学可以访问蓝湖上的设计稿，看标注和样式比较方便。具体链接团队内获取_
 
