@@ -36,9 +36,6 @@
 
 ### Task4
 
-- 实现 [A Guide To Flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)中最后的练习
-- 实现以下效果（Flex 布局实现垂直居中）：
-  ![图片效果](./task4-1.png)
 - 修改[模板](https://codepen.io/anon/pen/RBwEvg)实现以下效果（通过 Flex 布局实现水平居中，替换当前 display:inline 实现）：
   ![图片效果](./task4-2.png)
 
@@ -61,7 +58,7 @@ Tips:两个扇形定位在矩形的两角，矩形水平垂直居中，通过绝
 
 ### Task 1
 
-重构[学而](/101/xueer.png)首页，做出一个和它一模一样的页面出来。并使用 Github 的 gh-pages 分支部署静态页面。
+重构[学而](img/xueer.png)首页，做出一个和它一模一样的页面出来。并使用 Github 的 gh-pages 分支部署静态页面。
 
 _团队内同学可以访问蓝湖上的设计稿，看标注和样式比较方便。具体链接团队内获取_
 
