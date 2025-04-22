@@ -400,10 +400,10 @@ Cookie、Session、Token、JWT的作用和区别。
 
 ### Web爬虫
 
-| 爬虫     | [爬虫简明教程（超链接）](./crawler/go_crawler.md)            |
+| 爬虫     | [爬虫简明教程（超链接）](../crawler/go_crawler.md)           |
 | -------- | ------------------------------------------------------------ |
 | 正则匹配 | [正则匹配(简单了解下原理即可)](https://www.runoob.com/regexp/regexp-tutorial.html) |
-| 模拟登录 | [模拟登陆简明教程（超链接）](./crawler/simulate_login.md)    |
+| 模拟登录 | [模拟登陆简明教程（超链接）](../crawler/simulate_login.md)   |
 
 ### TASK:
 
