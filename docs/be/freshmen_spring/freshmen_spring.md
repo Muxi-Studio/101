@@ -333,7 +333,7 @@
 
 ### 任务
 
-1. 木犀外卖秒杀系统
+1. 木犀外卖秒杀系统1.0
 
 现在~~黑马程序员~~找到了你，让你去实现一个go版本的~~苍穹外卖~~，你为了证明自己是~~IT黑马~~，英勇无畏的接下了这个任务
 
@@ -352,19 +352,111 @@ post /register //用于注册账号
 
 ## week11 分布式事务
 
-// TODO
+### 事务
 
-## week12 搜索引擎 
+1. 什么是事务?
+2. ACID四大特性
 
-// TODO
+### DTM
 
-## week13 负载均衡与限流
+1. 什么是分布式事务,有什么使用场景?
+2. 核心概念包括但不限于幂等性，事务模型(重点关注TCC,Saga)
+3. 了解[dtm](https://github.com/dtm-labs/dtm)库的使用
 
-// TODO
+### 拓展学习：
 
-## week14 微服务架构
+1. mysql中InnoDB引擎是[如何实现事务的](https://mp.weixin.qq.com/s/dEgTmNioqjx5IyDTX4KE4g)
+2. [seat-go](https://github.com/apache/incubator-seata-go)了解seat是什么？和dtm有什么区别？
+3. 如何实现一个[分布式事务框架](https://mp.weixin.qq.com/s/aTQ6mgVUbUqn69NLmXh_7A)
+
+### 任务
+
+1. 木犀秒杀系统2.0
+
+由于你做出来的秒杀系统好评如潮，被~~京东外卖，美团，饿了么~~等广大电商平台积极采用，在巨大的流量冲击下你的服务崩塌了，~~黑马程序员~~希望你能够出一个微服务的版本，让他们能够更好投入云原生的怀抱。
+
+要求：
+
+- 将商品服务和支付服务分离，包含至少三个服务gateway，pay，item
+- 在gateway中使用分布式锁+事务来完成商品秒杀的控制
+
+## week12 搜索引擎
+
+### ElasticSearch
+
+1. [elasticsearch](https://www.elastic.co/docs/solutions/search/run-elasticsearch-locally)核心概念，使用场景，基础语法
+2. 搜索业务实现逻辑
+
+### 拓展学习:
+
+1. 利用canal实现mysql，es读写分离
+
+### 任务
+
+1. 木犀秒杀系统3.0
+
+你的系统写的太过完美，导致各大商家都打算迁移到你的系统上去，现在需要接入各大商家原本的数据库并实现商品的搜索功能
+
+要求：
+
+- 爬取任意商家的一定数量商品信息（不少于3000个）
+
+- 将爬取的数据写入es
+
+- 能够根据商品名称和描述进行全文搜索
+
+  
+
+## week13 限流策略与流量兜底
+
+### 限流策略：
+
+1. 令牌桶限流
+2. 滑动窗口限流
+
+### 流量兜底：
+
+1. 流量降级(降级的策略有哪些?)
+2. [singleFight](https://github.com/golang/sync/tree/master/singleflight)
+
+### 拓展任务
+
+1. 使用go语言编写一个简单的网关,具备基本的限流能力,可以参考nginx,caddy,Envoy等常见网关
+
+### 参考资料
+
+| redis令牌桶限流库 | [redis_rate](https://github.com/go-redis/redis_rate) |
+| ----------------- | ---------------------------------------------------- |
+| sync仓库          | [sync](https://github.com/golang/sync)               |
+| 开源网关参考      | https://github.com/alibaba/higress                   |
+
+### 任务：
+
+1. 木犀秒杀系统4.0
+
+恭喜你，你的秒杀系统已经被几乎所有电商企业采用。为了迎接即将到来的618，黑马程序员再次请你出山为秒杀系统增加限流措施
+
+要求：
+
+1. 增加限流中间件LimitMiddleware实现对流量的限流（限流对象可以自己选择，合理即可）
+2. 增加获取商品列表的接口同时为这个接口增加singlefight
+3. 为商品秒杀中因为分布式锁长时间等待的用户进行流量降级
+
+## 大一下期末任务
+
+### 任务
 
 基于本学期所学提交一个微服务的基本模板
 
-## 待续...
+要求如下:
 
+1. 符合DDD设计理念
+2. 符合微服务设计理念
+3. 至少包括注册中心，配置中心，数据库等
+4. 上传到github仓库
+
+## 参考资料
+
+- [Go-micro](https://github.com/micro/go-micro)
+- [Go-zero](https://go-zero.dev/)
+- [Kratos](https://go-kratos.dev/docs/)
