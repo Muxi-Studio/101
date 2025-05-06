@@ -554,7 +554,10 @@ Cookie、Session、Token、JWT的作用和区别。
 学习要求：
 
 - 熟悉[Gin](https://gin-gonic.com/zh-cn/)语法，学会使用gin进行路由的注册和端口的监听
+- 学会使用gin编写中间件
 - 了解gin与原生net/http的区别
+
+
 
 ### Gorm
 
@@ -566,6 +569,42 @@ Cookie、Session、Token、JWT的作用和区别。
 ### Task
 
 1. 将week8任务使用mvc架构重写
+
+2. 找到以下中间件的错误之处
+
+```
+// AdminAuth 中间件
+func AdminAuth() gin.HandlerFunc {
+    return func(c *gin.Context) {
+        // 放行设置——不需要登录的 URL
+        loginExceptURL := map[string]interface{}{
+            "/captcha": 0,
+            "/login":   1,
+        }
+
+        svc := service.New(c.Request.Context())
+
+        // 如果当前请求路径既不在白名单里，又不是静态文件
+        if !utils.InStringArray(c.Request.URL.Path, loginExceptURL) &&
+            !strings.Contains(c.Request.URL.Path, "/static/") {
+
+            // 检查管理员登录状态
+            if !svc.CheckAdminLogin(c) {
+                // 跳转登录页，方式：301(永久移动)，308(永久重定向), 307(临时重定向)
+                c.Redirect(http.StatusTemporaryRedirect, "/login")
+                return
+            }
+        }
+
+        // 将管理员 UID 保存到请求上下文，方便后续处理
+        c.Set("adminLoginUid", svc.GetAdminLoginUid(c))
+
+        // 前置中间件执行完毕，继续后续处理
+        c.Next()
+    }
+}
+
+```
 
 
 
@@ -667,9 +706,9 @@ go语言有一套经常被人嘲笑的错误处理机制，太过重复以至于
 
 1. 使用本周学习知识构建一个基于gin的日志middleware，要求能够同时实现：捕获错误，记录日志，数据埋点（当然你也可以构建多个中间件分别实现不同的功能
 
-# 大一上年终项目
+# 大一上期末任务
 
-综合运用各种**人际关系**以及**AI工具**组件一个完整的产品开发队伍，完成一个miniProject
+综合运用各种**人际关系**以及**AI工具**组建一个完整的产品开发队伍，完成一个miniProject
 
 参考AI生产力工具：
 
