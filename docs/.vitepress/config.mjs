@@ -69,7 +69,10 @@ export default defineConfig({
 			{ text: "后端", link: "/be/" },
 			{ text: "产品", link: "/product/" },
 			{ text: "设计", link: "/design/" },
+			{ text: "运营", link: "/op/" },
 			{ text: "计算机基础", link: "/cs/" },
+			
+			
 			// { text: "软技能", link: "/soft/" },
 			// { text: "求职", link: "/job/" },
 		],
@@ -204,6 +207,15 @@ export default defineConfig({
 					items: [
 						{ text: "设计组简介", link: "/design/" },
 						{ text: "团队成员", link: "/design/team" },
+					],
+				},
+			],
+			"/op/": [
+				{
+					text: "运营",
+					items: [
+						{ text: "运营组简介", link: "/op/" },
+						{ text: "团队成员", link: "/op/team" },
 					],
 				},
 			],
