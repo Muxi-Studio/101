@@ -43,7 +43,7 @@ layout: page
     avatar: 'https://muxi-avatar.muxixyz.com//product/wangweizhen.JPG',
     name: '王韦臻',
     desc: `向往退休了...`,
-    org: '人工智能学院',
+    org: '人工智能教育学部',
     links: []
   },
   
@@ -113,7 +113,9 @@ layout: page
     name: '李运韬',
     desc: `技术宅引爆产品市场！`,
     org: '物理学院',
-    links: []
+    links: [ 
+       { icon: 'github', link: 'https://github.com/JesseCooper0' }
+    ]
   }
   ]
 

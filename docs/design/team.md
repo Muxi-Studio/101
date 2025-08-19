@@ -15,7 +15,7 @@ layout: page
     avatar: 'https://muxi-avatar.muxixyz.com//design/weichuxi.jpg',
     name: '魏楚稀',
     desc: `祝大家万事胜意 前程似锦`,
-    org: '人工智能学院',
+    org: '人工智能教育学部',
     links: []
   },
 
@@ -24,7 +24,7 @@ layout: page
     avatar: 'https://muxi-avatar.muxixyz.com//design/dongyingfan.png',
     name: 'Butter fly',
     desc: `都是同龄人我原本没想降维打击`,
-    org: '人工智能学院',
+    org: '人工智能教育学部',
     links: []
   },
   {
@@ -32,13 +32,13 @@ layout: page
     name: 'jenyinnn',
     desc: `安静 你的同胞正在做中国梦`,
     org: '美术学院',
-    links: []
+    links: [ { icon: 'github', link: 'https://github.com/jenyinnn0111' }]
   },
   {
     avatar: 'https://muxi-avatar.muxixyz.com//design/liuyuan.jpg',
     name: '斯琴',
     desc: `刘媛只值六元`,
-    org: '人工智能学院',
+    org: '人工智能教育学部',
     links: []
   },
  
@@ -97,6 +97,13 @@ layout: page
     name: '张景昕',
     desc: `🧸`,
     org: '心理学院',
+    links: []
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//design/qianzhangwen.jpg',
+    name: '钱张雯',
+    desc: '会赢的',
+    org: '经管学院',
     links: []
   },
   ]

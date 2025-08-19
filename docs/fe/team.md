@@ -34,7 +34,7 @@ layout: page
     avatar: 'https://muxi-avatar.muxixyz.com//frontend/yushirui.jpeg',
     name: '余诗蕊',
     desc: `宇宙第一美刁蛮小公主`,
-    org: '人工智能学院',
+    org: '人工智能教育学部',
     links: [
       { icon: 'github', link: 'https://github.com/YYYSSSRRR' }
     ]
@@ -47,7 +47,16 @@ layout: page
     links: [
       { icon: 'github', link: 'https://github.com/bingling-sama' }
     ]
-  }
+  },
+   {
+    avatar: 'https://muxi-avatar.muxixyz.com//frontend/yinjian.jpg',
+    name: '尹健',
+    desc: '天地本宽,而鄙者自隘',
+    org: '计算机学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/aabbcc-nwjian' }
+    ]
+  },
 ]
 
   
@@ -70,15 +79,7 @@ layout: page
         { icon: 'github', link: 'https://github.com/ynnnny' },
       ]
     },
-    {
-      avatar: 'https://www.github.com/kuangkuang0326.png',
-      name: 'kuangkuang0326',
-      desc: `每天睡前祈祷明天没有小组作业`,
-      org: '人工智能教育学部',
-      links: [
-        { icon: 'github', link: 'https://github.com/kuangkuang0326' },
-      ]
-    },
+    
     {
       avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/10/82b99c8-d490388b-7662-4440-af2f-37bef005bcc.jpg?x-image-process=image/format,webp/quality,q_60',
       name: 'yaoyaoyiyi216',
