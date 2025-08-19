@@ -9,6 +9,46 @@ layout: page
     VPTeamMembers,
     VPTeamPageSection
   } from 'vitepress/theme';
+  const members2024 = [
+
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//product/sunxiaoyuan.png',
+    name: '孙萧媛',
+    desc: `在琐琐碎碎中发现世界`,
+    org: '心理学院',
+    links: []
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//product/yangjingfan.jpg',
+    name: '杨景凡',
+    desc: `୧( ૢ⁼̴ ꇴ ⁼̴)当你在看我的时候，我也在看你～`,
+    org: '信管学院',
+    links: []
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//product/wangyingzhen.jpeg',
+    name: '王颖桢',
+    desc: `船到桥头自然直`,
+    org: '数统学院',
+    links: []
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//product/zhutianyu.jpg',
+    name: '朱田宇',
+    desc: `我蛮夷也。`,
+    org: '计算机学院',
+    links: []
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//product/wangweizhen.JPG',
+    name: '王韦臻',
+    desc: `向往退休了...`,
+    org: '人工智能学院',
+    links: []
+  },
+  
+]
+
   const members2023 = [
     {
       avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/09/82b99c8-d753ec96-1a58-44d5-a103-36c35acb0e6.jpg?x-image-process=image/format,webp/quality,q_60',
@@ -30,6 +70,13 @@ layout: page
       name: '翁伟恩',
       desc: `学习做出一款好产品`,
     },
+      {
+    avatar: 'https://muxi-avatar.muxixyz.com//product/wujing.jpg',
+    name: '吴静',
+    desc: `暴富...`,
+    org: '计算机学院',
+    links: []
+  },
   ]
   const members2022 = [
     {
@@ -61,6 +108,13 @@ layout: page
       avatar: 'https://static.muxixyz.com/workbench/avatar/5.png',
       name: '张铭秋',
     },
+    {
+    avatar: 'https://muxi-avatar.muxixyz.com//product/liyuntao.jpg',
+    name: '李运韬',
+    desc: `技术宅引爆产品市场！`,
+    org: '物理学院',
+    links: []
+  }
   ]
 
   const members2021 = [
@@ -173,6 +227,13 @@ layout: page
     <template #title>木犀团队 产品组</template>
     <template #lead>...</template>
   </VPTeamPageTitle>
+  <VPTeamPageSection>
+    <template #title>2024 级</template>
+    <template #lead>...</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="members2024"/>
+    </template>
+  </VPTeamPageSection>
   <VPTeamPageSection>
     <template #title>2023 级</template>
     <template #lead>...</template>
