@@ -32,8 +32,8 @@ layout: page
   {
     avatar: 'https://muxi-avatar.muxixyz.com//backend/xionghaiwei.png',
     name: '熊海威',
-    desc: `♬月・火・水・木・金・土・日 ♬`,
-    org: '人工智能学院',
+    desc: `♬月・火・水・木・金・土・日 ♬ ♬毎日が coding day♬`,
+    org: '人工智能教育学部',
     links: [
       { icon: 'github', link: 'https://github.com/agermel' }
     ]
@@ -41,7 +41,7 @@ layout: page
   {
     avatar: 'https://muxi-avatar.muxixyz.com//backend/luyubo.png',
     name: '鲁雨博',
-    desc: `♬毎日が coding day♬`,
+    desc: `摸鱼，是一种学问`,
     org: '计算机学院',
     links: [
       { icon: 'github', link: 'https://github.com/luyb177' }
@@ -50,7 +50,7 @@ layout: page
   {
     avatar: 'https://muxi-avatar.muxixyz.com//backend/liuxuebin.jpeg',
     name: 'raiki',
-    desc: `摸鱼，是一种学问`,
+    desc: `Hi.`,
     org: '计算机学院',
     links: [
       { icon: 'github', link: 'https://github.com/raiki02' }
@@ -59,7 +59,7 @@ layout: page
   {
     avatar: 'https://muxi-avatar.muxixyz.com//backend/liyuyan.JPG',
     name: 'Yukiii',
-    desc: `Hi.`,
+    desc: `求不睡觉就能睡觉的方法`,
     org: '信管学院',
     links: [
       { icon: 'github', link: 'https://github.com/becky200605' }
@@ -68,12 +68,22 @@ layout: page
   {
     avatar: 'https://muxi-avatar.muxixyz.com//backend/xuchao.jpg',
     name: '许超',
-    desc: `求不睡觉就能睡觉的方法：）\n雨季不在来`,
-    org: '人工智能学院',
+    desc: `雨季不在来`,
+    org: '人工智能教育学部',
     links: [
       { icon: 'github', link: 'https://github.com/killingamockingbird' }
     ]
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//backend/luohuixi.jpg',
+    name: '罗惠熙',
+    desc: '我该如何追问 最热烈青春~',
+    org: '计算机学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/luohuixi?tab=repositories' }
+    ]
   }
+  
 
   ]
   const members2023= [
