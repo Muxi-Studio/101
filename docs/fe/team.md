@@ -9,6 +9,48 @@ layout: page
     VPTeamMembers,
     VPTeamPageSection
   } from 'vitepress/theme';
+  const members2024 = [
+    
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//frontend/zhanghaoyan.jpg',
+    name: '张颢严',
+    desc: `拉拉，可是能成为我母亲的女人啊！`,
+    org: '计算机学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/159357254680' }
+    ]
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//frontend/liweipeng.png',
+    name: 'limerence',
+    desc: `掌握平衡，受益终生`,
+    org: '计算机学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/L-w-p-999' }
+    ]
+  },
+
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//frontend/yushirui.jpeg',
+    name: '余诗蕊',
+    desc: `宇宙第一美刁蛮小公主`,
+    org: '人工智能学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/YYYSSSRRR' }
+    ]
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//frontend/liuxingyu.jpg',
+    name: '刘星宇',
+    desc: `这个人很懒，只想把你留下`,
+    org: '计算机学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/bingling-sama' }
+    ]
+  }
+]
+
+  
   const members2023 = [
     {
       avatar: 'https://www.github.com/eleliauk.png',
@@ -46,6 +88,15 @@ layout: page
         { icon: 'github', link: 'https://github.com/yaoyaoyiyi216' },
       ]
     },
+     {
+    avatar: 'https://muxi-avatar.muxixyz.com//frontend/tuyuheng.jpg',
+    name: '涂宇恒',
+    desc: `苍穹不负少年意，星光不枉赶路人`,
+    org: '计算机学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/fupingyezi' }
+    ]
+  },
   ]
 
   const members2022 = [
@@ -364,6 +415,13 @@ layout: page
     <template #title>木犀团队 前端组</template>
     <template #lead>...</template>
   </VPTeamPageTitle>
+  <VPTeamPageSection>
+    <template #title>2024 级</template>
+    <template #lead>...</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="members2024"/>
+    </template>
+  </VPTeamPageSection>
   <VPTeamPageSection>
     <template #title>2023 级</template>
     <template #lead>...</template>

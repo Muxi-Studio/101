@@ -9,6 +9,73 @@ layout: page
     VPTeamMembers,
     VPTeamPageSection
   } from 'vitepress/theme';
+  const members2024 = [
+    
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//backend/jiangruihao.png',
+    name: 'weiji',
+    desc: `庭中三千梨花树，再无一朵入我心.`,
+    org: '计算机学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/weiji6' }
+    ]
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//backend/chenqihao.jpeg',
+    name: '陈启昊',
+    desc: `所累哇多卡纳`,
+    org: '计算机学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/cqhasy' }
+    ]
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//backend/xionghaiwei.png',
+    name: '熊海威',
+    desc: `♬月・火・水・木・金・土・日 ♬`,
+    org: '人工智能学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/agermel' }
+    ]
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//backend/luyubo.png',
+    name: '鲁雨博',
+    desc: `♬毎日が coding day♬`,
+    org: '计算机学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/luyb177' }
+    ]
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//backend/liuxuebin.jpeg',
+    name: 'raiki',
+    desc: `摸鱼，是一种学问`,
+    org: '计算机学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/raiki02' }
+    ]
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//backend/liyuyan.JPG',
+    name: 'Yukiii',
+    desc: `Hi.`,
+    org: '信管学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/becky200605' }
+    ]
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//backend/xuchao.jpg',
+    name: '许超',
+    desc: `求不睡觉就能睡觉的方法：）\n雨季不在来`,
+    org: '人工智能学院',
+    links: [
+      { icon: 'github', link: 'https://github.com/killingamockingbird' }
+    ]
+  }
+
+  ]
   const members2023= [
     {
       avatar: 'https://avatars.githubusercontent.com/u/110370811?v=4',
@@ -371,6 +438,13 @@ layout: page
     <template #title>木犀团队 后端组</template>
     <template #lead>...</template>
   </VPTeamPageTitle>
+  <VPTeamPageSection>
+    <template #title>2024 级</template>
+    <template #lead>...</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="members2024"/>
+    </template>
+  </VPTeamPageSection>
    <VPTeamPageSection>
     <template #title>2023 级</template>
     <template #lead>...</template>

@@ -10,6 +10,40 @@ layout: page
     VPTeamPageSection
   } from 'vitepress/theme';
   //TODO =>23级的头像问题 
+  const members2024 = [
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//design/weichuxi.jpg',
+    name: '魏楚稀',
+    desc: `祝大家万事胜意 前程似锦`,
+    org: '人工智能学院',
+    links: []
+  },
+
+
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//design/dongyingfan.png',
+    name: 'Butter fly',
+    desc: `都是同龄人我原本没想降维打击`,
+    org: '人工智能学院',
+    links: []
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//design/yinjiayi.jpeg',
+    name: 'jenyinnn',
+    desc: `安静 你的同胞正在做中国梦`,
+    org: '美术学院',
+    links: []
+  },
+  {
+    avatar: 'https://muxi-avatar.muxixyz.com//design/liuyuan.jpg',
+    name: '斯琴',
+    desc: `刘媛只值六元`,
+    org: '人工智能学院',
+    links: []
+  },
+ 
+]
+
   const members2023 = [
     {
       avatar: 'https://obs.jielong.co/Jl_FeedBackRecord/2024/08/10/82b99c8-36f8078f-9660-47d0-80dc-2fc9689d3ea.jpg?x-image-process=image/format,webp/quality,q_60',
@@ -51,6 +85,20 @@ layout: page
       name: '赵宇轩',
       desc: `正在努力向技术栈进发`,
     },
+     {
+    avatar: 'https://muxi-avatar.muxixyz.com//design/helu.jpg',
+    name: '何露',
+    desc: `孩子们，我坠机了。`,
+    org: '信管学院',
+    links: []
+  },
+    {
+    avatar: 'https://muxi-avatar.muxixyz.com//design/zhangjingxin.jpg',
+    name: '张景昕',
+    desc: `🧸`,
+    org: '心理学院',
+    links: []
+  },
   ]
   const members2022 = [
     {
@@ -88,6 +136,13 @@ layout: page
       name: '许蓝菁',
       desc: `努力跟进前辈脚步的大学生`,
     },
+      {
+    avatar: 'https://muxi-avatar.muxixyz.com//design/wumenghan.jpg',
+    name: '吴梦晗',
+    desc: `被蚊子搬走了`,
+    org: '心理学院',
+    links: []
+  },
   ]
 
   const members2021 = [
@@ -140,6 +195,13 @@ layout: page
     <template #title>木犀团队 设计组</template>
     <template #lead>...</template>
   </VPTeamPageTitle>
+  <VPTeamPageSection>
+    <template #title>2024 级</template>
+    <template #lead>...</template>
+    <template #members>
+      <VPTeamMembers size="small" :members="members2024"/>
+    </template>
+  </VPTeamPageSection>
   <VPTeamPageSection>
     <template #title>2023 级</template>
     <template #lead>...</template>
