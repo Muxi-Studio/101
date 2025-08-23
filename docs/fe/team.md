@@ -41,10 +41,11 @@ layout: page
   },
   {
     avatar: 'https://muxi-avatar.muxixyz.com//frontend/liuxingyu.jpg',
-    name: '刘星宇',
-    desc: `这个人很懒，只想把你留下`,
+    name: 'bingling-sama',
+    desc: `这家伙很懒，只想把你留下`,
     org: '计算机学院',
     links: [
+      { icon: { svg: '<svg width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione" preserveAspectRatio="xMidYMid meet"><path d="M22 0c0 16.9-9.1 32-22 32c12.9 0 22 15.1 22 32c0-16.9 9.1-32 22-32c-12.9 0-22-15.1-22-32" fill="#ffe54d"></path><path d="M53 0c0 8.4-4.6 16-11 16c6.4 0 11 7.6 11 16c0-8.4 4.6-16 11-16c-6.4 0-11-7.6-11-16" fill="#6adbc6"></path><path d="M48 32c0 8.4-4.6 16-11 16c6.4 0 11 7.6 11 16c0-8.4 4.6-16 11-16c-6.4 0-11-7.6-11-16" fill="#ff73c0"></path></svg>' }, link: 'https://booling.cn/'},
       { icon: 'github', link: 'https://github.com/bingling-sama' }
     ]
   },
