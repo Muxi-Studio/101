@@ -3,8 +3,8 @@
 ## 模块一：HTML + CSS 基础
 
 - 学习 HTML 和 CSS，参考资料：
-  - [HTML-MDN](https://developer.mozilla.org/en-US/docs/Web/HTML)
-  - [CSS-MDN](https://developer.mozilla.org/en-US/docs/Web/CSS)
+  - [HTML-MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
+  - [CSS-MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
   - [学习 CSS 布局](http://zh.learnlayout.com/)
   - [Flex 布局](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
